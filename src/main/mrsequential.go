@@ -47,6 +47,7 @@ func main() {
 		}
 		file.Close()
 		kva := mapf(filename, string(content))
+		// intermediate = [{"word1","1"},{"word2","2"},{..}]
 		intermediate = append(intermediate, kva...)
 	}
 
