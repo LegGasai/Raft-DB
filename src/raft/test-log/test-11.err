@@ -1,0 +1,904 @@
+2023/11/06 12:42:44 [Timeout]:Peer[1] timeout:2023-11-06 12:42:44.296835046 +0800 CST m=+0.316203549 | 12:42:44.303
+2023/11/06 12:42:44 [Election]:Peer[1] start election for term[1] | 12:42:44.304
+2023/11/06 12:42:44 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:44.304
+2023/11/06 12:42:44 [Receive RequestVote]:Peer[2] receive RequestVote RPC from Peer[1] | 12:42:44.305
+2023/11/06 12:42:44 [Vote]:Peer[2] give vote to Peer[1] for term[1] | 12:42:44.305
+2023/11/06 12:42:44 [Leader]:Peer[1] become leader for term[1] | 12:42:44.305
+2023/11/06 12:42:44 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:44.305
+2023/11/06 12:42:44 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:44.306 | nextTimeout[12:42:44.580]
+2023/11/06 12:42:44 [Receive RequestVote]:Peer[0] receive RequestVote RPC from Peer[1] | 12:42:44.306
+2023/11/06 12:42:44 [Vote]:Peer[0] give vote to Peer[1] for term[1] | 12:42:44.306
+2023/11/06 12:42:44 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:44.319
+2023/11/06 12:42:44 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:44.319 | nextTimeout[12:42:44.694]
+2023/11/06 12:42:44 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:44.320 | nextTimeout[12:42:44.669]
+2023/11/06 12:42:44 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:44.335 | nextTimeout[12:42:44.566]
+2023/11/06 12:42:44 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:44.426
+2023/11/06 12:42:44 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:44.427 | nextTimeout[12:42:44.739]
+2023/11/06 12:42:44 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:44.428 | nextTimeout[12:42:44.673]
+2023/11/06 12:42:44 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:44.520
+2023/11/06 12:42:44 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:44.520 | nextTimeout[12:42:44.815]
+2023/11/06 12:42:44 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:44.520 | nextTimeout[12:42:44.906]
+2023/11/06 12:42:44 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:44.691
+2023/11/06 12:42:44 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:44.693 | nextTimeout[12:42:45.077]
+2023/11/06 12:42:44 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:44.693 | nextTimeout[12:42:44.961]
+2023/11/06 12:42:44 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:44.769
+2023/11/06 12:42:44 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:44.770 | nextTimeout[12:42:45.066]
+2023/11/06 12:42:44 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:44.770 | nextTimeout[12:42:45.147]
+2023/11/06 12:42:44 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:44.876
+2023/11/06 12:42:44 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:44.876 | nextTimeout[12:42:45.215]
+2023/11/06 12:42:44 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:44.877 | nextTimeout[12:42:45.187]
+2023/11/06 12:42:44 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:44.987
+2023/11/06 12:42:44 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:44.988 | nextTimeout[12:42:45.254]
+2023/11/06 12:42:44 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:44.989 | nextTimeout[12:42:45.296]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.095
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.095 | nextTimeout[12:42:45.472]
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.095 | nextTimeout[12:42:45.363]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.190
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.190 | nextTimeout[12:42:45.441]
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.190 | nextTimeout[12:42:45.454]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.246
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.247 | nextTimeout[12:42:45.528]
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.247 | nextTimeout[12:42:45.510]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.324
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.325 | nextTimeout[12:42:45.620]
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.325 | nextTimeout[12:42:45.539]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.399
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.399 | nextTimeout[12:42:45.616]
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.399 | nextTimeout[12:42:45.661]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.489
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.490 | nextTimeout[12:42:45.889]
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.490 | nextTimeout[12:42:45.760]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.582
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.583 | nextTimeout[12:42:45.941]
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.583 | nextTimeout[12:42:45.888]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.705
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.706 | nextTimeout[12:42:45.917]
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.706 | nextTimeout[12:42:45.949]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.786
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.787 | nextTimeout[12:42:46.181]
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.787 | nextTimeout[12:42:45.999]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.896
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.896 | nextTimeout[12:42:46.254]
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.897 | nextTimeout[12:42:46.200]
+2023/11/06 12:42:45 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:45.975
+2023/11/06 12:42:45 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:45.975 | nextTimeout[12:42:46.347]
+2023/11/06 12:42:45 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:45.975 | nextTimeout[12:42:46.206]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.067
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.068 | nextTimeout[12:42:46.420]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.068 | nextTimeout[12:42:46.328]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.175
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.176 | nextTimeout[12:42:46.451]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.176 | nextTimeout[12:42:46.492]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.281
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.282 | nextTimeout[12:42:46.596]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.283 | nextTimeout[12:42:46.506]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.389
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.390 | nextTimeout[12:42:46.625]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.390 | nextTimeout[12:42:46.631]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.468
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.468 | nextTimeout[12:42:46.700]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.468 | nextTimeout[12:42:46.853]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.547
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.547 | nextTimeout[12:42:46.846]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.548 | nextTimeout[12:42:46.797]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.657
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.657 | nextTimeout[12:42:46.868]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.657 | nextTimeout[12:42:46.974]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.737
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.737 | nextTimeout[12:42:46.947]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.738 | nextTimeout[12:42:47.105]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.812
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.812 | nextTimeout[12:42:47.194]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.812 | nextTimeout[12:42:47.170]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.905
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.905 | nextTimeout[12:42:47.232]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.906 | nextTimeout[12:42:47.298]
+2023/11/06 12:42:46 [Send HeartBeat]:Peer(Leader)[1] send HeartBeat | 12:42:46.997
+2023/11/06 12:42:46 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[1] | 12:42:46.998 | nextTimeout[12:42:47.246]
+2023/11/06 12:42:46 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[1] | 12:42:46.998 | nextTimeout[12:42:47.259]
+2023/11/06 12:42:47 [Timeout]:Peer[2] timeout:2023-11-06 12:42:47.290450208 +0800 CST m=+3.309818672 | 12:42:47.293
+2023/11/06 12:42:47 [Election]:Peer[2] start election for term[1] | 12:42:47.293
+2023/11/06 12:42:47 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:47.293
+2023/11/06 12:42:47 [Receive RequestVote]:Peer[1] receive RequestVote RPC from Peer[2] | 12:42:47.294
+2023/11/06 12:42:47 [Vote]:Peer[1] give vote to Peer[2] for term[1] | 12:42:47.294
+2023/11/06 12:42:47 [Leader]:Peer[2] become leader for term[1] | 12:42:47.294
+2023/11/06 12:42:47 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[2] | 12:42:47.294 | nextTimeout[12:42:47.519]
+2023/11/06 12:42:47 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:47.294
+2023/11/06 12:42:47 [Receive RequestVote]:Peer[0] receive RequestVote RPC from Peer[2] | 12:42:47.294
+2023/11/06 12:42:47 [Vote]:Peer[0] give vote to Peer[2] for term[1] | 12:42:47.294
+2023/11/06 12:42:47 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[2] | 12:42:47.294 | nextTimeout[12:42:47.560]
+2023/11/06 12:42:47 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:47.308
+2023/11/06 12:42:47 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[2] | 12:42:47.309 | nextTimeout[12:42:47.579]
+2023/11/06 12:42:47 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[2] | 12:42:47.309 | nextTimeout[12:42:47.683]
+2023/11/06 12:42:47 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:47.419
+2023/11/06 12:42:47 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[2] | 12:42:47.420 | nextTimeout[12:42:47.747]
+2023/11/06 12:42:47 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[2] | 12:42:47.420 | nextTimeout[12:42:47.749]
+2023/11/06 12:42:47 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:47.507
+2023/11/06 12:42:47 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[2] | 12:42:47.508 | nextTimeout[12:42:47.808]
+2023/11/06 12:42:47 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[2] | 12:42:47.508 | nextTimeout[12:42:47.772]
+2023/11/06 12:42:47 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:47.638
+2023/11/06 12:42:47 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:47.706
+2023/11/06 12:42:47 [Timeout]:Peer[0] timeout:2023-11-06 12:42:47.772700756 +0800 CST m=+3.792069240 | 12:42:47.795
+2023/11/06 12:42:47 [Election]:Peer[0] start election for term[2] | 12:42:47.795
+2023/11/06 12:42:47 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 12:42:47.795
+2023/11/06 12:42:47 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 12:42:47.795
+2023/11/06 12:42:47 [Receive RequestVote]:Peer[1] receive RequestVote RPC from Peer[0] | 12:42:47.795
+2023/11/06 12:42:47 [Vote]:Peer[1] give vote to Peer[0] for term[2] | 12:42:47.795
+2023/11/06 12:42:47 [Leader]:Peer[0] become leader for term[2] | 12:42:47.795
+2023/11/06 12:42:47 [HeartBeat]:Peer[1] in term[2] receive HeartBeat from Leader[0] | 12:42:47.795 | nextTimeout[12:42:48.117]
+2023/11/06 12:42:47 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:47.842
+2023/11/06 12:42:47 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:47.852
+2023/11/06 12:42:47 [HeartBeat]:Peer[1] in term[2] receive HeartBeat from Leader[0] | 12:42:47.853 | nextTimeout[12:42:48.201]
+2023/11/06 12:42:47 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:47.918
+2023/11/06 12:42:47 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:47.934
+2023/11/06 12:42:47 [HeartBeat]:Peer[1] in term[2] receive HeartBeat from Leader[0] | 12:42:47.934 | nextTimeout[12:42:48.175]
+2023/11/06 12:42:47 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:47.995
+2023/11/06 12:42:47 [HeartBeat]:Peer[1] in term[2] receive pre HeartBeat from Leader[2] | 12:42:47.997
+2023/11/06 12:42:47 [HeartBeat]:Peer[0] in term[2] receive pre HeartBeat from Leader[2] | 12:42:47.998
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.011
+2023/11/06 12:42:48 [HeartBeat]:Peer[2] in term[2] receive HeartBeat from Leader[0] | 12:42:48.012 | nextTimeout[12:42:48.341]
+2023/11/06 12:42:48 [HeartBeat]:Peer[1] in term[2] receive HeartBeat from Leader[0] | 12:42:48.012 | nextTimeout[12:42:48.214]
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.111
+2023/11/06 12:42:48 [HeartBeat]:Peer[2] in term[2] receive HeartBeat from Leader[0] | 12:42:48.112 | nextTimeout[12:42:48.420]
+2023/11/06 12:42:48 [HeartBeat]:Peer[1] in term[2] receive HeartBeat from Leader[0] | 12:42:48.112 | nextTimeout[12:42:48.412]
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.244
+2023/11/06 12:42:48 [HeartBeat]:Peer[2] in term[2] receive HeartBeat from Leader[0] | 12:42:48.244 | nextTimeout[12:42:48.579]
+2023/11/06 12:42:48 [HeartBeat]:Peer[1] in term[2] receive HeartBeat from Leader[0] | 12:42:48.245 | nextTimeout[12:42:48.642]
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.324
+2023/11/06 12:42:48 [HeartBeat]:Peer[2] in term[2] receive HeartBeat from Leader[0] | 12:42:48.325 | nextTimeout[12:42:48.704]
+2023/11/06 12:42:48 [HeartBeat]:Peer[1] in term[2] receive HeartBeat from Leader[0] | 12:42:48.325 | nextTimeout[12:42:48.647]
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.433
+2023/11/06 12:42:48 [HeartBeat]:Peer[2] in term[2] receive HeartBeat from Leader[0] | 12:42:48.433 | nextTimeout[12:42:48.675]
+2023/11/06 12:42:48 [HeartBeat]:Peer[1] in term[2] receive HeartBeat from Leader[0] | 12:42:48.433 | nextTimeout[12:42:48.785]
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.543
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.651
+2023/11/06 12:42:48 [Timeout]:Peer[2] timeout:2023-11-06 12:42:48.675550308 +0800 CST m=+4.694918797 | 12:42:48.681
+2023/11/06 12:42:48 [Election]:Peer[2] start election for term[3] | 12:42:48.681
+2023/11/06 12:42:48 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:48.681
+2023/11/06 12:42:48 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:48.681
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.743
+2023/11/06 12:42:48 [Timeout]:Peer[1] timeout:2023-11-06 12:42:48.785980651 +0800 CST m=+4.805349138 | 12:42:48.786
+2023/11/06 12:42:48 [Election]:Peer[1] start election for term[3] | 12:42:48.786
+2023/11/06 12:42:48 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:48.786
+2023/11/06 12:42:48 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:48.786
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.821
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.911
+2023/11/06 12:42:48 [Timeout]:Peer[2] timeout:2023-11-06 12:42:48.916506667 +0800 CST m=+4.935875157 | 12:42:48.930
+2023/11/06 12:42:48 [Election]:Peer[2] start election for term[4] | 12:42:48.930
+2023/11/06 12:42:48 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:48.931
+2023/11/06 12:42:48 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:48.931
+2023/11/06 12:42:48 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:48.990
+2023/11/06 12:42:49 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:49.066
+2023/11/06 12:42:49 [Timeout]:Peer[1] timeout:2023-11-06 12:42:49.080718229 +0800 CST m=+5.100086715 | 12:42:49.083
+2023/11/06 12:42:49 [Election]:Peer[1] start election for term[4] | 12:42:49.083
+2023/11/06 12:42:49 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:49.083
+2023/11/06 12:42:49 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:49.083
+2023/11/06 12:42:49 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:49.162
+2023/11/06 12:42:49 [Timeout]:Peer[2] timeout:2023-11-06 12:42:49.165770979 +0800 CST m=+5.185139474 | 12:42:49.174
+2023/11/06 12:42:49 [Election]:Peer[2] start election for term[5] | 12:42:49.174
+2023/11/06 12:42:49 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:49.174
+2023/11/06 12:42:49 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:49.174
+2023/11/06 12:42:49 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:49.297
+2023/11/06 12:42:49 [Timeout]:Peer[1] timeout:2023-11-06 12:42:49.302314923 +0800 CST m=+5.321683358 | 12:42:49.335
+2023/11/06 12:42:49 [Election]:Peer[1] start election for term[5] | 12:42:49.335
+2023/11/06 12:42:49 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:49.335
+2023/11/06 12:42:49 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:49.335
+2023/11/06 12:42:49 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:49.382
+2023/11/06 12:42:49 [Timeout]:Peer[2] timeout:2023-11-06 12:42:49.460110737 +0800 CST m=+5.479479195 | 12:42:49.537
+2023/11/06 12:42:49 [Election]:Peer[2] start election for term[6] | 12:42:49.537
+2023/11/06 12:42:49 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:49.537
+2023/11/06 12:42:49 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:49.537
+2023/11/06 12:42:49 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:49.553
+2023/11/06 12:42:49 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:49.647
+2023/11/06 12:42:49 [Timeout]:Peer[1] timeout:2023-11-06 12:42:49.672737425 +0800 CST m=+5.692105860 | 12:42:49.716
+2023/11/06 12:42:49 [Election]:Peer[1] start election for term[6] | 12:42:49.716
+2023/11/06 12:42:49 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:49.716
+2023/11/06 12:42:49 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:49.717
+2023/11/06 12:42:49 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:49.774
+2023/11/06 12:42:49 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:49.852
+2023/11/06 12:42:49 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:49.931
+2023/11/06 12:42:49 [Timeout]:Peer[2] timeout:2023-11-06 12:42:49.934863962 +0800 CST m=+5.954232421 | 12:42:49.941
+2023/11/06 12:42:49 [Election]:Peer[2] start election for term[7] | 12:42:49.941
+2023/11/06 12:42:49 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:49.941
+2023/11/06 12:42:49 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:49.941
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.007
+2023/11/06 12:42:50 [Timeout]:Peer[1] timeout:2023-11-06 12:42:50.023652719 +0800 CST m=+6.043021224 | 12:42:50.024
+2023/11/06 12:42:50 [Election]:Peer[1] start election for term[7] | 12:42:50.025
+2023/11/06 12:42:50 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:50.025
+2023/11/06 12:42:50 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:50.025
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.098
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.201
+2023/11/06 12:42:50 [Timeout]:Peer[2] timeout:2023-11-06 12:42:50.284103873 +0800 CST m=+6.303472359 | 12:42:50.286
+2023/11/06 12:42:50 [Election]:Peer[2] start election for term[8] | 12:42:50.286
+2023/11/06 12:42:50 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:50.286
+2023/11/06 12:42:50 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:50.286
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.293
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.377
+2023/11/06 12:42:50 [Timeout]:Peer[1] timeout:2023-11-06 12:42:50.414064899 +0800 CST m=+6.433433380 | 12:42:50.422
+2023/11/06 12:42:50 [Election]:Peer[1] start election for term[8] | 12:42:50.422
+2023/11/06 12:42:50 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:50.423
+2023/11/06 12:42:50 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:50.423
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.452
+2023/11/06 12:42:50 [Timeout]:Peer[2] timeout:2023-11-06 12:42:50.496876286 +0800 CST m=+6.516244742 | 12:42:50.499
+2023/11/06 12:42:50 [Election]:Peer[2] start election for term[9] | 12:42:50.499
+2023/11/06 12:42:50 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:50.499
+2023/11/06 12:42:50 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:50.500
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.540
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.667
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.760
+2023/11/06 12:42:50 [Timeout]:Peer[1] timeout:2023-11-06 12:42:50.77500499 +0800 CST m=+6.794373476 | 12:42:50.775
+2023/11/06 12:42:50 [Election]:Peer[1] start election for term[9] | 12:42:50.775
+2023/11/06 12:42:50 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:50.775
+2023/11/06 12:42:50 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:50.775
+2023/11/06 12:42:50 [Receive RequestVote]:Peer[2] receive RequestVote RPC from Peer[1] | 12:42:50.775
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.869
+2023/11/06 12:42:50 [Timeout]:Peer[2] timeout:2023-11-06 12:42:50.856963385 +0800 CST m=+6.876331866 | 12:42:50.869
+2023/11/06 12:42:50 [Election]:Peer[2] start election for term[10] | 12:42:50.869
+2023/11/06 12:42:50 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:50.869
+2023/11/06 12:42:50 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:50.869
+2023/11/06 12:42:50 [Receive RequestVote]:Peer[1] receive RequestVote RPC from Peer[2] | 12:42:50.869
+2023/11/06 12:42:50 [Vote]:Peer[1] give vote to Peer[2] for term[10] | 12:42:50.869
+2023/11/06 12:42:50 [Leader]:Peer[2] become leader for term[10] | 12:42:50.869
+2023/11/06 12:42:50 [HeartBeat]:Peer[1] in term[10] receive HeartBeat from Leader[2] | 12:42:50.869 | nextTimeout[12:42:51.254]
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:50.930
+2023/11/06 12:42:50 [HeartBeat]:Peer[1] in term[10] receive HeartBeat from Leader[2] | 12:42:50.931 | nextTimeout[12:42:51.235]
+2023/11/06 12:42:50 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:50.946
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:51.036
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:51.036
+2023/11/06 12:42:51 [HeartBeat]:Peer[1] in term[10] receive HeartBeat from Leader[2] | 12:42:51.037 | nextTimeout[12:42:51.331]
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:51.117
+2023/11/06 12:42:51 [HeartBeat]:Peer[1] in term[10] receive pre HeartBeat from Leader[0] | 12:42:51.117
+2023/11/06 12:42:51 [HeartBeat]:Peer[2] in term[10] receive pre HeartBeat from Leader[0] | 12:42:51.117
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:51.148
+2023/11/06 12:42:51 [HeartBeat]:Peer[1] in term[10] receive HeartBeat from Leader[2] | 12:42:51.149 | nextTimeout[12:42:51.452]
+2023/11/06 12:42:51 [HeartBeat]:Peer[0] in term[10] receive HeartBeat from Leader[2] | 12:42:51.149 | nextTimeout[12:42:51.517]
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:51.238
+2023/11/06 12:42:51 [HeartBeat]:Peer[1] in term[10] receive HeartBeat from Leader[2] | 12:42:51.239 | nextTimeout[12:42:51.594]
+2023/11/06 12:42:51 [HeartBeat]:Peer[0] in term[10] receive HeartBeat from Leader[2] | 12:42:51.239 | nextTimeout[12:42:51.609]
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:51.320
+2023/11/06 12:42:51 [HeartBeat]:Peer[1] in term[10] receive HeartBeat from Leader[2] | 12:42:51.320 | nextTimeout[12:42:51.657]
+2023/11/06 12:42:51 [HeartBeat]:Peer[0] in term[10] receive HeartBeat from Leader[2] | 12:42:51.320 | nextTimeout[12:42:51.628]
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:51.408
+2023/11/06 12:42:51 [HeartBeat]:Peer[1] in term[10] receive HeartBeat from Leader[2] | 12:42:51.408 | nextTimeout[12:42:51.754]
+2023/11/06 12:42:51 [HeartBeat]:Peer[0] in term[10] receive HeartBeat from Leader[2] | 12:42:51.409 | nextTimeout[12:42:51.648]
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:51.502
+2023/11/06 12:42:51 [HeartBeat]:Peer[1] in term[10] receive HeartBeat from Leader[2] | 12:42:51.503 | nextTimeout[12:42:51.712]
+2023/11/06 12:42:51 [HeartBeat]:Peer[0] in term[10] receive HeartBeat from Leader[2] | 12:42:51.503 | nextTimeout[12:42:51.710]
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:51.581
+2023/11/06 12:42:51 [Timeout]:Peer[6] timeout:2023-11-06 12:42:51.810409856 +0800 CST m=+7.829778343 | 12:42:51.811
+2023/11/06 12:42:51 [Election]:Peer[6] start election for term[1] | 12:42:51.811
+2023/11/06 12:42:51 [Send RequestVote]:Peer[6] send RequestVote to Peer[5] | 12:42:51.811
+2023/11/06 12:42:51 [Send RequestVote]:Peer[6] send RequestVote to Peer[1] | 12:42:51.811
+2023/11/06 12:42:51 [Send RequestVote]:Peer[6] send RequestVote to Peer[3] | 12:42:51.811
+2023/11/06 12:42:51 [Receive RequestVote]:Peer[5] receive RequestVote RPC from Peer[6] | 12:42:51.811
+2023/11/06 12:42:51 [Vote]:Peer[5] give vote to Peer[6] for term[1] | 12:42:51.811
+2023/11/06 12:42:51 [Receive RequestVote]:Peer[1] receive RequestVote RPC from Peer[6] | 12:42:51.811
+2023/11/06 12:42:51 [Vote]:Peer[1] give vote to Peer[6] for term[1] | 12:42:51.811
+2023/11/06 12:42:51 [Receive RequestVote]:Peer[3] receive RequestVote RPC from Peer[6] | 12:42:51.811
+2023/11/06 12:42:51 [Vote]:Peer[3] give vote to Peer[6] for term[1] | 12:42:51.811
+2023/11/06 12:42:51 [Send RequestVote]:Peer[6] send RequestVote to Peer[4] | 12:42:51.811
+2023/11/06 12:42:51 [Send RequestVote]:Peer[6] send RequestVote to Peer[0] | 12:42:51.811
+2023/11/06 12:42:51 [Leader]:Peer[6] become leader for term[1] | 12:42:51.811
+2023/11/06 12:42:51 [Receive RequestVote]:Peer[4] receive RequestVote RPC from Peer[6] | 12:42:51.811
+2023/11/06 12:42:51 [Vote]:Peer[4] give vote to Peer[6] for term[1] | 12:42:51.811
+2023/11/06 12:42:51 [Receive RequestVote]:Peer[0] receive RequestVote RPC from Peer[6] | 12:42:51.811
+2023/11/06 12:42:51 [Vote]:Peer[0] give vote to Peer[6] for term[1] | 12:42:51.811
+2023/11/06 12:42:51 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:51.811 | nextTimeout[12:42:52.126]
+2023/11/06 12:42:51 [Send RequestVote]:Peer[6] send RequestVote to Peer[2] | 12:42:51.811
+2023/11/06 12:42:51 [Receive RequestVote]:Peer[2] receive RequestVote RPC from Peer[6] | 12:42:51.812
+2023/11/06 12:42:51 [Vote]:Peer[2] give vote to Peer[6] for term[1] | 12:42:51.812
+2023/11/06 12:42:51 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[6] | 12:42:51.812 | nextTimeout[12:42:52.106]
+2023/11/06 12:42:51 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:51.812 | nextTimeout[12:42:52.096]
+2023/11/06 12:42:51 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[6] | 12:42:51.812 | nextTimeout[12:42:52.183]
+2023/11/06 12:42:51 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:51.812 | nextTimeout[12:42:52.173]
+2023/11/06 12:42:51 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:51.812 | nextTimeout[12:42:52.163]
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:51.896
+2023/11/06 12:42:51 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:51.896 | nextTimeout[12:42:52.192]
+2023/11/06 12:42:51 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[6] | 12:42:51.897 | nextTimeout[12:42:52.205]
+2023/11/06 12:42:51 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[6] | 12:42:51.897 | nextTimeout[12:42:52.132]
+2023/11/06 12:42:51 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:51.897 | nextTimeout[12:42:52.283]
+2023/11/06 12:42:51 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:51.898 | nextTimeout[12:42:52.136]
+2023/11/06 12:42:51 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:51.898 | nextTimeout[12:42:52.152]
+2023/11/06 12:42:51 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:51.963
+2023/11/06 12:42:51 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:51.964 | nextTimeout[12:42:52.323]
+2023/11/06 12:42:51 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[6] | 12:42:51.964 | nextTimeout[12:42:52.305]
+2023/11/06 12:42:51 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[6] | 12:42:51.964 | nextTimeout[12:42:52.362]
+2023/11/06 12:42:51 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:51.964 | nextTimeout[12:42:52.363]
+2023/11/06 12:42:51 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:51.964 | nextTimeout[12:42:52.351]
+2023/11/06 12:42:51 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:51.965 | nextTimeout[12:42:52.167]
+2023/11/06 12:42:52 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:52.039
+2023/11/06 12:42:52 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[6] | 12:42:52.039 | nextTimeout[12:42:52.317]
+2023/11/06 12:42:52 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[6] | 12:42:52.040 | nextTimeout[12:42:52.248]
+2023/11/06 12:42:52 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:52.040 | nextTimeout[12:42:52.285]
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:52.040 | nextTimeout[12:42:52.311]
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:52.040 | nextTimeout[12:42:52.293]
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:52.040 | nextTimeout[12:42:52.419]
+2023/11/06 12:42:52 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:52.136
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:52.136 | nextTimeout[12:42:52.342]
+2023/11/06 12:42:52 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:52.136 | nextTimeout[12:42:52.341]
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:52.136 | nextTimeout[12:42:52.348]
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:52.136 | nextTimeout[12:42:52.400]
+2023/11/06 12:42:52 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:52.215
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:52.215 | nextTimeout[12:42:52.453]
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:52.216 | nextTimeout[12:42:52.591]
+2023/11/06 12:42:52 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:52.216 | nextTimeout[12:42:52.532]
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:52.216 | nextTimeout[12:42:52.459]
+2023/11/06 12:42:52 [Timeout]:Peer[1] timeout:2023-11-06 12:42:52.248052317 +0800 CST m=+8.267420794 | 12:42:52.260
+2023/11/06 12:42:52 [Election]:Peer[1] start election for term[2] | 12:42:52.260
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[6] | 12:42:52.260
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:52.261
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:52.261
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 12:42:52.261
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 12:42:52.261
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[5] | 12:42:52.261
+2023/11/06 12:42:52 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:52.293
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:52.293 | nextTimeout[12:42:52.554]
+2023/11/06 12:42:52 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:52.294 | nextTimeout[12:42:52.596]
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:52.294 | nextTimeout[12:42:52.550]
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:52.294 | nextTimeout[12:42:52.640]
+2023/11/06 12:42:52 [Timeout]:Peer[0] timeout:2023-11-06 12:42:52.317820996 +0800 CST m=+8.337189492 | 12:42:52.321
+2023/11/06 12:42:52 [Election]:Peer[0] start election for term[2] | 12:42:52.321
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[6] | 12:42:52.321
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 12:42:52.321
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[5] | 12:42:52.322
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 12:42:52.322
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 12:42:52.322
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 12:42:52.322
+2023/11/06 12:42:52 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:52.400
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:52.400 | nextTimeout[12:42:52.693]
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:52.400 | nextTimeout[12:42:52.712]
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:52.401 | nextTimeout[12:42:52.775]
+2023/11/06 12:42:52 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:52.401 | nextTimeout[12:42:52.731]
+2023/11/06 12:42:52 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:52.462
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:52.463 | nextTimeout[12:42:52.839]
+2023/11/06 12:42:52 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:52.463 | nextTimeout[12:42:52.808]
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:52.464 | nextTimeout[12:42:52.684]
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:52.464 | nextTimeout[12:42:52.840]
+2023/11/06 12:42:52 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:52.554
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:52.554 | nextTimeout[12:42:52.920]
+2023/11/06 12:42:52 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:52.555 | nextTimeout[12:42:52.851]
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:52.555 | nextTimeout[12:42:52.912]
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:52.555 | nextTimeout[12:42:52.834]
+2023/11/06 12:42:52 [Timeout]:Peer[1] timeout:2023-11-06 12:42:52.583802434 +0800 CST m=+8.603170953 | 12:42:52.586
+2023/11/06 12:42:52 [Election]:Peer[1] start election for term[3] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[6] | 12:42:52.587
+2023/11/06 12:42:52 [Timeout]:Peer[0] timeout:2023-11-06 12:42:52.585970362 +0800 CST m=+8.605338834 | 12:42:52.587
+2023/11/06 12:42:52 [Election]:Peer[0] start election for term[3] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[6] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[5] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 12:42:52.587
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[5] | 12:42:52.587
+2023/11/06 12:42:52 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:52.634
+2023/11/06 12:42:52 [HeartBeat]:Peer[0] in term[3] receive pre HeartBeat from Leader[6] | 12:42:52.635
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[6] | 12:42:52.635 | nextTimeout[12:42:52.916]
+2023/11/06 12:42:52 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[6] | 12:42:52.635 | nextTimeout[12:42:53.001]
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[1] receive HeartBeat from Leader[6] | 12:42:52.635 | nextTimeout[12:42:52.870]
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[1] receive HeartBeat from Leader[6] | 12:42:52.635 | nextTimeout[12:42:53.031]
+2023/11/06 12:42:52 [Timeout]:Peer[0] timeout:2023-11-06 12:42:52.805266448 +0800 CST m=+8.824634933 | 12:42:52.836
+2023/11/06 12:42:52 [Election]:Peer[0] start election for term[4] | 12:42:52.836
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[6] | 12:42:52.837
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 12:42:52.837
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 12:42:52.837
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 12:42:52.837
+2023/11/06 12:42:52 [Receive RequestVote]:Peer[3] receive RequestVote RPC from Peer[0] | 12:42:52.837
+2023/11/06 12:42:52 [Vote]:Peer[3] give vote to Peer[0] for term[4] | 12:42:52.837
+2023/11/06 12:42:52 [Receive RequestVote]:Peer[4] receive RequestVote RPC from Peer[0] | 12:42:52.837
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[5] | 12:42:52.837
+2023/11/06 12:42:52 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 12:42:52.837
+2023/11/06 12:42:52 [Vote]:Peer[4] give vote to Peer[0] for term[4] | 12:42:52.837
+2023/11/06 12:42:52 [Receive RequestVote]:Peer[6] receive RequestVote RPC from Peer[0] | 12:42:52.837
+2023/11/06 12:42:52 [Vote]:Peer[6] give vote to Peer[0] for term[4] | 12:42:52.837
+2023/11/06 12:42:52 [Receive RequestVote]:Peer[5] receive RequestVote RPC from Peer[0] | 12:42:52.837
+2023/11/06 12:42:52 [Vote]:Peer[5] give vote to Peer[0] for term[4] | 12:42:52.837
+2023/11/06 12:42:52 [Leader]:Peer[0] become leader for term[4] | 12:42:52.837
+2023/11/06 12:42:52 [HeartBeat]:Peer[6] in term[4] receive HeartBeat from Leader[0] | 12:42:52.838 | nextTimeout[12:42:53.190]
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[4] receive HeartBeat from Leader[0] | 12:42:52.838 | nextTimeout[12:42:53.231]
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:52.838 | nextTimeout[12:42:53.186]
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[4] receive HeartBeat from Leader[0] | 12:42:52.838 | nextTimeout[12:42:53.096]
+2023/11/06 12:42:52 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:52.861
+2023/11/06 12:42:52 [HeartBeat]:Peer[6] in term[4] receive HeartBeat from Leader[0] | 12:42:52.862 | nextTimeout[12:42:53.173]
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[4] receive HeartBeat from Leader[0] | 12:42:52.862 | nextTimeout[12:42:53.114]
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:52.863 | nextTimeout[12:42:53.064]
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[4] receive HeartBeat from Leader[0] | 12:42:52.863 | nextTimeout[12:42:53.177]
+2023/11/06 12:42:52 [Timeout]:Peer[1] timeout:2023-11-06 12:42:52.922076258 +0800 CST m=+8.941444747 | 12:42:52.926
+2023/11/06 12:42:52 [Election]:Peer[1] start election for term[4] | 12:42:52.926
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[6] | 12:42:52.927
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:52.927
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:52.927
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 12:42:52.927
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 12:42:52.927
+2023/11/06 12:42:52 [Send RequestVote]:Peer[1] send RequestVote to Peer[5] | 12:42:52.927
+2023/11/06 12:42:52 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:52.947
+2023/11/06 12:42:52 [HeartBeat]:Peer[6] in term[4] receive HeartBeat from Leader[0] | 12:42:52.947 | nextTimeout[12:42:53.249]
+2023/11/06 12:42:52 [HeartBeat]:Peer[3] in term[4] receive HeartBeat from Leader[0] | 12:42:52.947 | nextTimeout[12:42:53.171]
+2023/11/06 12:42:52 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:52.948 | nextTimeout[12:42:53.215]
+2023/11/06 12:42:52 [HeartBeat]:Peer[5] in term[4] receive HeartBeat from Leader[0] | 12:42:52.948 | nextTimeout[12:42:53.172]
+2023/11/06 12:42:53 [Timeout]:Peer[2] timeout:2023-11-06 12:42:53.00123238 +0800 CST m=+9.020600856 | 12:42:53.004
+2023/11/06 12:42:53 [Election]:Peer[2] start election for term[2] | 12:42:53.004
+2023/11/06 12:42:53 [Send RequestVote]:Peer[2] send RequestVote to Peer[6] | 12:42:53.004
+2023/11/06 12:42:53 [Send RequestVote]:Peer[2] send RequestVote to Peer[4] | 12:42:53.004
+2023/11/06 12:42:53 [Send RequestVote]:Peer[2] send RequestVote to Peer[3] | 12:42:53.004
+2023/11/06 12:42:53 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:53.005
+2023/11/06 12:42:53 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:53.005
+2023/11/06 12:42:53 [Send RequestVote]:Peer[2] send RequestVote to Peer[5] | 12:42:53.005
+2023/11/06 12:42:53 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:53.016
+2023/11/06 12:42:53 [HeartBeat]:Peer[3] in term[4] receive HeartBeat from Leader[0] | 12:42:53.016 | nextTimeout[12:42:53.285]
+2023/11/06 12:42:53 [HeartBeat]:Peer[6] in term[4] receive HeartBeat from Leader[0] | 12:42:53.016 | nextTimeout[12:42:53.353]
+2023/11/06 12:42:53 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:53.017 | nextTimeout[12:42:53.280]
+2023/11/06 12:42:53 [HeartBeat]:Peer[5] in term[4] receive HeartBeat from Leader[0] | 12:42:53.017 | nextTimeout[12:42:53.386]
+2023/11/06 12:42:53 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:53.096
+2023/11/06 12:42:53 [HeartBeat]:Peer[6] in term[4] receive HeartBeat from Leader[0] | 12:42:53.097 | nextTimeout[12:42:53.298]
+2023/11/06 12:42:53 [HeartBeat]:Peer[3] in term[4] receive HeartBeat from Leader[0] | 12:42:53.097 | nextTimeout[12:42:53.431]
+2023/11/06 12:42:53 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:53.098 | nextTimeout[12:42:53.323]
+2023/11/06 12:42:53 [HeartBeat]:Peer[5] in term[4] receive HeartBeat from Leader[0] | 12:42:53.098 | nextTimeout[12:42:53.317]
+2023/11/06 12:42:53 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:53.187
+2023/11/06 12:42:53 [HeartBeat]:Peer[1] in term[4] receive HeartBeat from Leader[0] | 12:42:53.190 | nextTimeout[12:42:53.445]
+2023/11/06 12:42:53 [HeartBeat]:Peer[2] in term[4] receive HeartBeat from Leader[0] | 12:42:53.191 | nextTimeout[12:42:53.584]
+2023/11/06 12:42:53 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:53.191 | nextTimeout[12:42:53.483]
+2023/11/06 12:42:53 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:53.283
+2023/11/06 12:42:53 [HeartBeat]:Peer[1] in term[4] receive HeartBeat from Leader[0] | 12:42:53.284 | nextTimeout[12:42:53.676]
+2023/11/06 12:42:53 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:53.284 | nextTimeout[12:42:53.572]
+2023/11/06 12:42:53 [HeartBeat]:Peer[2] in term[4] receive HeartBeat from Leader[0] | 12:42:53.284 | nextTimeout[12:42:53.648]
+2023/11/06 12:42:53 [Timeout]:Peer[6] timeout:2023-11-06 12:42:53.298638699 +0800 CST m=+9.318007236 | 12:42:53.312
+2023/11/06 12:42:53 [Election]:Peer[6] start election for term[5] | 12:42:53.312
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[5] | 12:42:53.312
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[0] | 12:42:53.312
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[1] | 12:42:53.312
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[2] | 12:42:53.312
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[3] | 12:42:53.313
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[4] | 12:42:53.313
+2023/11/06 12:42:53 [Timeout]:Peer[5] timeout:2023-11-06 12:42:53.317282837 +0800 CST m=+9.336651363 | 12:42:53.327
+2023/11/06 12:42:53 [Election]:Peer[5] start election for term[5] | 12:42:53.327
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[6] | 12:42:53.327
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[0] | 12:42:53.327
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[1] | 12:42:53.327
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[2] | 12:42:53.328
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[3] | 12:42:53.328
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[4] | 12:42:53.328
+2023/11/06 12:42:53 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:53.374
+2023/11/06 12:42:53 [HeartBeat]:Peer[1] in term[4] receive HeartBeat from Leader[0] | 12:42:53.375 | nextTimeout[12:42:53.732]
+2023/11/06 12:42:53 [HeartBeat]:Peer[2] in term[4] receive HeartBeat from Leader[0] | 12:42:53.375 | nextTimeout[12:42:53.596]
+2023/11/06 12:42:53 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:53.375 | nextTimeout[12:42:53.643]
+2023/11/06 12:42:53 [Timeout]:Peer[3] timeout:2023-11-06 12:42:53.431980579 +0800 CST m=+9.451349080 | 12:42:53.439
+2023/11/06 12:42:53 [Election]:Peer[3] start election for term[5] | 12:42:53.439
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[6] | 12:42:53.439
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[0] | 12:42:53.439
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[1] | 12:42:53.439
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[2] | 12:42:53.439
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[4] | 12:42:53.439
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[5] | 12:42:53.439
+2023/11/06 12:42:53 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:53.455
+2023/11/06 12:42:53 [HeartBeat]:Peer[1] in term[4] receive HeartBeat from Leader[0] | 12:42:53.456 | nextTimeout[12:42:53.697]
+2023/11/06 12:42:53 [HeartBeat]:Peer[2] in term[4] receive HeartBeat from Leader[0] | 12:42:53.456 | nextTimeout[12:42:53.856]
+2023/11/06 12:42:53 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:53.456 | nextTimeout[12:42:53.731]
+2023/11/06 12:42:53 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:53.561
+2023/11/06 12:42:53 [Timeout]:Peer[5] timeout:2023-11-06 12:42:53.547838985 +0800 CST m=+9.567207441 | 12:42:53.561
+2023/11/06 12:42:53 [Election]:Peer[5] start election for term[6] | 12:42:53.561
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[6] | 12:42:53.561
+2023/11/06 12:42:53 [HeartBeat]:Peer[1] in term[4] receive HeartBeat from Leader[0] | 12:42:53.561 | nextTimeout[12:42:53.939]
+2023/11/06 12:42:53 [HeartBeat]:Peer[2] in term[4] receive HeartBeat from Leader[0] | 12:42:53.562 | nextTimeout[12:42:53.772]
+2023/11/06 12:42:53 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:53.562 | nextTimeout[12:42:53.769]
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[3] | 12:42:53.562
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[4] | 12:42:53.562
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[0] | 12:42:53.562
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[1] | 12:42:53.562
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[2] | 12:42:53.563
+2023/11/06 12:42:53 [Timeout]:Peer[6] timeout:2023-11-06 12:42:53.573326818 +0800 CST m=+9.592695267 | 12:42:53.576
+2023/11/06 12:42:53 [Election]:Peer[6] start election for term[6] | 12:42:53.576
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[5] | 12:42:53.576
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[0] | 12:42:53.576
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[1] | 12:42:53.576
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[2] | 12:42:53.576
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[3] | 12:42:53.576
+2023/11/06 12:42:53 [Send RequestVote]:Peer[6] send RequestVote to Peer[4] | 12:42:53.576
+2023/11/06 12:42:53 [Send HeartBeat]:Peer(Leader)[0] send HeartBeat | 12:42:53.639
+2023/11/06 12:42:53 [HeartBeat]:Peer[2] in term[4] receive HeartBeat from Leader[0] | 12:42:53.639 | nextTimeout[12:42:53.873]
+2023/11/06 12:42:53 [HeartBeat]:Peer[3] in term[5] receive pre HeartBeat from Leader[0] | 12:42:53.639
+2023/11/06 12:42:53 [HeartBeat]:Peer[4] in term[4] receive HeartBeat from Leader[0] | 12:42:53.639 | nextTimeout[12:42:53.983]
+2023/11/06 12:42:53 [Timeout]:Peer[3] timeout:2023-11-06 12:42:53.79913349 +0800 CST m=+9.818501962 | 12:42:53.827
+2023/11/06 12:42:53 [Election]:Peer[3] start election for term[6] | 12:42:53.827
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[6] | 12:42:53.827
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[0] | 12:42:53.827
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[1] | 12:42:53.827
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[2] | 12:42:53.827
+2023/11/06 12:42:53 [Receive RequestVote]:Peer[0] receive RequestVote RPC from Peer[3] | 12:42:53.827
+2023/11/06 12:42:53 [Vote]:Peer[0] give vote to Peer[3] for term[6] | 12:42:53.827
+2023/11/06 12:42:53 [Receive RequestVote]:Peer[2] receive RequestVote RPC from Peer[3] | 12:42:53.827
+2023/11/06 12:42:53 [Vote]:Peer[2] give vote to Peer[3] for term[6] | 12:42:53.828
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[4] | 12:42:53.827
+2023/11/06 12:42:53 [Send RequestVote]:Peer[3] send RequestVote to Peer[5] | 12:42:53.827
+2023/11/06 12:42:53 [Receive RequestVote]:Peer[4] receive RequestVote RPC from Peer[3] | 12:42:53.828
+2023/11/06 12:42:53 [Vote]:Peer[4] give vote to Peer[3] for term[6] | 12:42:53.828
+2023/11/06 12:42:53 [Leader]:Peer[3] become leader for term[6] | 12:42:53.828
+2023/11/06 12:42:53 [HeartBeat]:Peer[4] in term[6] receive HeartBeat from Leader[3] | 12:42:53.828 | nextTimeout[12:42:54.091]
+2023/11/06 12:42:53 [HeartBeat]:Peer[2] in term[6] receive HeartBeat from Leader[3] | 12:42:53.829 | nextTimeout[12:42:54.195]
+2023/11/06 12:42:53 [HeartBeat]:Peer[0] in term[6] receive HeartBeat from Leader[3] | 12:42:53.829 | nextTimeout[12:42:54.133]
+2023/11/06 12:42:53 [Timeout]:Peer[5] timeout:2023-11-06 12:42:53.833645091 +0800 CST m=+9.853013631 | 12:42:53.843
+2023/11/06 12:42:53 [Election]:Peer[5] start election for term[7] | 12:42:53.843
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[6] | 12:42:53.843
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[0] | 12:42:53.843
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[1] | 12:42:53.843
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[2] | 12:42:53.843
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[3] | 12:42:53.843
+2023/11/06 12:42:53 [Send RequestVote]:Peer[5] send RequestVote to Peer[4] | 12:42:53.843
+2023/11/06 12:42:53 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 12:42:53.875
+2023/11/06 12:42:53 [HeartBeat]:Peer[0] in term[6] receive HeartBeat from Leader[3] | 12:42:53.876 | nextTimeout[12:42:54.189]
+2023/11/06 12:42:53 [HeartBeat]:Peer[4] in term[6] receive HeartBeat from Leader[3] | 12:42:53.876 | nextTimeout[12:42:54.227]
+2023/11/06 12:42:53 [HeartBeat]:Peer[2] in term[6] receive HeartBeat from Leader[3] | 12:42:53.878 | nextTimeout[12:42:54.139]
+2023/11/06 12:42:53 [Timeout]:Peer[1] timeout:2023-11-06 12:42:53.93997613 +0800 CST m=+9.959344709 | 12:42:53.952
+2023/11/06 12:42:53 [Election]:Peer[1] start election for term[5] | 12:42:53.952
+2023/11/06 12:42:53 [Send RequestVote]:Peer[1] send RequestVote to Peer[6] | 12:42:53.952
+2023/11/06 12:42:53 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:53.952
+2023/11/06 12:42:53 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:53.952
+2023/11/06 12:42:53 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 12:42:53.952
+2023/11/06 12:42:53 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 12:42:53.952
+2023/11/06 12:42:53 [Send RequestVote]:Peer[1] send RequestVote to Peer[5] | 12:42:53.952
+2023/11/06 12:42:54 [Timeout]:Peer[6] timeout:2023-11-06 12:42:53.975329307 +0800 CST m=+9.994697759 | 12:42:54.006
+2023/11/06 12:42:54 [Election]:Peer[6] start election for term[7] | 12:42:54.006
+2023/11/06 12:42:54 [Send RequestVote]:Peer[6] send RequestVote to Peer[5] | 12:42:54.006
+2023/11/06 12:42:54 [Send RequestVote]:Peer[6] send RequestVote to Peer[0] | 12:42:54.006
+2023/11/06 12:42:54 [Send RequestVote]:Peer[6] send RequestVote to Peer[1] | 12:42:54.006
+2023/11/06 12:42:54 [Send RequestVote]:Peer[6] send RequestVote to Peer[2] | 12:42:54.006
+2023/11/06 12:42:54 [Send RequestVote]:Peer[6] send RequestVote to Peer[3] | 12:42:54.006
+2023/11/06 12:42:54 [Send RequestVote]:Peer[6] send RequestVote to Peer[4] | 12:42:54.007
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 12:42:54.047
+2023/11/06 12:42:54 [HeartBeat]:Peer[2] in term[6] receive HeartBeat from Leader[3] | 12:42:54.048 | nextTimeout[12:42:54.371]
+2023/11/06 12:42:54 [HeartBeat]:Peer[4] in term[6] receive HeartBeat from Leader[3] | 12:42:54.048 | nextTimeout[12:42:54.248]
+2023/11/06 12:42:54 [HeartBeat]:Peer[0] in term[6] receive HeartBeat from Leader[3] | 12:42:54.048 | nextTimeout[12:42:54.273]
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 12:42:54.130
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[7] receive pre HeartBeat from Leader[3] | 12:42:54.131
+2023/11/06 12:42:54 [HeartBeat]:Peer[1] in term[6] receive HeartBeat from Leader[3] | 12:42:54.131 | nextTimeout[12:42:54.469]
+2023/11/06 12:42:54 [HeartBeat]:Peer[4] in term[6] receive HeartBeat from Leader[3] | 12:42:54.132 | nextTimeout[12:42:54.453]
+2023/11/06 12:42:54 [HeartBeat]:Peer[5] in term[7] receive pre HeartBeat from Leader[3] | 12:42:54.132
+2023/11/06 12:42:54 [Timeout]:Peer[5] timeout:2023-11-06 12:42:54.173191509 +0800 CST m=+10.192560004 | 12:42:54.174
+2023/11/06 12:42:54 [Election]:Peer[5] start election for term[8] | 12:42:54.174
+2023/11/06 12:42:54 [Send RequestVote]:Peer[5] send RequestVote to Peer[6] | 12:42:54.174
+2023/11/06 12:42:54 [Send RequestVote]:Peer[5] send RequestVote to Peer[2] | 12:42:54.174
+2023/11/06 12:42:54 [Send RequestVote]:Peer[5] send RequestVote to Peer[0] | 12:42:54.174
+2023/11/06 12:42:54 [Send RequestVote]:Peer[5] send RequestVote to Peer[1] | 12:42:54.174
+2023/11/06 12:42:54 [Receive RequestVote]:Peer[6] receive RequestVote RPC from Peer[5] | 12:42:54.174
+2023/11/06 12:42:54 [Vote]:Peer[6] give vote to Peer[5] for term[8] | 12:42:54.174
+2023/11/06 12:42:54 [Receive RequestVote]:Peer[1] receive RequestVote RPC from Peer[5] | 12:42:54.174
+2023/11/06 12:42:54 [Vote]:Peer[1] give vote to Peer[5] for term[8] | 12:42:54.174
+2023/11/06 12:42:54 [Send RequestVote]:Peer[5] send RequestVote to Peer[4] | 12:42:54.174
+2023/11/06 12:42:54 [Receive RequestVote]:Peer[4] receive RequestVote RPC from Peer[5] | 12:42:54.174
+2023/11/06 12:42:54 [Vote]:Peer[4] give vote to Peer[5] for term[8] | 12:42:54.174
+2023/11/06 12:42:54 [Leader]:Peer[5] become leader for term[8] | 12:42:54.174
+2023/11/06 12:42:54 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:54.175 | nextTimeout[12:42:54.554]
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:54.175 | nextTimeout[12:42:54.500]
+2023/11/06 12:42:54 [HeartBeat]:Peer[4] in term[8] receive HeartBeat from Leader[5] | 12:42:54.175 | nextTimeout[12:42:54.479]
+2023/11/06 12:42:54 [Send RequestVote]:Peer[5] send RequestVote to Peer[3] | 12:42:54.174
+2023/11/06 12:42:54 [HeartBeat]:Peer[1] in term[8] receive HeartBeat from Leader[5] | 12:42:54.175 | nextTimeout[12:42:54.436]
+2023/11/06 12:42:54 [Receive RequestVote]:Peer[3] receive RequestVote RPC from Peer[5] | 12:42:54.175
+2023/11/06 12:42:54 [Vote]:Peer[3] give vote to Peer[5] for term[8] | 12:42:54.175
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:54.188
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:54.189 | nextTimeout[12:42:54.580]
+2023/11/06 12:42:54 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:54.189 | nextTimeout[12:42:54.445]
+2023/11/06 12:42:54 [HeartBeat]:Peer[4] in term[8] receive HeartBeat from Leader[5] | 12:42:54.189 | nextTimeout[12:42:54.577]
+2023/11/06 12:42:54 [HeartBeat]:Peer[1] in term[8] receive HeartBeat from Leader[5] | 12:42:54.189 | nextTimeout[12:42:54.439]
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:54.280
+2023/11/06 12:42:54 [Timeout]:Peer[0] timeout:2023-11-06 12:42:54.273790434 +0800 CST m=+10.293158965 | 12:42:54.280
+2023/11/06 12:42:54 [Election]:Peer[0] start election for term[7] | 12:42:54.280
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[6] | 12:42:54.280
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 12:42:54.280
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 12:42:54.280
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:54.280 | nextTimeout[12:42:54.503]
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 12:42:54.280
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 12:42:54.280
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[5] | 12:42:54.280
+2023/11/06 12:42:54 [HeartBeat]:Peer[1] in term[8] receive HeartBeat from Leader[5] | 12:42:54.280 | nextTimeout[12:42:54.679]
+2023/11/06 12:42:54 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:54.280 | nextTimeout[12:42:54.666]
+2023/11/06 12:42:54 [HeartBeat]:Peer[4] in term[8] receive HeartBeat from Leader[5] | 12:42:54.280 | nextTimeout[12:42:54.678]
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:54.376
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:54.376 | nextTimeout[12:42:54.653]
+2023/11/06 12:42:54 [HeartBeat]:Peer[1] in term[8] receive HeartBeat from Leader[5] | 12:42:54.377 | nextTimeout[12:42:54.727]
+2023/11/06 12:42:54 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:54.377 | nextTimeout[12:42:54.676]
+2023/11/06 12:42:54 [HeartBeat]:Peer[4] in term[8] receive HeartBeat from Leader[5] | 12:42:54.377 | nextTimeout[12:42:54.770]
+2023/11/06 12:42:54 [Timeout]:Peer[2] timeout:2023-11-06 12:42:54.371522932 +0800 CST m=+10.390891426 | 12:42:54.388
+2023/11/06 12:42:54 [Election]:Peer[2] start election for term[7] | 12:42:54.388
+2023/11/06 12:42:54 [Send RequestVote]:Peer[2] send RequestVote to Peer[6] | 12:42:54.388
+2023/11/06 12:42:54 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:54.388
+2023/11/06 12:42:54 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:54.388
+2023/11/06 12:42:54 [Send RequestVote]:Peer[2] send RequestVote to Peer[3] | 12:42:54.388
+2023/11/06 12:42:54 [Send RequestVote]:Peer[2] send RequestVote to Peer[4] | 12:42:54.388
+2023/11/06 12:42:54 [Send RequestVote]:Peer[2] send RequestVote to Peer[5] | 12:42:54.388
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:54.430
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:54.430 | nextTimeout[12:42:54.658]
+2023/11/06 12:42:54 [HeartBeat]:Peer[1] in term[8] receive HeartBeat from Leader[5] | 12:42:54.431 | nextTimeout[12:42:54.715]
+2023/11/06 12:42:54 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:54.431 | nextTimeout[12:42:54.689]
+2023/11/06 12:42:54 [HeartBeat]:Peer[4] in term[8] receive HeartBeat from Leader[5] | 12:42:54.431 | nextTimeout[12:42:54.659]
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:54.487
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:54.487 | nextTimeout[12:42:54.805]
+2023/11/06 12:42:54 [HeartBeat]:Peer[1] in term[8] receive HeartBeat from Leader[5] | 12:42:54.487 | nextTimeout[12:42:54.777]
+2023/11/06 12:42:54 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:54.487 | nextTimeout[12:42:54.754]
+2023/11/06 12:42:54 [HeartBeat]:Peer[4] in term[8] receive HeartBeat from Leader[5] | 12:42:54.487 | nextTimeout[12:42:54.818]
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:54.555
+2023/11/06 12:42:54 [HeartBeat]:Peer[1] in term[8] receive HeartBeat from Leader[5] | 12:42:54.555 | nextTimeout[12:42:54.874]
+2023/11/06 12:42:54 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:54.555 | nextTimeout[12:42:54.770]
+2023/11/06 12:42:54 [HeartBeat]:Peer[4] in term[8] receive HeartBeat from Leader[5] | 12:42:54.556 | nextTimeout[12:42:54.767]
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:54.556 | nextTimeout[12:42:54.805]
+2023/11/06 12:42:54 [Timeout]:Peer[0] timeout:2023-11-06 12:42:54.632347719 +0800 CST m=+10.651716160 | 12:42:54.638
+2023/11/06 12:42:54 [Election]:Peer[0] start election for term[8] | 12:42:54.638
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[6] | 12:42:54.638
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:54.638
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 12:42:54.638
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 12:42:54.638
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 12:42:54.638
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[5] | 12:42:54.638
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 12:42:54.638
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:54.639 | nextTimeout[12:42:55.018]
+2023/11/06 12:42:54 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:54.639 | nextTimeout[12:42:54.850]
+2023/11/06 12:42:54 [HeartBeat]:Peer[2] in term[8] receive HeartBeat from Leader[5] | 12:42:54.639 | nextTimeout[12:42:55.022]
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:54.774
+2023/11/06 12:42:54 [Timeout]:Peer[4] timeout:2023-11-06 12:42:54.767207298 +0800 CST m=+10.786575787 | 12:42:54.774
+2023/11/06 12:42:54 [Election]:Peer[4] start election for term[9] | 12:42:54.774
+2023/11/06 12:42:54 [Send RequestVote]:Peer[4] send RequestVote to Peer[6] | 12:42:54.775
+2023/11/06 12:42:54 [Send RequestVote]:Peer[4] send RequestVote to Peer[0] | 12:42:54.775
+2023/11/06 12:42:54 [Send RequestVote]:Peer[4] send RequestVote to Peer[1] | 12:42:54.775
+2023/11/06 12:42:54 [Send RequestVote]:Peer[4] send RequestVote to Peer[2] | 12:42:54.775
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:54.775 | nextTimeout[12:42:55.039]
+2023/11/06 12:42:54 [Send RequestVote]:Peer[4] send RequestVote to Peer[5] | 12:42:54.775
+2023/11/06 12:42:54 [Send RequestVote]:Peer[4] send RequestVote to Peer[3] | 12:42:54.775
+2023/11/06 12:42:54 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:54.775 | nextTimeout[12:42:55.023]
+2023/11/06 12:42:54 [HeartBeat]:Peer[2] in term[8] receive HeartBeat from Leader[5] | 12:42:54.775 | nextTimeout[12:42:55.018]
+2023/11/06 12:42:54 [Timeout]:Peer[1] timeout:2023-11-06 12:42:54.874574935 +0800 CST m=+10.893943432 | 12:42:54.890
+2023/11/06 12:42:54 [Election]:Peer[1] start election for term[9] | 12:42:54.890
+2023/11/06 12:42:54 [Send RequestVote]:Peer[1] send RequestVote to Peer[6] | 12:42:54.890
+2023/11/06 12:42:54 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:54.890
+2023/11/06 12:42:54 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 12:42:54.890
+2023/11/06 12:42:54 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 12:42:54.890
+2023/11/06 12:42:54 [Send RequestVote]:Peer[1] send RequestVote to Peer[5] | 12:42:54.890
+2023/11/06 12:42:54 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:54.890
+2023/11/06 12:42:54 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:54.906
+2023/11/06 12:42:54 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:54.906 | nextTimeout[12:42:55.185]
+2023/11/06 12:42:54 [HeartBeat]:Peer[2] in term[8] receive HeartBeat from Leader[5] | 12:42:54.906 | nextTimeout[12:42:55.179]
+2023/11/06 12:42:54 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:54.907 | nextTimeout[12:42:55.216]
+2023/11/06 12:42:54 [Timeout]:Peer[0] timeout:2023-11-06 12:42:54.926760056 +0800 CST m=+10.946128534 | 12:42:54.938
+2023/11/06 12:42:54 [Election]:Peer[0] start election for term[9] | 12:42:54.938
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[6] | 12:42:54.938
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 12:42:54.938
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 12:42:54.938
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 12:42:54.938
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 12:42:54.938
+2023/11/06 12:42:54 [Send RequestVote]:Peer[0] send RequestVote to Peer[5] | 12:42:54.938
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:55.007
+2023/11/06 12:42:55 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:55.007 | nextTimeout[12:42:55.291]
+2023/11/06 12:42:55 [HeartBeat]:Peer[2] in term[8] receive HeartBeat from Leader[5] | 12:42:55.007 | nextTimeout[12:42:55.334]
+2023/11/06 12:42:55 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:55.007 | nextTimeout[12:42:55.353]
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:55.110
+2023/11/06 12:42:55 [Timeout]:Peer[4] timeout:2023-11-06 12:42:55.101018061 +0800 CST m=+11.120386548 | 12:42:55.110
+2023/11/06 12:42:55 [Election]:Peer[4] start election for term[10] | 12:42:55.110
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[6] | 12:42:55.110
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[0] | 12:42:55.110
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[1] | 12:42:55.110
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[2] | 12:42:55.110
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[3] | 12:42:55.110
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[5] | 12:42:55.110
+2023/11/06 12:42:55 [HeartBeat]:Peer[3] in term[8] receive HeartBeat from Leader[5] | 12:42:55.110 | nextTimeout[12:42:55.412]
+2023/11/06 12:42:55 [HeartBeat]:Peer[2] in term[8] receive HeartBeat from Leader[5] | 12:42:55.111 | nextTimeout[12:42:55.340]
+2023/11/06 12:42:55 [HeartBeat]:Peer[6] in term[8] receive HeartBeat from Leader[5] | 12:42:55.111 | nextTimeout[12:42:55.411]
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:55.206
+2023/11/06 12:42:55 [Timeout]:Peer[0] timeout:2023-11-06 12:42:55.251132014 +0800 CST m=+11.270500448 | 12:42:55.264
+2023/11/06 12:42:55 [Election]:Peer[0] start election for term[10] | 12:42:55.264
+2023/11/06 12:42:55 [Send RequestVote]:Peer[0] send RequestVote to Peer[6] | 12:42:55.264
+2023/11/06 12:42:55 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 12:42:55.264
+2023/11/06 12:42:55 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 12:42:55.264
+2023/11/06 12:42:55 [Receive RequestVote]:Peer[3] receive RequestVote RPC from Peer[0] | 12:42:55.265
+2023/11/06 12:42:55 [Vote]:Peer[3] give vote to Peer[0] for term[10] | 12:42:55.265
+2023/11/06 12:42:55 [Receive RequestVote]:Peer[2] receive RequestVote RPC from Peer[0] | 12:42:55.265
+2023/11/06 12:42:55 [Vote]:Peer[2] give vote to Peer[0] for term[10] | 12:42:55.265
+2023/11/06 12:42:55 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 12:42:55.264
+2023/11/06 12:42:55 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 12:42:55.264
+2023/11/06 12:42:55 [Send RequestVote]:Peer[0] send RequestVote to Peer[5] | 12:42:55.264
+2023/11/06 12:42:55 [Receive RequestVote]:Peer[4] receive RequestVote RPC from Peer[0] | 12:42:55.265
+2023/11/06 12:42:55 [Timeout]:Peer[1] timeout:2023-11-06 12:42:55.287341617 +0800 CST m=+11.306710052 | 12:42:55.297
+2023/11/06 12:42:55 [Election]:Peer[1] start election for term[10] | 12:42:55.297
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[6] | 12:42:55.297
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:55.297
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:55.297
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 12:42:55.297
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 12:42:55.298
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[5] | 12:42:55.298
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:55.298
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:55.402
+2023/11/06 12:42:55 [Timeout]:Peer[6] timeout:2023-11-06 12:42:55.411435419 +0800 CST m=+11.430803893 | 12:42:55.419
+2023/11/06 12:42:55 [Election]:Peer[6] start election for term[9] | 12:42:55.419
+2023/11/06 12:42:55 [Send RequestVote]:Peer[6] send RequestVote to Peer[5] | 12:42:55.419
+2023/11/06 12:42:55 [Send RequestVote]:Peer[6] send RequestVote to Peer[0] | 12:42:55.419
+2023/11/06 12:42:55 [Send RequestVote]:Peer[6] send RequestVote to Peer[1] | 12:42:55.419
+2023/11/06 12:42:55 [Send RequestVote]:Peer[6] send RequestVote to Peer[2] | 12:42:55.419
+2023/11/06 12:42:55 [Send RequestVote]:Peer[6] send RequestVote to Peer[3] | 12:42:55.419
+2023/11/06 12:42:55 [Send RequestVote]:Peer[6] send RequestVote to Peer[4] | 12:42:55.420
+2023/11/06 12:42:55 [Timeout]:Peer[4] timeout:2023-11-06 12:42:55.465772204 +0800 CST m=+11.485140667 | 12:42:55.465
+2023/11/06 12:42:55 [Election]:Peer[4] start election for term[11] | 12:42:55.465
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[6] | 12:42:55.465
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[0] | 12:42:55.465
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[1] | 12:42:55.466
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[5] | 12:42:55.466
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[3] | 12:42:55.466
+2023/11/06 12:42:55 [Send RequestVote]:Peer[4] send RequestVote to Peer[2] | 12:42:55.465
+2023/11/06 12:42:55 [Receive RequestVote]:Peer[3] receive RequestVote RPC from Peer[4] | 12:42:55.466
+2023/11/06 12:42:55 [Vote]:Peer[3] give vote to Peer[4] for term[11] | 12:42:55.466
+2023/11/06 12:42:55 [Receive RequestVote]:Peer[2] receive RequestVote RPC from Peer[4] | 12:42:55.466
+2023/11/06 12:42:55 [Vote]:Peer[2] give vote to Peer[4] for term[11] | 12:42:55.466
+2023/11/06 12:42:55 [Receive RequestVote]:Peer[0] receive RequestVote RPC from Peer[4] | 12:42:55.466
+2023/11/06 12:42:55 [Vote]:Peer[0] give vote to Peer[4] for term[11] | 12:42:55.466
+2023/11/06 12:42:55 [Leader]:Peer[4] become leader for term[11] | 12:42:55.466
+2023/11/06 12:42:55 [HeartBeat]:Peer[0] in term[11] receive HeartBeat from Leader[4] | 12:42:55.466 | nextTimeout[12:42:55.817]
+2023/11/06 12:42:55 [HeartBeat]:Peer[2] in term[11] receive HeartBeat from Leader[4] | 12:42:55.467 | nextTimeout[12:42:55.863]
+2023/11/06 12:42:55 [HeartBeat]:Peer[3] in term[11] receive HeartBeat from Leader[4] | 12:42:55.467 | nextTimeout[12:42:55.808]
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:55.482
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:55.491
+2023/11/06 12:42:55 [HeartBeat]:Peer[0] in term[11] receive HeartBeat from Leader[4] | 12:42:55.491 | nextTimeout[12:42:55.750]
+2023/11/06 12:42:55 [HeartBeat]:Peer[2] in term[11] receive HeartBeat from Leader[4] | 12:42:55.491 | nextTimeout[12:42:55.722]
+2023/11/06 12:42:55 [HeartBeat]:Peer[3] in term[11] receive HeartBeat from Leader[4] | 12:42:55.494 | nextTimeout[12:42:55.808]
+2023/11/06 12:42:55 [Timeout]:Peer[1] timeout:2023-11-06 12:42:55.609832619 +0800 CST m=+11.629201103 | 12:42:55.623
+2023/11/06 12:42:55 [Election]:Peer[1] start election for term[11] | 12:42:55.623
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[6] | 12:42:55.623
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:55.624
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 12:42:55.624
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 12:42:55.624
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 12:42:55.624
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 12:42:55.624
+2023/11/06 12:42:55 [Send RequestVote]:Peer[1] send RequestVote to Peer[5] | 12:42:55.624
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:55.638
+2023/11/06 12:42:55 [HeartBeat]:Peer[0] in term[11] receive HeartBeat from Leader[4] | 12:42:55.638 | nextTimeout[12:42:55.978]
+2023/11/06 12:42:55 [HeartBeat]:Peer[2] in term[11] receive HeartBeat from Leader[4] | 12:42:55.638 | nextTimeout[12:42:55.960]
+2023/11/06 12:42:55 [HeartBeat]:Peer[3] in term[11] receive HeartBeat from Leader[4] | 12:42:55.638 | nextTimeout[12:42:56.014]
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:55.716
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:55.732
+2023/11/06 12:42:55 [HeartBeat]:Peer[6] in term[11] receive HeartBeat from Leader[4] | 12:42:55.732 | nextTimeout[12:42:56.049]
+2023/11/06 12:42:55 [HeartBeat]:Peer[0] in term[11] receive HeartBeat from Leader[4] | 12:42:55.732 | nextTimeout[12:42:56.078]
+2023/11/06 12:42:55 [HeartBeat]:Peer[1] in term[11] receive HeartBeat from Leader[4] | 12:42:55.733 | nextTimeout[12:42:55.937]
+2023/11/06 12:42:55 [HeartBeat]:Peer[3] in term[11] receive HeartBeat from Leader[4] | 12:42:55.733 | nextTimeout[12:42:56.004]
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:55.841
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:55.866
+2023/11/06 12:42:55 [HeartBeat]:Peer[6] in term[11] receive HeartBeat from Leader[4] | 12:42:55.866 | nextTimeout[12:42:56.092]
+2023/11/06 12:42:55 [HeartBeat]:Peer[0] in term[11] receive HeartBeat from Leader[4] | 12:42:55.867 | nextTimeout[12:42:56.267]
+2023/11/06 12:42:55 [HeartBeat]:Peer[1] in term[11] receive HeartBeat from Leader[4] | 12:42:55.867 | nextTimeout[12:42:56.067]
+2023/11/06 12:42:55 [HeartBeat]:Peer[3] in term[11] receive HeartBeat from Leader[4] | 12:42:55.867 | nextTimeout[12:42:56.253]
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:55.944
+2023/11/06 12:42:55 [HeartBeat]:Peer[0] in term[11] receive HeartBeat from Leader[4] | 12:42:55.944 | nextTimeout[12:42:56.259]
+2023/11/06 12:42:55 [HeartBeat]:Peer[1] in term[11] receive HeartBeat from Leader[4] | 12:42:55.945 | nextTimeout[12:42:56.314]
+2023/11/06 12:42:55 [HeartBeat]:Peer[3] in term[11] receive HeartBeat from Leader[4] | 12:42:55.945 | nextTimeout[12:42:56.239]
+2023/11/06 12:42:55 [HeartBeat]:Peer[6] in term[11] receive HeartBeat from Leader[4] | 12:42:55.945 | nextTimeout[12:42:56.260]
+2023/11/06 12:42:55 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:55.967
+2023/11/06 12:42:55 [Timeout]:Peer[2] timeout:2023-11-06 12:42:55.960591462 +0800 CST m=+11.979959912 | 12:42:55.967
+2023/11/06 12:42:55 [Election]:Peer[2] start election for term[12] | 12:42:55.967
+2023/11/06 12:42:55 [Send RequestVote]:Peer[2] send RequestVote to Peer[6] | 12:42:55.967
+2023/11/06 12:42:55 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:55.967
+2023/11/06 12:42:55 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:55.967
+2023/11/06 12:42:55 [Send RequestVote]:Peer[2] send RequestVote to Peer[3] | 12:42:55.967
+2023/11/06 12:42:55 [Send RequestVote]:Peer[2] send RequestVote to Peer[4] | 12:42:55.967
+2023/11/06 12:42:55 [Send RequestVote]:Peer[2] send RequestVote to Peer[5] | 12:42:55.967
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:56.043
+2023/11/06 12:42:56 [HeartBeat]:Peer[6] in term[11] receive HeartBeat from Leader[4] | 12:42:56.043 | nextTimeout[12:42:56.349]
+2023/11/06 12:42:56 [HeartBeat]:Peer[0] in term[11] receive HeartBeat from Leader[4] | 12:42:56.044 | nextTimeout[12:42:56.439]
+2023/11/06 12:42:56 [HeartBeat]:Peer[1] in term[11] receive HeartBeat from Leader[4] | 12:42:56.044 | nextTimeout[12:42:56.362]
+2023/11/06 12:42:56 [HeartBeat]:Peer[3] in term[11] receive HeartBeat from Leader[4] | 12:42:56.044 | nextTimeout[12:42:56.277]
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:56.058
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:56.169
+2023/11/06 12:42:56 [HeartBeat]:Peer[3] in term[11] receive HeartBeat from Leader[4] | 12:42:56.169 | nextTimeout[12:42:56.503]
+2023/11/06 12:42:56 [HeartBeat]:Peer[0] in term[11] receive HeartBeat from Leader[4] | 12:42:56.170 | nextTimeout[12:42:56.487]
+2023/11/06 12:42:56 [HeartBeat]:Peer[6] in term[11] receive HeartBeat from Leader[4] | 12:42:56.170 | nextTimeout[12:42:56.378]
+2023/11/06 12:42:56 [HeartBeat]:Peer[1] in term[11] receive HeartBeat from Leader[4] | 12:42:56.170 | nextTimeout[12:42:56.500]
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[5] send HeartBeat | 12:42:56.214
+2023/11/06 12:42:56 [HeartBeat]:Peer[6] in term[11] receive pre HeartBeat from Leader[5] | 12:42:56.214
+2023/11/06 12:42:56 [HeartBeat]:Peer[1] in term[11] receive pre HeartBeat from Leader[5] | 12:42:56.214
+2023/11/06 12:42:56 [HeartBeat]:Peer[3] in term[11] receive pre HeartBeat from Leader[5] | 12:42:56.214
+2023/11/06 12:42:56 [Timeout]:Peer[2] timeout:2023-11-06 12:42:56.234123578 +0800 CST m=+12.253492044 | 12:42:56.245
+2023/11/06 12:42:56 [Election]:Peer[2] start election for term[13] | 12:42:56.245
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[6] | 12:42:56.245
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:56.245
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:56.245
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[3] | 12:42:56.245
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[4] | 12:42:56.245
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[5] | 12:42:56.245
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:56.276
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:56.369
+2023/11/06 12:42:56 [Timeout]:Peer[6] timeout:2023-11-06 12:42:56.378580661 +0800 CST m=+12.397949150 | 12:42:56.387
+2023/11/06 12:42:56 [Election]:Peer[6] start election for term[12] | 12:42:56.387
+2023/11/06 12:42:56 [Send RequestVote]:Peer[6] send RequestVote to Peer[5] | 12:42:56.387
+2023/11/06 12:42:56 [Receive RequestVote]:Peer[5] receive RequestVote RPC from Peer[6] | 12:42:56.387
+2023/11/06 12:42:56 [Vote]:Peer[5] give vote to Peer[6] for term[12] | 12:42:56.387
+2023/11/06 12:42:56 [Send RequestVote]:Peer[6] send RequestVote to Peer[0] | 12:42:56.387
+2023/11/06 12:42:56 [Send RequestVote]:Peer[6] send RequestVote to Peer[1] | 12:42:56.387
+2023/11/06 12:42:56 [Receive RequestVote]:Peer[1] receive RequestVote RPC from Peer[6] | 12:42:56.388
+2023/11/06 12:42:56 [Vote]:Peer[1] give vote to Peer[6] for term[12] | 12:42:56.388
+2023/11/06 12:42:56 [Send RequestVote]:Peer[6] send RequestVote to Peer[2] | 12:42:56.388
+2023/11/06 12:42:56 [Send RequestVote]:Peer[6] send RequestVote to Peer[3] | 12:42:56.388
+2023/11/06 12:42:56 [Receive RequestVote]:Peer[3] receive RequestVote RPC from Peer[6] | 12:42:56.388
+2023/11/06 12:42:56 [Vote]:Peer[3] give vote to Peer[6] for term[12] | 12:42:56.388
+2023/11/06 12:42:56 [Leader]:Peer[6] become leader for term[12] | 12:42:56.388
+2023/11/06 12:42:56 [HeartBeat]:Peer[5] in term[12] receive HeartBeat from Leader[6] | 12:42:56.388 | nextTimeout[12:42:56.599]
+2023/11/06 12:42:56 [Send RequestVote]:Peer[6] send RequestVote to Peer[4] | 12:42:56.389
+2023/11/06 12:42:56 [HeartBeat]:Peer[1] in term[12] receive HeartBeat from Leader[6] | 12:42:56.389 | nextTimeout[12:42:56.605]
+2023/11/06 12:42:56 [HeartBeat]:Peer[3] in term[12] receive HeartBeat from Leader[6] | 12:42:56.389 | nextTimeout[12:42:56.718]
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:56.510
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:56.510
+2023/11/06 12:42:56 [Timeout]:Peer[0] timeout:2023-11-06 12:42:56.487243451 +0800 CST m=+12.506611938 | 12:42:56.510
+2023/11/06 12:42:56 [Election]:Peer[0] start election for term[12] | 12:42:56.510
+2023/11/06 12:42:56 [Send RequestVote]:Peer[0] send RequestVote to Peer[6] | 12:42:56.510
+2023/11/06 12:42:56 [HeartBeat]:Peer[5] in term[12] receive HeartBeat from Leader[6] | 12:42:56.510 | nextTimeout[12:42:56.712]
+2023/11/06 12:42:56 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 12:42:56.510
+2023/11/06 12:42:56 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 12:42:56.511
+2023/11/06 12:42:56 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 12:42:56.511
+2023/11/06 12:42:56 [HeartBeat]:Peer[3] in term[12] receive HeartBeat from Leader[6] | 12:42:56.511 | nextTimeout[12:42:56.729]
+2023/11/06 12:42:56 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 12:42:56.511
+2023/11/06 12:42:56 [Send RequestVote]:Peer[0] send RequestVote to Peer[5] | 12:42:56.511
+2023/11/06 12:42:56 [HeartBeat]:Peer[1] in term[12] receive HeartBeat from Leader[6] | 12:42:56.510 | nextTimeout[12:42:56.773]
+2023/11/06 12:42:56 [Timeout]:Peer[2] timeout:2023-11-06 12:42:56.522569303 +0800 CST m=+12.541937798 | 12:42:56.526
+2023/11/06 12:42:56 [Election]:Peer[2] start election for term[14] | 12:42:56.526
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[6] | 12:42:56.526
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:56.526
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:56.526
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[3] | 12:42:56.526
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[4] | 12:42:56.526
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[5] | 12:42:56.526
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[4] send HeartBeat | 12:42:56.589
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:56.589
+2023/11/06 12:42:56 [HeartBeat]:Peer[5] in term[12] receive HeartBeat from Leader[6] | 12:42:56.590 | nextTimeout[12:42:56.837]
+2023/11/06 12:42:56 [HeartBeat]:Peer[1] in term[12] receive HeartBeat from Leader[6] | 12:42:56.591 | nextTimeout[12:42:56.904]
+2023/11/06 12:42:56 [HeartBeat]:Peer[3] in term[12] receive HeartBeat from Leader[6] | 12:42:56.591 | nextTimeout[12:42:56.799]
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[6] send HeartBeat | 12:42:56.684
+2023/11/06 12:42:56 [HeartBeat]:Peer[5] in term[12] receive HeartBeat from Leader[6] | 12:42:56.684 | nextTimeout[12:42:56.947]
+2023/11/06 12:42:56 [HeartBeat]:Peer[2] in term[14] receive pre HeartBeat from Leader[6] | 12:42:56.684
+2023/11/06 12:42:56 [HeartBeat]:Peer[1] in term[12] receive HeartBeat from Leader[6] | 12:42:56.684 | nextTimeout[12:42:56.989]
+2023/11/06 12:42:56 [HeartBeat]:Peer[0] in term[12] receive HeartBeat from Leader[6] | 12:42:56.684 | nextTimeout[12:42:57.031]
+2023/11/06 12:42:56 [HeartBeat]:Peer[3] in term[12] receive HeartBeat from Leader[6] | 12:42:56.684 | nextTimeout[12:42:57.048]
+2023/11/06 12:42:56 [HeartBeat]:Peer[4] in term[12] receive HeartBeat from Leader[6] | 12:42:56.685 | nextTimeout[12:42:56.892]
+2023/11/06 12:42:56 [Timeout]:Peer[2] timeout:2023-11-06 12:42:56.867659854 +0800 CST m=+12.887028314 | 12:42:56.870
+2023/11/06 12:42:56 [Election]:Peer[2] start election for term[15] | 12:42:56.870
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[6] | 12:42:56.870
+2023/11/06 12:42:56 [Receive RequestVote]:Peer[6] receive RequestVote RPC from Peer[2] | 12:42:56.870
+2023/11/06 12:42:56 [Vote]:Peer[6] give vote to Peer[2] for term[15] | 12:42:56.870
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[0] | 12:42:56.870
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[1] | 12:42:56.870
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[4] | 12:42:56.870
+2023/11/06 12:42:56 [Receive RequestVote]:Peer[1] receive RequestVote RPC from Peer[2] | 12:42:56.870
+2023/11/06 12:42:56 [Vote]:Peer[1] give vote to Peer[2] for term[15] | 12:42:56.870
+2023/11/06 12:42:56 [Receive RequestVote]:Peer[0] receive RequestVote RPC from Peer[2] | 12:42:56.870
+2023/11/06 12:42:56 [Vote]:Peer[0] give vote to Peer[2] for term[15] | 12:42:56.870
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[5] | 12:42:56.870
+2023/11/06 12:42:56 [Receive RequestVote]:Peer[4] receive RequestVote RPC from Peer[2] | 12:42:56.870
+2023/11/06 12:42:56 [Leader]:Peer[2] become leader for term[15] | 12:42:56.870
+2023/11/06 12:42:56 [Send RequestVote]:Peer[2] send RequestVote to Peer[3] | 12:42:56.870
+2023/11/06 12:42:56 [Receive RequestVote]:Peer[5] receive RequestVote RPC from Peer[2] | 12:42:56.870
+2023/11/06 12:42:56 [Vote]:Peer[5] give vote to Peer[2] for term[15] | 12:42:56.870
+2023/11/06 12:42:56 [Receive RequestVote]:Peer[3] receive RequestVote RPC from Peer[2] | 12:42:56.870
+2023/11/06 12:42:56 [Vote]:Peer[3] give vote to Peer[2] for term[15] | 12:42:56.870
+2023/11/06 12:42:56 [HeartBeat]:Peer[6] in term[15] receive HeartBeat from Leader[2] | 12:42:56.870 | nextTimeout[12:42:57.132]
+2023/11/06 12:42:56 [HeartBeat]:Peer[1] in term[15] receive HeartBeat from Leader[2] | 12:42:56.870 | nextTimeout[12:42:57.075]
+2023/11/06 12:42:56 [HeartBeat]:Peer[3] in term[15] receive HeartBeat from Leader[2] | 12:42:56.870 | nextTimeout[12:42:57.269]
+2023/11/06 12:42:56 [Vote]:Peer[4] give vote to Peer[2] for term[15] | 12:42:56.870
+2023/11/06 12:42:56 [HeartBeat]:Peer[5] in term[15] receive HeartBeat from Leader[2] | 12:42:56.870 | nextTimeout[12:42:57.219]
+2023/11/06 12:42:56 [HeartBeat]:Peer[4] in term[15] receive HeartBeat from Leader[2] | 12:42:56.870 | nextTimeout[12:42:57.101]
+2023/11/06 12:42:56 [HeartBeat]:Peer[0] in term[15] receive HeartBeat from Leader[2] | 12:42:56.871 | nextTimeout[12:42:57.250]
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:56.918
+2023/11/06 12:42:56 [HeartBeat]:Peer[6] in term[15] receive HeartBeat from Leader[2] | 12:42:56.919 | nextTimeout[12:42:57.153]
+2023/11/06 12:42:56 [HeartBeat]:Peer[0] in term[15] receive HeartBeat from Leader[2] | 12:42:56.920 | nextTimeout[12:42:57.158]
+2023/11/06 12:42:56 [HeartBeat]:Peer[1] in term[15] receive HeartBeat from Leader[2] | 12:42:56.920 | nextTimeout[12:42:57.287]
+2023/11/06 12:42:56 [HeartBeat]:Peer[4] in term[15] receive HeartBeat from Leader[2] | 12:42:56.921 | nextTimeout[12:42:57.142]
+2023/11/06 12:42:56 [HeartBeat]:Peer[5] in term[15] receive HeartBeat from Leader[2] | 12:42:56.921 | nextTimeout[12:42:57.287]
+2023/11/06 12:42:56 [HeartBeat]:Peer[3] in term[15] receive HeartBeat from Leader[2] | 12:42:56.921 | nextTimeout[12:42:57.147]
+2023/11/06 12:42:56 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:56.998
+2023/11/06 12:42:56 [HeartBeat]:Peer[6] in term[15] receive HeartBeat from Leader[2] | 12:42:56.999 | nextTimeout[12:42:57.298]
+2023/11/06 12:42:56 [HeartBeat]:Peer[0] in term[15] receive HeartBeat from Leader[2] | 12:42:56.999 | nextTimeout[12:42:57.300]
+2023/11/06 12:42:56 [HeartBeat]:Peer[4] in term[15] receive HeartBeat from Leader[2] | 12:42:56.999 | nextTimeout[12:42:57.364]
+2023/11/06 12:42:57 [HeartBeat]:Peer[3] in term[15] receive HeartBeat from Leader[2] | 12:42:56.999 | nextTimeout[12:42:57.270]
+2023/11/06 12:42:57 [HeartBeat]:Peer[1] in term[15] receive HeartBeat from Leader[2] | 12:42:57.000 | nextTimeout[12:42:57.211]
+2023/11/06 12:42:57 [HeartBeat]:Peer[5] in term[15] receive HeartBeat from Leader[2] | 12:42:57.000 | nextTimeout[12:42:57.226]
+2023/11/06 12:42:57 [Send HeartBeat]:Peer(Leader)[2] send HeartBeat | 12:42:57.139
+2023/11/06 12:42:57 [HeartBeat]:Peer[0] in term[15] receive HeartBeat from Leader[2] | 12:42:57.140 | nextTimeout[12:42:57.390]
+2023/11/06 12:42:57 [HeartBeat]:Peer[6] in term[15] receive HeartBeat from Leader[2] | 12:42:57.140 | nextTimeout[12:42:57.503]
+2023/11/06 12:42:57 [HeartBeat]:Peer[4] in term[15] receive HeartBeat from Leader[2] | 12:42:57.140 | nextTimeout[12:42:57.457]
+2023/11/06 12:42:57 [HeartBeat]:Peer[1] in term[15] receive HeartBeat from Leader[2] | 12:42:57.140 | nextTimeout[12:42:57.415]
+2023/11/06 12:42:57 [HeartBeat]:Peer[5] in term[15] receive HeartBeat from Leader[2] | 12:42:57.140 | nextTimeout[12:42:57.523]
+2023/11/06 12:42:57 [HeartBeat]:Peer[3] in term[15] receive HeartBeat from Leader[2] | 12:42:57.140 | nextTimeout[12:42:57.396]
