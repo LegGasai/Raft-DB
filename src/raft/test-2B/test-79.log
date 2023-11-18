@@ -1,0 +1,5 @@
+=== RUN   TestFailNoAgree2B
+Test (2B): no agreement if too many followers disconnect ...
+    config.go:602: one(10) failed to reach agreement
+--- FAIL: TestFailNoAgree2B (2.36s)
+FAIL

@@ -1,0 +1,5 @@
+=== RUN   TestFailNoAgree2B
+Test (2B): no agreement if too many followers disconnect ...
+    test_test.go:337: 2 committed but no majority
+--- FAIL: TestFailNoAgree2B (2.89s)
+FAIL

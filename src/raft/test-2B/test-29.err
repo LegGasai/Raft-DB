@@ -1,0 +1,341 @@
+2023/11/13 23:12:39 [Timeout]:Peer[3] timeout:2023-11-13 23:12:39.438454478 +0800 CST m=+0.207429106 | 23:12:39.448
+2023/11/13 23:12:39 [Election]:Peer[3] start election for term[1] | 23:12:39.448
+2023/11/13 23:12:39 [Send RequestVote]:Peer[3] send RequestVote to Peer[4] | 23:12:39.448
+2023/11/13 23:12:39 [Receive RequestVote]:Peer[4] receive RequestVote RPC from Peer[3] | 23:12:39.449
+2023/11/13 23:12:39 [Vote]:Peer[4] give vote to Peer[3] for term[1] | 23:12:39.449
+2023/11/13 23:12:39 [Send RequestVote]:Peer[3] send RequestVote to Peer[0] | 23:12:39.450
+2023/11/13 23:12:39 [Receive RequestVote]:Peer[0] receive RequestVote RPC from Peer[3] | 23:12:39.450
+2023/11/13 23:12:39 [Vote]:Peer[0] give vote to Peer[3] for term[1] | 23:12:39.450
+2023/11/13 23:12:39 [Leader]:Peer[3] become leader for term[1] | 23:12:39.450
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 0 0 [] 0}]:[0]:[[{<nil> 0}]]| 23:12:39.450
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 0 0 [] 0}]:[0]:[[{<nil> 0}]]| 23:12:39.450
+2023/11/13 23:12:39 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[3] | 23:12:39.451 | nextTimeout[23:12:39.763]
+2023/11/13 23:12:39 [Send RequestVote]:Peer[3] send RequestVote to Peer[1] | 23:12:39.451
+2023/11/13 23:12:39 [Receive RequestVote]:Peer[1] receive RequestVote RPC from Peer[3] | 23:12:39.452
+2023/11/13 23:12:39 [Vote]:Peer[1] give vote to Peer[3] for term[1] | 23:12:39.452
+2023/11/13 23:12:39 [Send RequestVote]:Peer[3] send RequestVote to Peer[2] | 23:12:39.452
+2023/11/13 23:12:39 [Receive RequestVote]:Peer[2] receive RequestVote RPC from Peer[3] | 23:12:39.452
+2023/11/13 23:12:39 [Vote]:Peer[2] give vote to Peer[3] for term[1] | 23:12:39.452
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 0 0 [] 0}]:[0]:[[{<nil> 0}]]| 23:12:39.452
+2023/11/13 23:12:39 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[3] | 23:12:39.452 | nextTimeout[23:12:39.820]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 0 0 [] 0}]:[0]:[[{<nil> 0}]]| 23:12:39.452
+2023/11/13 23:12:39 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:39.453 | nextTimeout[23:12:39.697]
+2023/11/13 23:12:39 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[3] | 23:12:39.455 | nextTimeout[23:12:39.845]
+
+2023/11/13 23:12:39 [Start]:Peer(Leader)[3] received Request [10] | 23:12:39.504
+2023/11/13 23:12:39 [Start]:Peer(Leader)[3] return ok : Request [10] | 23:12:39.504
+
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 0 0 [{10 1}] 0}]:[0]:[[{<nil> 0} {10 1}]]| 23:12:39.504
+2023/11/13 23:12:39 [AppendEntries Received]:Peer[4] in term[1] receive AppendEntries from Leader[3] and log:[[{<nil> 0} {10 1}]] keep same as leader | 23:12:39.505
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 0 0 [{10 1}] 0}]:[0]:[[{<nil> 0} {10 1}]]| 23:12:39.505
+2023/11/13 23:12:39 [AppendEntries Received]:Peer[0] in term[1] receive AppendEntries from Leader[3] and log:[[{<nil> 0} {10 1}]] keep same as leader | 23:12:39.505
+2023/11/13 23:12:39 [Update CommitIndex Leader] Leader[3] update its CommitIndex to [1] | 23:12:39.505
+2023/11/13 23:12:39 [ApplyMsg Leader] Leader[3] send a ApplyMsg[1] | 23:12:39.505
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 0 0 [{10 1}] 1}]:[0]:[[{<nil> 0} {10 1}]]| 23:12:39.505
+2023/11/13 23:12:39 [AppendEntries Received]:Peer[1] in term[1] receive AppendEntries from Leader[3] and log:[[{<nil> 0} {10 1}]] keep same as leader | 23:12:39.505
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 0 0 [{10 1}] 1}]:[0]:[[{<nil> 0} {10 1}]]| 23:12:39.505
+2023/11/13 23:12:39 [AppendEntries Received]:Peer[2] in term[1] receive AppendEntries from Leader[3] and log:[[{<nil> 0} {10 1}]] keep same as leader | 23:12:39.505
+2023/11/13 23:12:39 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:39.506
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.506
+2023/11/13 23:12:39 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[3] | 23:12:39.507 | nextTimeout[23:12:39.762]
+2023/11/13 23:12:39 [Update CommitIndex Follower] Peers[4] update its CommitIndex to [1] | 23:12:39.507
+2023/11/13 23:12:39 [ApplyMsg Follower] Follower[4] send a ApplyMsg[1] | 23:12:39.507
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.507
+2023/11/13 23:12:39 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[3] | 23:12:39.507 | nextTimeout[23:12:39.858]
+2023/11/13 23:12:39 [Update CommitIndex Follower] Peers[1] update its CommitIndex to [1] | 23:12:39.507
+2023/11/13 23:12:39 [ApplyMsg Follower] Follower[1] send a ApplyMsg[1] | 23:12:39.507
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.507
+2023/11/13 23:12:39 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[3] | 23:12:39.507 | nextTimeout[23:12:39.861]
+2023/11/13 23:12:39 [Update CommitIndex Follower] Peers[0] update its CommitIndex to [1] | 23:12:39.507
+2023/11/13 23:12:39 [ApplyMsg Follower] Follower[0] send a ApplyMsg[1] | 23:12:39.507
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.507
+2023/11/13 23:12:39 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:39.507 | nextTimeout[23:12:39.878]
+2023/11/13 23:12:39 [Update CommitIndex Follower] Peers[2] update its CommitIndex to [1] | 23:12:39.507
+2023/11/13 23:12:39 [ApplyMsg Follower] Follower[2] send a ApplyMsg[1] | 23:12:39.507
+2023/11/13 23:12:39 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:39.590
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.590
+2023/11/13 23:12:39 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[3] | 23:12:39.591 | nextTimeout[23:12:39.984]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.591
+2023/11/13 23:12:39 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[3] | 23:12:39.591 | nextTimeout[23:12:39.889]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.591
+2023/11/13 23:12:39 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[3] | 23:12:39.591 | nextTimeout[23:12:39.964]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.592
+2023/11/13 23:12:39 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:39.592 | nextTimeout[23:12:39.879]
+2023/11/13 23:12:39 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:39.705
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.705
+2023/11/13 23:12:39 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[3] | 23:12:39.706 | nextTimeout[23:12:39.973]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.706
+2023/11/13 23:12:39 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[3] | 23:12:39.706 | nextTimeout[23:12:39.966]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.706
+2023/11/13 23:12:39 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[3] | 23:12:39.707 | nextTimeout[23:12:39.957]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.707
+2023/11/13 23:12:39 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:39.707 | nextTimeout[23:12:39.943]
+2023/11/13 23:12:39 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:39.813
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.813
+2023/11/13 23:12:39 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[3] | 23:12:39.814 | nextTimeout[23:12:40.084]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.814
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.815
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.815
+2023/11/13 23:12:39 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:39.815 | nextTimeout[23:12:40.109]
+2023/11/13 23:12:39 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[3] | 23:12:39.815 | nextTimeout[23:12:40.038]
+2023/11/13 23:12:39 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[3] | 23:12:39.816 | nextTimeout[23:12:40.038]
+2023/11/13 23:12:39 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:39.907
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.907
+2023/11/13 23:12:39 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[3] | 23:12:39.907 | nextTimeout[23:12:40.166]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.907
+2023/11/13 23:12:39 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[3] | 23:12:39.907 | nextTimeout[23:12:40.184]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.907
+2023/11/13 23:12:39 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[3] | 23:12:39.907 | nextTimeout[23:12:40.265]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.908
+2023/11/13 23:12:39 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:39.908 | nextTimeout[23:12:40.228]
+2023/11/13 23:12:39 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:39.991
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.991
+2023/11/13 23:12:39 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[3] | 23:12:39.991 | nextTimeout[23:12:40.233]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.992
+2023/11/13 23:12:39 [HeartBeat]:Peer[0] in term[1] receive HeartBeat from Leader[3] | 23:12:39.992 | nextTimeout[23:12:40.215]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.992
+2023/11/13 23:12:39 [HeartBeat]:Peer[1] in term[1] receive HeartBeat from Leader[3] | 23:12:39.992 | nextTimeout[23:12:40.233]
+2023/11/13 23:12:39 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:39.992
+2023/11/13 23:12:39 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:39.993 | nextTimeout[23:12:40.246]
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.076
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:40.077
+2023/11/13 23:12:40 [HeartBeat]:Peer[4] in term[1] receive HeartBeat from Leader[3] | 23:12:40.077 | nextTimeout[23:12:40.348]
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [] 1}]:[1]:[[{<nil> 0} {10 1}]]| 23:12:40.077
+
+2023/11/13 23:12:40 [Start]:Peer(Leader)[3] received Request [20] | 23:12:40.077
+2023/11/13 23:12:40 [Start]:Peer(Leader)[3] return ok : Request [20] | 23:12:40.077
+
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 1 1 [{20 1}] 1}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.077
+2023/11/13 23:12:40 [AppendEntries Received]:Peer[2] in term[1] receive AppendEntries from Leader[3] and log:[[{<nil> 0} {10 1} {20 1}]] keep same as leader | 23:12:40.078
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 1}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.078
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 1 1 [{20 1}] 1}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.078
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 1}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.078
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 1}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.078
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 1}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.078
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.078 | nextTimeout[23:12:40.328]
+2023/11/13 23:12:40 [Update CommitIndex Leader] Leader[3] update its CommitIndex to [2] | 23:12:40.085
+2023/11/13 23:12:40 [ApplyMsg Leader] Leader[3] send a ApplyMsg[2] | 23:12:40.086
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.172
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.172
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.172
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.172
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.172
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.173 | nextTimeout[23:12:40.523]
+2023/11/13 23:12:40 [Update CommitIndex Follower] Peers[2] update its CommitIndex to [2] | 23:12:40.173
+2023/11/13 23:12:40 [ApplyMsg Follower] Follower[2] send a ApplyMsg[2] | 23:12:40.173
+2023/11/13 23:12:40 [AppendEntries Fail] Peer[4] timeout no reply to Leader[3]| 23:12:40.186
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.206
+2023/11/13 23:12:40 [Timeout]:Peer[0] timeout:2023-11-13 23:12:40.215323953 +0800 CST m=+0.984298581 | 23:12:40.216
+2023/11/13 23:12:40 [Election]:Peer[0] start election for term[2] | 23:12:40.217
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 23:12:40.217
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 23:12:40.217
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 23:12:40.217
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 23:12:40.217
+2023/11/13 23:12:40 [Timeout]:Peer[1] timeout:2023-11-13 23:12:40.233712277 +0800 CST m=+1.002686904 | 23:12:40.244
+2023/11/13 23:12:40 [Election]:Peer[1] start election for term[2] | 23:12:40.244
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 23:12:40.244
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 23:12:40.244
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 23:12:40.244
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.244
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 23:12:40.244
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.244
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.244
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.245
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.245
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.245 | nextTimeout[23:12:40.516]
+2023/11/13 23:12:40 [Timeout]:Peer[4] timeout:2023-11-13 23:12:40.348549919 +0800 CST m=+1.117524572 | 23:12:40.362
+2023/11/13 23:12:40 [Election]:Peer[4] start election for term[2] | 23:12:40.362
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[3] | 23:12:40.362
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[1] | 23:12:40.362
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[0] | 23:12:40.362
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[2] | 23:12:40.363
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.362
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.363
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.363
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.363
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.363
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.363 | nextTimeout[23:12:40.696]
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.464
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.464
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.465
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.465
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.465
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.465 | nextTimeout[23:12:40.804]
+2023/11/13 23:12:40 [Timeout]:Peer[1] timeout:2023-11-13 23:12:40.549579813 +0800 CST m=+1.318554438 | 23:12:40.551
+2023/11/13 23:12:40 [Election]:Peer[1] start election for term[3] | 23:12:40.551
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 23:12:40.551
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 23:12:40.551
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 23:12:40.551
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 23:12:40.551
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.561
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.561
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.561
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.562
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.562
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.563 | nextTimeout[23:12:40.877]
+2023/11/13 23:12:40 [Timeout]:Peer[0] timeout:2023-11-13 23:12:40.601130251 +0800 CST m=+1.370104877 | 23:12:40.614
+2023/11/13 23:12:40 [Election]:Peer[0] start election for term[3] | 23:12:40.614
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 23:12:40.614
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 23:12:40.614
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 23:12:40.614
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 23:12:40.614
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.628
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.628
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.628
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.628
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.628
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.628 | nextTimeout[23:12:40.923]
+2023/11/13 23:12:40 [Timeout]:Peer[4] timeout:2023-11-13 23:12:40.669882086 +0800 CST m=+1.438856730 | 23:12:40.695
+2023/11/13 23:12:40 [Election]:Peer[4] start election for term[3] | 23:12:40.696
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[3] | 23:12:40.696
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[0] | 23:12:40.696
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[1] | 23:12:40.696
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[2] | 23:12:40.696
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.730
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.730
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.731
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.731
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.731
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.731 | nextTimeout[23:12:41.127]
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.809
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.809
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.810
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.810 | nextTimeout[23:12:41.091]
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.810
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.810
+2023/11/13 23:12:40 [AppendEntries Fail] Peer[1] timeout no reply to Leader[3]| 23:12:40.824
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.835
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.921
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.922
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.922
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.922
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.922
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.922 | nextTimeout[23:12:41.170]
+2023/11/13 23:12:40 [Timeout]:Peer[1] timeout:2023-11-13 23:12:40.922703194 +0800 CST m=+1.691677820 | 23:12:40.933
+2023/11/13 23:12:40 [Election]:Peer[1] start election for term[4] | 23:12:40.933
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 23:12:40.933
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 23:12:40.933
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 23:12:40.933
+2023/11/13 23:12:40 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 23:12:40.933
+2023/11/13 23:12:40 [Timeout]:Peer[0] timeout:2023-11-13 23:12:40.989186595 +0800 CST m=+1.758161175 | 23:12:40.990
+2023/11/13 23:12:40 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:40.990
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.990
+2023/11/13 23:12:40 [Election]:Peer[0] start election for term[4] | 23:12:40.990
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.990
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 23:12:40.991
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.991
+2023/11/13 23:12:40 [Timeout]:Peer[4] timeout:2023-11-13 23:12:40.985074948 +0800 CST m=+1.754049574 | 23:12:40.990
+2023/11/13 23:12:40 [Election]:Peer[4] start election for term[4] | 23:12:40.991
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[3] | 23:12:40.991
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[0] | 23:12:40.991
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[1] | 23:12:40.991
+2023/11/13 23:12:40 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:40.991
+2023/11/13 23:12:40 [Send RequestVote]:Peer[4] send RequestVote to Peer[2] | 23:12:40.991
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 23:12:40.991
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 23:12:40.991
+2023/11/13 23:12:40 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 23:12:40.991
+2023/11/13 23:12:40 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:40.992 | nextTimeout[23:12:41.321]
+2023/11/13 23:12:41 [AppendEntries Fail] Peer[1] timeout no reply to Leader[3]| 23:12:41.132
+2023/11/13 23:12:41 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:41.132
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.132
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.132
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.132
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.132
+2023/11/13 23:12:41 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:41.132 | nextTimeout[23:12:41.375]
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.142
+2023/11/13 23:12:41 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:41.280
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.280
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.280
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.280
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.280
+2023/11/13 23:12:41 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:41.280 | nextTimeout[23:12:41.537]
+2023/11/13 23:12:41 [Timeout]:Peer[1] timeout:2023-11-13 23:12:41.297223504 +0800 CST m=+2.066198133 | 23:12:41.307
+2023/11/13 23:12:41 [Election]:Peer[1] start election for term[5] | 23:12:41.307
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 23:12:41.307
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 23:12:41.308
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 23:12:41.308
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 23:12:41.308
+2023/11/13 23:12:41 [Timeout]:Peer[0] timeout:2023-11-13 23:12:41.300962875 +0800 CST m=+2.069937503 | 23:12:41.312
+2023/11/13 23:12:41 [Election]:Peer[0] start election for term[5] | 23:12:41.312
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 23:12:41.312
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 23:12:41.312
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 23:12:41.312
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 23:12:41.312
+2023/11/13 23:12:41 [Timeout]:Peer[4] timeout:2023-11-13 23:12:41.313453572 +0800 CST m=+2.082428198 | 23:12:41.341
+2023/11/13 23:12:41 [Election]:Peer[4] start election for term[5] | 23:12:41.341
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[3] | 23:12:41.341
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[0] | 23:12:41.341
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[1] | 23:12:41.341
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[2] | 23:12:41.342
+2023/11/13 23:12:41 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:41.467
+2023/11/13 23:12:41 [AppendEntries Fail] Peer[0] timeout no reply to Leader[3]| 23:12:41.467
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.467
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.467
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.468
+2023/11/13 23:12:41 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:41.468 | nextTimeout[23:12:41.698]
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.468
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.482
+2023/11/13 23:12:41 [Timeout]:Peer[0] timeout:2023-11-13 23:12:41.615106765 +0800 CST m=+2.384081340 | 23:12:41.647
+2023/11/13 23:12:41 [Election]:Peer[0] start election for term[6] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 23:12:41.647
+2023/11/13 23:12:41 [Timeout]:Peer[4] timeout:2023-11-13 23:12:41.555472737 +0800 CST m=+2.324447365 | 23:12:41.647
+2023/11/13 23:12:41 [Election]:Peer[4] start election for term[6] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[3] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[1] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[2] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[0] | 23:12:41.647
+2023/11/13 23:12:41 [Timeout]:Peer[1] timeout:2023-11-13 23:12:41.60096349 +0800 CST m=+2.369938088 | 23:12:41.647
+2023/11/13 23:12:41 [Election]:Peer[1] start election for term[6] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 23:12:41.647
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 23:12:41.648
+2023/11/13 23:12:41 [AppendEntries Fail] Peer[1] timeout no reply to Leader[3]| 23:12:41.659
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.672
+2023/11/13 23:12:41 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:41.678
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.678
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.679
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.679
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.679
+2023/11/13 23:12:41 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:41.679 | nextTimeout[23:12:41.903]
+2023/11/13 23:12:41 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:41.811
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.811
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.811
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.812
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.812
+2023/11/13 23:12:41 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:41.812 | nextTimeout[23:12:42.148]
+2023/11/13 23:12:41 [Timeout]:Peer[4] timeout:2023-11-13 23:12:41.875603789 +0800 CST m=+2.644578414 | 23:12:41.885
+2023/11/13 23:12:41 [Election]:Peer[4] start election for term[7] | 23:12:41.885
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[3] | 23:12:41.885
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[0] | 23:12:41.885
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[2] | 23:12:41.885
+2023/11/13 23:12:41 [Send RequestVote]:Peer[4] send RequestVote to Peer[1] | 23:12:41.885
+2023/11/13 23:12:41 [Timeout]:Peer[0] timeout:2023-11-13 23:12:41.90348526 +0800 CST m=+2.672459887 | 23:12:41.909
+2023/11/13 23:12:41 [Election]:Peer[0] start election for term[7] | 23:12:41.909
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[4] | 23:12:41.909
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[2] | 23:12:41.909
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[1] | 23:12:41.909
+2023/11/13 23:12:41 [Send RequestVote]:Peer[0] send RequestVote to Peer[3] | 23:12:41.909
+2023/11/13 23:12:41 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:41.922
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.922
+2023/11/13 23:12:41 [AppendEntries Fail] Peer[1] timeout no reply to Leader[3]| 23:12:41.922
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.922
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.922
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.922
+2023/11/13 23:12:41 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:41.922 | nextTimeout[23:12:42.168]
+2023/11/13 23:12:41 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:41.937
+2023/11/13 23:12:41 [Timeout]:Peer[1] timeout:2023-11-13 23:12:41.984881489 +0800 CST m=+2.753856116 | 23:12:41.985
+2023/11/13 23:12:41 [Election]:Peer[1] start election for term[7] | 23:12:41.985
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[4] | 23:12:41.985
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[0] | 23:12:41.985
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[2] | 23:12:41.985
+2023/11/13 23:12:41 [Send RequestVote]:Peer[1] send RequestVote to Peer[3] | 23:12:41.986
+2023/11/13 23:12:41 [Send HeartBeat]:Peer(Leader)[3] send HeartBeat | 23:12:41.999
+2023/11/13 23:12:42 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[4] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:42.000
+2023/11/13 23:12:42 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[0] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:42.000
+2023/11/13 23:12:42 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[1] [{1 3 1 1 [{20 1}] 2}]:[1]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:42.000
+2023/11/13 23:12:42 [AppendEntries Send] Leader[3] send an AppendEntries to Peer[2] [{1 3 2 1 [] 2}]:[2]:[[{<nil> 0} {10 1} {20 1}]]| 23:12:42.000
+2023/11/13 23:12:42 [HeartBeat]:Peer[2] in term[1] receive HeartBeat from Leader[3] | 23:12:42.000 | nextTimeout[23:12:42.290]

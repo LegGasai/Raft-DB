@@ -1,0 +1,2 @@
+2023/11/14 00:11:43 1: log map[1:101]; server map[1:101 2:102 3:103 4:104]
+2023/11/14 00:11:43 apply error: commit index=2 server=1 103 != server=0 102
