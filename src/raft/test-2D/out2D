@@ -1,0 +1,6 @@
+Test (2D): snapshots basic ...
+  ... Passed --   3.0  3  502  441384  212
+Test (2D): install snapshots (disconnect) ...
+2023/12/01 22:21:46 apply error: server 1 apply out of order, expected index 280, got 281
+exit status 1
+FAIL	6.824/raft	35.729s

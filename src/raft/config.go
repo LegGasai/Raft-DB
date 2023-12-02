@@ -195,6 +195,7 @@ func (cfg *config) ingestSnap(i int, snapshot []byte, index int) string {
 		return "snapshot Decode() error"
 	}
 	if index != -1 && index != lastIncludedIndex {
+		DPrintf("[IngestSnap]:Peer[%d] with index:[%d] lastIncludedIndex:[%d]| %s\n",i,index,lastIncludedIndex,time.Now().Format("15:04:05.000"))
 		err := fmt.Sprintf("server %v snapshot doesn't match m.SnapshotIndex", i)
 		return err
 	}
@@ -242,6 +243,7 @@ func (cfg *config) applierSnap(i int, applyCh chan ApplyMsg) {
 
 			cfg.mu.Lock()
 			cfg.lastApplied[i] = m.CommandIndex
+			DPrintf("[ApplierSnap]:Peer[%d] lastApplied:[%d] | %s\n",i,cfg.lastApplied[i],time.Now().Format("15:04:05.000"))
 			cfg.mu.Unlock()
 
 			if (m.CommandIndex+1)%SnapShotInterval == 0 {
