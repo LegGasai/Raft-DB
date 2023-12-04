@@ -218,10 +218,12 @@ func (kv *KVServer) applier() {
 				currentTerm,isLeader:=kv.rf.GetState()
 				//DPrintf("[DEBUG][applier()]: Server[%d] in term[%d] and isLeader[%t] msg:[%d] | %s\n",kv.me,currentTerm,isLeader,msg.CommandTerm,time.Now().Format("15:04:05.000"))
 				if isLeader && currentTerm == msg.CommandTerm {
-					ch:= kv.getWaitCh(msg.CommandIndex)
-					ch<-commandReply
-					DPrintf("[Notify Msg][applier()]: Server[%d] notify waitCh with a reply:[%v] | %s\n",kv.me,commandReply,time.Now().Format("15:04:05.000"))
-					fmt.Printf("[Notify Msg][applier()]: Server[%d] notify waitCh with a reply:[%d] | %s\n",kv.me,msg.CommandIndex,time.Now().Format("15:04:05.000"))
+					ch,ok:= kv.waitChMap[msg.CommandIndex]
+					if ok{
+						ch<-commandReply
+						DPrintf("[Notify Msg][applier()]: Server[%d] notify waitCh with a reply:[%v] | %s\n",kv.me,commandReply,time.Now().Format("15:04:05.000"))
+						fmt.Printf("[Notify Msg][applier()]: Server[%d] notify waitCh with a reply:[%d] | %s\n",kv.me,msg.CommandIndex,time.Now().Format("15:04:05.000"))
+					}
 				}
 
 				kv.mu.Unlock()
