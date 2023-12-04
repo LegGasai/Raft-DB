@@ -1,0 +1,1897 @@
+Test: one client (3A) ...
+  ... Passed --  15.1  5  4154  470
+Test: ops complete fast enough (3A) ...
+  ... Passed --   3.6  3  4753    0
+Test: many clients (3A) ...
+  ... Passed --  17.6  5  9367  585
+Test: unreliable net, many clients (3A) ...
+  ... Passed --  16.6  5  5557  564
+Test: concurrent append to same key, unreliable (3A) ...
+  ... Passed --   0.8  3   273   52
+Test: progress in majority (3A) ...
+  ... Passed --   0.7  5   105    2
+Test: no progress in minority (3A) ...
+  ... Passed --   1.1  5   429    3
+Test: completion after heal (3A) ...
+  ... Passed --   1.0  5    89    3
+Test: partitions, one client (3A) ...
+  ... Passed --  22.6  5 18011  444
+Test: partitions, many clients (3A) ...
+  ... Passed --  22.7  5 35078  563
+Test: restarts, one client (3A) ...
+  ... Passed --  51.9  5 12434  549
+Test: restarts, many clients (3A) ...
+  ... Passed --  102.2  5 42708  734
+Test: unreliable net, restarts, many clients (3A) ...
+  ... Passed --  68.5  5 17082  555
+Test: restarts, partitions, many clients (3A) ...
+--- FAIL: TestPersistPartition3A (121.67s)
+    config.go:65: test took longer than 120 seconds
+Test: unreliable net, restarts, partitions, many clients (3A) ...
+  ... Passed --  59.3  5 12616  244
+Test: unreliable net, restarts, partitions, random keys, many clients (3A) ...
+panic: test timed out after 10m0s
+
+goroutine 731447 [running]:
+testing.(*M).startAlarm.func1()
+	/usr/local/go/src/testing/testing.go:1710 +0xe5
+created by time.goFunc
+	/usr/local/go/src/time/sleep.go:180 +0x45
+
+goroutine 1 [chan receive, 1 minutes]:
+testing.(*T).Run(0xc000152d80, 0x5f5de9, 0x2c, 0x5ff4b0, 0x48d201)
+	/usr/local/go/src/testing/testing.go:1249 +0x2da
+testing.runTests.func1(0xc000001200)
+	/usr/local/go/src/testing/testing.go:1521 +0x78
+testing.tRunner(0xc000001200, 0xc00005dde0)
+	/usr/local/go/src/testing/testing.go:1203 +0xe5
+testing.runTests(0xc00000c510, 0x725d20, 0x17, 0x17, 0xc1537df9c525ec6f, 0x8bb2dab638, 0x729740, 0x5edba5)
+	/usr/local/go/src/testing/testing.go:1519 +0x2fe
+testing.(*M).Run(0xc000136000, 0x0)
+	/usr/local/go/src/testing/testing.go:1427 +0x1eb
+main.main()
+	_testmain.go:87 +0x138
+
+goroutine 593110 [chan receive]:
+6.824/kvraft.GenericTest(0xc000152d80, 0x5ebc10, 0x2, 0xf, 0x7, 0x65010101, 0xffffffffffffffff, 0x8c333e9cc201)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:340 +0x405
+6.824/kvraft.TestPersistPartitionUnreliableLinearizable3A(0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:591 +0x6c
+testing.tRunner(0xc000152d80, 0x5ff4b0)
+	/usr/local/go/src/testing/testing.go:1203 +0xe5
+created by testing.(*T).Run
+	/usr/local/go/src/testing/testing.go:1248 +0x2b3
+
+goroutine 580125 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc000ad7f90, 0xf)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000ad7f80)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000756c60)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731173 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x4, 0xad6)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 12 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc000011c90, 0x1cb)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000011c80)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000120900)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 723636 [sleep]:
+time.Sleep(0x989680)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/raft.(*Raft).ticker(0xc000b77320)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:975 +0x65
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1040 +0x255
+
+goroutine 731395 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x0, 0xade)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:547 +0x10dd
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 588762 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc000a2db90, 0x5)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000a2db80)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025c000)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 66461 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc000428c50, 0x23)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000428c40)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000405440)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 724240 [runnable]:
+time.Sleep(0x989680)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/raft.(*Raft).ticker(0xc0004050e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:975 +0x65
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1040 +0x255
+
+goroutine 202454 [sync.Cond.Wait, 7 minutes]:
+sync.runtime_notifyListWait(0xc00038f010, 0x16)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00038f000)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025c6c0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731165 [runnable]:
+sync.runtime_SemacquireMutex(0xc000404004, 0xc0010d8300, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc000404000)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).Start(0xc000404000, 0x5d5320, 0xc0010d8380, 0x0, 0x0, 0xc000928000)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:901 +0x290
+6.824/kvraft.(*KVServer).Command(0xc000de6000, 0xc0010d8300, 0xc00036e260)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:122 +0x27a
+reflect.Value.call(0xc000028240, 0xc00000e700, 0x13, 0x5ebdc9, 0x4, 0xc000e31bd0, 0x3, 0x3, 0xc000e31a98, 0x4d1d6b, ...)
+	/usr/local/go/src/reflect/value.go:476 +0x8e7
+reflect.Value.Call(0xc000028240, 0xc00000e700, 0x13, 0xc000e31bd0, 0x3, 0x3, 0x1, 0x0, 0xc000736b50)
+	/usr/local/go/src/reflect/value.go:337 +0xb9
+6.824/labrpc.(*Service).dispatch(0xc000b28dc0, 0x5ee3b2, 0x7, 0x5adac0, 0xc0002cdb90, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc000806180, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:496 +0x674
+6.824/labrpc.(*Server).dispatch(0xc000dda2a0, 0x5adac0, 0xc0002cdb90, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc000806180, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:420 +0x4b8
+6.824/labrpc.(*Network).processReq.func1(0xc000dda2a0, 0x5adac0, 0xc0002cdb90, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc000806180, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:240 +0x65
+created by 6.824/labrpc.(*Network).processReq
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:239 +0x13e
+
+goroutine 25793 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc000398750, 0x21)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000398740)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc0001205a0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731324 [semacquire]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc000742500, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0009fd680, 0x164, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:238 +0xe7
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 723644 [runnable]:
+6.824/kvraft.(*KVServer).applier(0xc000de6050)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:183 +0x91
+created by 6.824/kvraft.StartKVServer
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:294 +0x1cd
+
+goroutine 51266 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc000272350, 0xf2)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000272340)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000404240)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 724306 [chan send]:
+6.824/raft.(*Raft).applyMessage(0xc000405b00)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:959 +0x252
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 712455 [chan send]:
+6.824/kvraft.GenericTest.func1.1(0xc0007ff280, 0xf, 0xf, 0xe, 0xc000869ea0)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:262 +0x55
+6.824/kvraft.GenericTest.func1(0xe, 0xc00037d040, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:297 +0x705
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0xe, 0xc0007b4720, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 731306 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000eb6420, 0x5eec7d, 0x12, 0x5a3860, 0xc000a78c40, 0x5a38a0, 0xc0008613e0, 0xc00074cf70)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x4, 0xadd)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 212566 [sync.Cond.Wait, 7 minutes]:
+sync.runtime_notifyListWait(0xc0001f4750, 0xb)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0001f4740)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025a240)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731233 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000eb63e0, 0x5eec7d, 0x12, 0x5a3860, 0xc000a42040, 0x5a38a0, 0xc000861d20, 0xc00074bf70)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x2, 0xad8)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731312 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000eb63e0, 0x5eec7d, 0x12, 0x5a3860, 0xc000423bc0, 0x5a38a0, 0xc000861940, 0xc0000c6d20)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x2, 0xadc)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 723638 [runnable]:
+6.824/kvraft.(*KVServer).applier(0xc000b7f900)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:183 +0x91
+created by 6.824/kvraft.StartKVServer
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:294 +0x1cd
+
+goroutine 731353 [semacquire]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0007424c0, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc000a40a00, 0x215, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:238 +0xe7
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731279 [select]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cdd80, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f6540, 0x69, 0xb9, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731246 [select]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002ccf60, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc000806240, 0x69, 0xb9, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 348006 [sync.Cond.Wait, 5 minutes]:
+sync.runtime_notifyListWait(0xc000359f90, 0x7)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000359f80)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000756fc0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731397 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x345872e66904600, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x2, 0xadf)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:547 +0x10dd
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 723640 [semacquire]:
+sync.runtime_SemacquireMutex(0xc000404004, 0xc000f7fe00, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc000404000)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).applyMessage(0xc000404000)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:960 +0x279
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 379149 [sync.Cond.Wait, 4 minutes]:
+sync.runtime_notifyListWait(0xc00026d590, 0xa)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00026d580)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025db00)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731197 [semacquire]:
+bytes.NewBuffer(...)
+	/usr/local/go/src/bytes/buffer.go:450
+6.824/labrpc.(*ClientEnd).Call(0xc000eb6440, 0x5eec7d, 0x12, 0x5a3860, 0xc000b4b440, 0x5a38a0, 0xc000c262c0, 0xc0003c6a00)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:114 +0x334
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x5, 0xadb)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 724295 [runnable]:
+sync.runtime_SemacquireMutex(0xc0004058c4, 0xc000f6ae00, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004058c0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).applyMessage(0xc0004058c0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:960 +0x279
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 67204 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc00014ef50, 0x4)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00014ef40)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000404c60)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 195848 [sync.Cond.Wait, 8 minutes]:
+sync.runtime_notifyListWait(0xc0003d5b50, 0xb3)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0003d5b40)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00027d200)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 51272 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc000272a90, 0x15)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000272a80)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000404480)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731332 [select]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc000742540, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0009fc000, 0x215, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 212580 [sync.Cond.Wait, 7 minutes]:
+sync.runtime_notifyListWait(0xc0002f4510, 0x1)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0002f4500)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025a900)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 464426 [sync.Cond.Wait, 3 minutes]:
+sync.runtime_notifyListWait(0xc0003e4090, 0x23)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0003e4080)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000b770e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731407 [runnable]:
+sync.runtime_SemacquireMutex(0xc0004dd8b4, 0xc0007b1700, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004dd8b0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/kvraft.(*KVServer).Command(0xc0004dd8b0, 0xc000a65cc0, 0xc000eb6c20)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:105 +0x696
+reflect.Value.call(0xc000028240, 0xc0004ba4c8, 0x13, 0x5ebdc9, 0x4, 0xc0007b1bd0, 0x3, 0x3, 0xc0007b1a98, 0x4d1d6b, ...)
+	/usr/local/go/src/reflect/value.go:476 +0x8e7
+reflect.Value.Call(0xc000028240, 0xc0004ba4c8, 0x13, 0xc0007b1bd0, 0x3, 0x3, 0xc000014420, 0x0, 0xc00093ab70)
+	/usr/local/go/src/reflect/value.go:337 +0xb9
+6.824/labrpc.(*Service).dispatch(0xc001389cc0, 0x5ee3b2, 0x7, 0x5adac0, 0xc0002cc740, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f6cc0, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:496 +0x674
+6.824/labrpc.(*Server).dispatch(0xc00083aba0, 0x5adac0, 0xc0002cc740, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f6cc0, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:420 +0x4b8
+6.824/labrpc.(*Network).processReq.func1(0xc00083aba0, 0x5adac0, 0xc0002cc740, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f6cc0, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:240 +0x65
+created by 6.824/labrpc.(*Network).processReq
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:239 +0x13e
+
+goroutine 363064 [sync.Cond.Wait, 4 minutes]:
+sync.runtime_notifyListWait(0xc0005bc510, 0x7)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0005bc500)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025a480)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 593113 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc000b3c950, 0x2)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000b3c940)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000b77e60)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 724294 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004058c4, 0x46da00, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004058c0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).ticker(0xc0004058c0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:977 +0x2f2
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1040 +0x255
+
+goroutine 731235 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x4, 0xad9)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731305 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000eb6400, 0x5eec7d, 0x12, 0x5a3860, 0xc000409ec0, 0x5a38a0, 0xc0008613a0, 0xc0003c7080)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x3, 0xadd)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 588765 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc000b1f910, 0x5)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000b1f900)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025c240)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731352 [semacquire]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc000742480, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc000a40780, 0x1bd, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:238 +0xe7
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 334540 [sync.Cond.Wait, 5 minutes]:
+sync.runtime_notifyListWait(0xc0005dbbd0, 0xa)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0005dbbc0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc0007579e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 111661 [sync.Cond.Wait, 8 minutes]:
+sync.runtime_notifyListWait(0xc0004388d0, 0x17)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0004388c0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000120000)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 580122 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc0003452d0, 0x12)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0003452c0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000756900)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 724291 [sleep]:
+time.Sleep(0x989680)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/raft.(*Raft).ticker(0xc000405680)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:975 +0x65
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1040 +0x255
+
+goroutine 731387 [select]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002ccd70, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce3c0, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 25796 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc000398990, 0x22)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000398980)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc0001206c0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 66458 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc000428410, 0x1)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000428400)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000405320)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 536725 [sync.Cond.Wait, 2 minutes]:
+sync.runtime_notifyListWait(0xc000bc7b10, 0x5)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000bc7b00)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025a7e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731413 [semacquire]:
+encoding/gob.glob..func1(0x721020, 0x3)
+	/usr/local/go/src/encoding/gob/encode.go:44 +0x2d
+sync.(*Pool).Get(0x721020, 0x49, 0xc000011ad0)
+	/usr/local/go/src/sync/pool.go:148 +0xaa
+encoding/gob.(*Encoder).encodeInterface(0xc000c78fa0, 0xc000c78fd8, 0x5b5b00, 0xc00137b2e8, 0x194)
+	/usr/local/go/src/encoding/gob/encode.go:417 +0x465
+encoding/gob.encOpFor.func5(0xc000148480, 0xc000ef8380, 0x5b5b00, 0xc00137b2e8, 0x194)
+	/usr/local/go/src/encoding/gob/encode.go:589 +0x6a
+encoding/gob.(*Encoder).encodeStruct(0xc000c78fa0, 0xc000c78fd8, 0xc000594cf0, 0x5c3ca0, 0xc00137b2e8, 0x199)
+	/usr/local/go/src/encoding/gob/encode.go:328 +0x256
+encoding/gob.encOpFor.func4(0x0, 0xc000ef8240, 0x5c3ca0, 0xc00137b2e8, 0x199)
+	/usr/local/go/src/encoding/gob/encode.go:581 +0xac
+encoding/gob.(*Encoder).encodeArray(0xc000c78fa0, 0xc000c78fd8, 0x5a9940, 0xc000ddaa98, 0x97, 0xc0004c4160, 0x0, 0xae2, 0x0)
+	/usr/local/go/src/encoding/gob/encode.go:351 +0x15d
+encoding/gob.encOpFor.func1(0xc0002ed050, 0xc000ef80c0, 0x5a9940, 0xc000ddaa98, 0x97)
+	/usr/local/go/src/encoding/gob/encode.go:551 +0xf1
+encoding/gob.(*Encoder).encodeSingle(0xc000c78fa0, 0xc000c78fd8, 0xc000594cd8, 0x5a9940, 0xc000ddaa98, 0x97)
+	/usr/local/go/src/encoding/gob/encode.go:301 +0x1bc
+encoding/gob.(*Encoder).encode(0xc000c78fa0, 0xc000c78fd8, 0x5a9940, 0xc000ddaa98, 0x97, 0xc0002a7cc0)
+	/usr/local/go/src/encoding/gob/encode.go:703 +0x146
+encoding/gob.(*Encoder).EncodeValue(0xc000c78fa0, 0x5a9940, 0xc000ddaa98, 0x97, 0x0, 0x0)
+	/usr/local/go/src/encoding/gob/encoder.go:251 +0x399
+encoding/gob.(*Encoder).Encode(0xc000c78fa0, 0x5a9940, 0xc000ddaa98, 0x1, 0xc000ddaa98)
+	/usr/local/go/src/encoding/gob/encoder.go:176 +0xa9
+6.824/labgob.(*LabEncoder).Encode(0xc0004e7620, 0x5a9940, 0xc000ddaa98, 0xc000ddaa98, 0x0)
+	/home/jyc/MIT6.824/6.824/src/labgob/labgob.go:34 +0x5a
+6.824/raft.(*Raft).persist(0xc0004047e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:146 +0x129
+6.824/raft.(*Raft).Start(0xc0004047e0, 0x5d5320, 0xc000bc72c0, 0x0, 0x0, 0xc0007fe000)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:911 +0x151
+6.824/kvraft.(*KVServer).Command(0xc000de6050, 0xc000bc70c0, 0xc000a01b80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:122 +0x27a
+reflect.Value.call(0xc000028240, 0xc00000e8d8, 0x13, 0x5ebdc9, 0x4, 0xc0004e7bd0, 0x3, 0x3, 0xc0004e7a98, 0x4d1d6b, ...)
+	/usr/local/go/src/reflect/value.go:476 +0x8e7
+reflect.Value.Call(0xc000028240, 0xc00000e8d8, 0x13, 0xc0004e7bd0, 0x3, 0x3, 0xc000014420, 0x0, 0xc001b4db70)
+	/usr/local/go/src/reflect/value.go:337 +0xb9
+6.824/labrpc.(*Service).dispatch(0xc000ce8980, 0x5ee3b2, 0x7, 0x5adac0, 0xc0002cdd80, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f6540, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:496 +0x674
+6.824/labrpc.(*Server).dispatch(0xc000dda510, 0x5adac0, 0xc0002cdd80, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f6540, 0x69, 0xb9, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:420 +0x4b8
+6.824/labrpc.(*Network).processReq.func1(0xc000dda510, 0x5adac0, 0xc0002cdd80, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f6540, 0x69, 0xb9, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:240 +0x65
+created by 6.824/labrpc.(*Network).processReq
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:239 +0x13e
+
+goroutine 25799 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc000398cd0, 0x7c)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000398cc0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000120a20)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 724290 [runnable]:
+6.824/kvraft.(*KVServer).applier(0xc0004dd810)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:183 +0x91
+created by 6.824/kvraft.StartKVServer
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:294 +0x1cd
+
+goroutine 212586 [sync.Cond.Wait, 7 minutes]:
+sync.runtime_notifyListWait(0xc0001c0e50, 0x9)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0001c0e40)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000404360)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731234 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x3, 0xad8)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 464417 [sync.Cond.Wait, 3 minutes]:
+sync.runtime_notifyListWait(0xc0004a9a10, 0x5)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0004a9a00)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000b767e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731425 [sleep]:
+time.Sleep(0x1036640)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cc8d0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce780, 0x69, 0xb9, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:225 +0x79b
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 723641 [semacquire]:
+sync.runtime_SemacquireMutex(0xc000404004, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc000404000)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).GetState(0xc000404000, 0x0, 0xc000dfe300)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:121 +0xa5
+6.824/kvraft.(*KVServer).applier(0xc000de6000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:214 +0x333
+created by 6.824/kvraft.StartKVServer
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:294 +0x1cd
+
+goroutine 724307 [runnable]:
+6.824/kvraft.(*KVServer).applier(0xc0004dd900)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:183 +0x91
+created by 6.824/kvraft.StartKVServer
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:294 +0x1cd
+
+goroutine 25774 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc000398450, 0x3c)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000398440)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000120360)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 723642 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x46da00, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).ticker(0xc0004047e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:977 +0x2f2
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1040 +0x255
+
+goroutine 731415 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004058c4, 0xc000593700, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004058c0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).AppendEntries(0xc0004058c0, 0xc00083e500, 0xc000258680)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:403 +0x6de
+reflect.Value.call(0xc0000283c0, 0xc0004ba4e8, 0x13, 0x5ebdc9, 0x4, 0xc000593bd0, 0x3, 0x3, 0xc000593a98, 0x4d1d6b, ...)
+	/usr/local/go/src/reflect/value.go:476 +0x8e7
+reflect.Value.Call(0xc0000283c0, 0xc0004ba4e8, 0x13, 0xc000593bd0, 0x3, 0x3, 0x7509e0, 0x7f0f44684330, 0xc000078b50)
+	/usr/local/go/src/reflect/value.go:337 +0xb9
+6.824/labrpc.(*Service).dispatch(0xc001389d00, 0x5eec82, 0xd, 0x5adac0, 0xc0007424e0, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0006c2500, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:496 +0x674
+6.824/labrpc.(*Server).dispatch(0xc00083aba0, 0x5adac0, 0xc0007424e0, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0006c2500, 0x242, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:420 +0x4b8
+6.824/labrpc.(*Network).processReq.func1(0xc00083aba0, 0x5adac0, 0xc0007424e0, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0006c2500, 0x242, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:240 +0x65
+created by 6.824/labrpc.(*Network).processReq
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:239 +0x13e
+
+goroutine 252497 [sync.Cond.Wait, 6 minutes]:
+sync.runtime_notifyListWait(0xc0001fbe50, 0x11)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0001fbe40)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025a360)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731398 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x3, 0xadf)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:547 +0x10dd
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 580116 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc000b10290, 0x7)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000b10280)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000756360)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 712234 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc0011bd980, 0x5ee3a9, 0x10, 0x5a3260, 0xc00037d680, 0x5a32a0, 0xc0005ba880, 0x1)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc00037d640, 0x5f3ff6, 0x1, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x7)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc00037d640, 0x5f3ff6, 0x1, 0xc00006db40, 0x1, 0x1, 0x5f3ff3)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0x1, 0xc00037d640, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0x1, 0xc0007b4180, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 12128 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc0003989d0, 0x3e8)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0003989c0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025b8c0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 25771 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc000398210, 0x20)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000398200)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000120240)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 347994 [sync.Cond.Wait, 5 minutes]:
+sync.runtime_notifyListWait(0xc000891750, 0x3)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000891740)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000756120)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731325 [semacquire]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc000742520, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0009fd900, 0x164, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:238 +0xe7
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731347 [runnable]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0007424e0, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc000efd180, 0x190, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 71128 [sync.Cond.Wait, 8 minutes]:
+sync.runtime_notifyListWait(0xc00055cd10, 0x103)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00055cd00)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025c900)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 379143 [sync.Cond.Wait, 4 minutes]:
+sync.runtime_notifyListWait(0xc00026c6d0, 0xd)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00026c6c0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025d8c0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731313 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000eb6400, 0x5eec7d, 0x12, 0x5a3860, 0xc0009de340, 0x5a38a0, 0xc000861980, 0xc000686f70)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x3, 0xadd)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 588768 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc000584ed0, 0x5)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000584ec0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025c480)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 188639 [sync.Cond.Wait, 8 minutes]:
+sync.runtime_notifyListWait(0xc0007b8010, 0xa0)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0007b8000)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025a5a0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731152 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000eb6440, 0x5eec7d, 0x12, 0x5a3860, 0xc000fd1cc0, 0x5a38a0, 0xc000c266e0, 0xc000f00500)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x5, 0xad9)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 464420 [sync.Cond.Wait, 3 minutes]:
+sync.runtime_notifyListWait(0xc0002e15d0, 0x6)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0002e15c0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000b76c60)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731419 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004dd8b4, 0xc000811700, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004dd8b0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/kvraft.(*KVServer).Command(0xc0004dd8b0, 0xc00020e3c0, 0xc0005bafe0)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:105 +0x696
+reflect.Value.call(0xc000028240, 0xc0004ba4c8, 0x13, 0x5ebdc9, 0x4, 0xc000811bd0, 0x3, 0x3, 0xc000811a98, 0x4d1d6b, ...)
+	/usr/local/go/src/reflect/value.go:476 +0x8e7
+reflect.Value.Call(0xc000028240, 0xc0004ba4c8, 0x13, 0xc000811bd0, 0x3, 0x3, 0x632b20, 0x5b6620, 0x40da7b)
+	/usr/local/go/src/reflect/value.go:337 +0xb9
+6.824/labrpc.(*Service).dispatch(0xc001389cc0, 0x5ee3b2, 0x7, 0x5adac0, 0xc0002ccd70, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce3c0, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:496 +0x674
+6.824/labrpc.(*Server).dispatch(0xc00083aba0, 0x5adac0, 0xc0002ccd70, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce3c0, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:420 +0x4b8
+6.824/labrpc.(*Network).processReq.func1(0xc00083aba0, 0x5adac0, 0xc0002ccd70, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce3c0, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:240 +0x65
+created by 6.824/labrpc.(*Network).processReq
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:239 +0x13e
+
+goroutine 731271 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x3, 0xad9)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731199 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000eb63a0, 0x5eec7d, 0x12, 0x5a3860, 0xc0009df940, 0x5a38a0, 0xc000861ca0, 0xc0003c6a80)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x0, 0xadb)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731376 [select]:
+6.824/kvraft.(*KVServer).Command(0xc000de6050, 0xc000682080, 0xc0005baac0)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:135 +0x41b
+reflect.Value.call(0xc000028240, 0xc00000e8d8, 0x13, 0x5ebdc9, 0x4, 0xc000bfbbd0, 0x3, 0x3, 0xc000bfba98, 0x4d1d6b, ...)
+	/usr/local/go/src/reflect/value.go:476 +0x8e7
+reflect.Value.Call(0xc000028240, 0xc00000e8d8, 0x13, 0xc000bfbbd0, 0x3, 0x3, 0x1, 0x0, 0xc000a51b50)
+	/usr/local/go/src/reflect/value.go:337 +0xb9
+6.824/labrpc.(*Service).dispatch(0xc000ce8980, 0x5ee3b2, 0x7, 0x5adac0, 0xc0002cd0d0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009cf2c0, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:496 +0x674
+6.824/labrpc.(*Server).dispatch(0xc000dda510, 0x5adac0, 0xc0002cd0d0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009cf2c0, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:420 +0x4b8
+6.824/labrpc.(*Network).processReq.func1(0xc000dda510, 0x5adac0, 0xc0002cd0d0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009cf2c0, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:240 +0x65
+created by 6.824/labrpc.(*Network).processReq
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:239 +0x13e
+
+goroutine 605323 [sync.Cond.Wait]:
+sync.runtime_notifyListWait(0xc000bd7990, 0x3)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000bd7980)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000757440)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 283128 [sync.Cond.Wait, 5 minutes]:
+sync.runtime_notifyListWait(0xc0002f4390, 0x42)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0002f4380)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025aa20)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 588771 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc000bc7510, 0x4)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000bc7500)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025c7e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731303 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x1, 0xadd)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731304 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x2, 0xadc)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 347997 [sync.Cond.Wait, 5 minutes]:
+sync.runtime_notifyListWait(0xc0002e0950, 0x3)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0002e0940)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc0007565a0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 67201 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc00014ec10, 0x5)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00014ec00)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000404b40)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 111664 [sync.Cond.Wait, 8 minutes]:
+sync.runtime_notifyListWait(0xc000438a50, 0x21)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000438a40)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000120480)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731200 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000eb63c0, 0x5eec7d, 0x12, 0x5a3860, 0xc0009dfc40, 0x5a38a0, 0xc000861ce0, 0xc0003c6b40)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x1, 0xad9)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 593111 [select]:
+6.824/labrpc.MakeNetwork.func1(0xc000c467d0)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:153 +0x14c
+created by 6.824/labrpc.MakeNetwork
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:151 +0x13c
+
+goroutine 731311 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x1, 0xadd)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 724292 [chan send]:
+6.824/raft.(*Raft).applyMessage(0xc000405680)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:959 +0x252
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731170 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x1, 0xad8)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 379152 [sync.Cond.Wait, 4 minutes]:
+sync.runtime_notifyListWait(0xc00026d950, 0x3)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00026d940)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025dc20)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731441 [sleep]:
+time.Sleep(0xb71b00)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cd6a0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f7140, 0x69, 0xb9, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:225 +0x79b
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 588774 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc0004a5cd0, 0x8)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0004a5cc0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025cea0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 111658 [sync.Cond.Wait, 8 minutes]:
+sync.runtime_notifyListWait(0xc000438750, 0x10)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000438740)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025de60)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 67195 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc00014e410, 0x2)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00014e400)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000404900)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 580119 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc000ae9210, 0x9)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000ae9200)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc0007566c0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731196 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x46da01, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x4, 0xad9)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:547 +0x10dd
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 66464 [sync.Cond.Wait, 9 minutes]:
+sync.runtime_notifyListWait(0xc0004290d0, 0x3)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0004290c0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000405560)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731308 [runnable]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc000742540, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0009fc500, 0x190, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731193 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x46da00, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x1, 0xad9)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:547 +0x10dd
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731384 [select]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cd1c0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce240, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731272 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x46da00, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x4, 0xadd)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:547 +0x10dd
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 202457 [sync.Cond.Wait, 7 minutes]:
+sync.runtime_notifyListWait(0xc0000e5390, 0x17)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0000e5380)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025ca20)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 712449 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc0008c9400, 0x5ee3a9, 0x10, 0x5a3260, 0xc000659cc0, 0x5a32a0, 0xc000a005a0, 0x40da01)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc000a658c0, 0x5f3ff9, 0x1, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x7)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc000a658c0, 0x5f3ff9, 0x1, 0xc00006db40, 0x8, 0x1, 0x5f3ff5)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0x8, 0xc000a658c0, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0x8, 0xc0007b44e0, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 593119 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc000b3d8d0, 0x1)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000b3d8c0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000404120)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 712232 [chan receive]:
+6.824/kvraft.spawn_clients_and_wait(0xc000152d80, 0xc000548840, 0xf, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:123 +0x138
+created by 6.824/kvraft.GenericTest
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:259 +0x5e5
+
+goroutine 334531 [sync.Cond.Wait, 5 minutes]:
+sync.runtime_notifyListWait(0xc0005dab50, 0x2c)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0005dab40)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000757560)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 202460 [sync.Cond.Wait, 7 minutes]:
+sync.runtime_notifyListWait(0xc0003bf9d0, 0xd)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc0003bf9c0)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025cc60)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 593122 [sync.Cond.Wait, 1 minutes]:
+sync.runtime_notifyListWait(0xc000b3df10, 0x2)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000b3df00)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc0004046c0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 464423 [chan send, 3 minutes]:
+6.824/raft.(*Raft).applyMessage(0xc000b76ea0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:959 +0x252
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731194 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000eb63e0, 0x5eec7d, 0x12, 0x5a3860, 0xc000fd1580, 0x5a38a0, 0xc000c266a0, 0xc000f00360)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x2, 0xad8)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 712235 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc0011bdb80, 0x5ee3a9, 0x10, 0x5a3260, 0xc000be2280, 0x5a32a0, 0xc000a008a0, 0x1)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc00037d940, 0x5f861d, 0x2, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x7)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc00037d940, 0x5f861d, 0x2, 0xc00006db40, 0x2, 0x1, 0x5f3ff6)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0x2, 0xc00037d940, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0x2, 0xc0007b41e0, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 348000 [sync.Cond.Wait, 5 minutes]:
+sync.runtime_notifyListWait(0xc00088c450, 0xc000000003)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00088c440)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc000756a20)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731375 [select]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cc740, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f6cc0, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 283122 [sync.Cond.Wait, 5 minutes]:
+sync.runtime_notifyListWait(0xc000720c10, 0x5)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000720c00)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00025ad80)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 568930 [sync.Cond.Wait, 2 minutes]:
+sync.runtime_notifyListWait(0xc000aa4450, 0x7)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000aa4440)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00134d440)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 568908 [sync.Cond.Wait, 2 minutes]:
+sync.runtime_notifyListWait(0xc00078a490, 0xb)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00078a480)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00134cfc0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 568933 [sync.Cond.Wait, 2 minutes]:
+sync.runtime_notifyListWait(0xc00090bc50, 0x21)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc00090bc40)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00134d680)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731163 [select]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cdb90, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc000806180, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731399 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x4, 0xadf)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:547 +0x10dd
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 195842 [sync.Cond.Wait, 8 minutes]:
+sync.runtime_notifyListWait(0xc000438b50, 0xe)
+	/usr/local/go/src/runtime/sema.go:513 +0xf8
+sync.(*Cond).Wait(0xc000438b40)
+	/usr/local/go/src/sync/cond.go:56 +0x99
+6.824/raft.(*Raft).applyMessage(0xc00027cd80)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:962 +0x2b5
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 712451 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000808940, 0x5ee3a9, 0x10, 0x5a3260, 0xc00028fe80, 0x5a32a0, 0xc000a00f60, 0x1)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc0009831c0, 0x5f3ff5, 0x1, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x8)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc0009831c0, 0x5f3ff5, 0x1, 0xc00006db40, 0xa, 0x1, 0x5f3ff4)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0xa, 0xc0009831c0, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0xa, 0xc0007b45a0, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 723639 [semacquire]:
+sync.runtime_SemacquireMutex(0xc000404004, 0x46da00, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc000404000)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).ticker(0xc000404000)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:977 +0x2f2
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1040 +0x255
+
+goroutine 731270 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x2, 0xad8)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731354 [semacquire]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0007424e0, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc000a40c80, 0x242, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:238 +0xe7
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 724305 [runnable]:
+time.Sleep(0x989680)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/raft.(*Raft).ticker(0xc000405b00)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:975 +0x65
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1040 +0x255
+
+goroutine 731348 [semacquire]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc000742500, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc000efd900, 0x164, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:238 +0xe7
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 712239 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc0008c8bc0, 0x5ee3a9, 0x10, 0x5a3260, 0xc0005605c0, 0x5a32a0, 0xc0005baa40, 0xc000b08c01)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc0005604c0, 0x5f861b, 0x2, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x7)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc0005604c0, 0x5f861b, 0x2, 0xc00006db40, 0x6, 0x1, 0x5f3ff3)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0x6, 0xc0005604c0, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0x6, 0xc0007b4420, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 731268 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x0, 0xadb)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 712450 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc0008c9fc0, 0x5ee3a9, 0x10, 0x5a3260, 0xc000982940, 0x5a32a0, 0xc0011bcba0, 0x1)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc000982840, 0x5f8621, 0x2, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x7)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc000982840, 0x5f8621, 0x2, 0xc00006db40, 0x9, 0x1, 0x5f3ff3)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0x9, 0xc000982840, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0x9, 0xc0007b4540, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 731411 [semacquire]:
+sync.runtime_SemacquireMutex(0xc000de6004, 0xc0006bd700, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc000de6000)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/kvraft.(*KVServer).Command(0xc000de6000, 0xc000bc6740, 0xc000a019e0)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:105 +0x696
+reflect.Value.call(0xc000028240, 0xc00000e700, 0x13, 0x5ebdc9, 0x4, 0xc0006bdbd0, 0x3, 0x3, 0xc0006bda98, 0x4d1d6b, ...)
+	/usr/local/go/src/reflect/value.go:476 +0x8e7
+reflect.Value.Call(0xc000028240, 0xc00000e700, 0x13, 0xc0006bdbd0, 0x3, 0x3, 0xc000014420, 0x0, 0xc001b4db70)
+	/usr/local/go/src/reflect/value.go:337 +0xb9
+6.824/labrpc.(*Service).dispatch(0xc000b28dc0, 0x5ee3b2, 0x7, 0x5adac0, 0xc0002cd8b0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce480, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:496 +0x674
+6.824/labrpc.(*Server).dispatch(0xc000dda2a0, 0x5adac0, 0xc0002cd8b0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce480, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:420 +0x4b8
+6.824/labrpc.(*Network).processReq.func1(0xc000dda2a0, 0x5adac0, 0xc0002cd8b0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce480, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:240 +0x65
+created by 6.824/labrpc.(*Network).processReq
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:239 +0x13e
+
+goroutine 731445 [sleep]:
+time.Sleep(0x1406f40)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cca00, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f7380, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:225 +0x79b
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 712454 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000809440, 0x5ee3a9, 0x10, 0x5a3260, 0xc00037d0c0, 0x5a32a0, 0xc000769c60, 0x40dc00)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc000c5c980, 0x5f8623, 0x2, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x8)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc000c5c980, 0x5f8623, 0x2, 0xc00006db40, 0xd, 0x1, 0x5f3ff4)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0xd, 0xc000c5c980, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0xd, 0xc0007b46c0, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 731389 [select]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cd8b0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce480, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731310 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x0, 0xadd)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 712238 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc0008c8700, 0x5ee3a9, 0x10, 0x5a3260, 0xc000c434c0, 0x5a32a0, 0xc000a00c00, 0x40da01)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc000aeb600, 0x5f3ffc, 0x1, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x7)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc000aeb600, 0x5f3ffc, 0x1, 0xc00006db40, 0x5, 0x1, 0x5f3ff4)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0x5, 0xc000aeb600, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0x5, 0xc0007b43c0, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 731297 [select]:
+6.824/kvraft.(*KVServer).Command(0xc000de6050, 0xc000dc94c0, 0xc00036fca0)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:135 +0x41b
+reflect.Value.call(0xc000028240, 0xc00000e8d8, 0x13, 0x5ebdc9, 0x4, 0xc0009afbd0, 0x3, 0x3, 0xc0009afa98, 0x4d1d6b, ...)
+	/usr/local/go/src/reflect/value.go:476 +0x8e7
+reflect.Value.Call(0xc000028240, 0xc00000e8d8, 0x13, 0xc0009afbd0, 0x3, 0x3, 0x632b20, 0x5b6620, 0x40da7b)
+	/usr/local/go/src/reflect/value.go:337 +0xb9
+6.824/labrpc.(*Service).dispatch(0xc000ce8980, 0x5ee3b2, 0x7, 0x5adac0, 0xc0002ccf60, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc000806240, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:496 +0x674
+6.824/labrpc.(*Server).dispatch(0xc000dda510, 0x5adac0, 0xc0002ccf60, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc000806240, 0x69, 0xb9, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:420 +0x4b8
+6.824/labrpc.(*Network).processReq.func1(0xc000dda510, 0x5adac0, 0xc0002ccf60, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc000806240, 0x69, 0xb9, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:240 +0x65
+created by 6.824/labrpc.(*Network).processReq
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:239 +0x13e
+
+goroutine 723643 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0xc000a52e00, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).applyMessage(0xc0004047e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:960 +0x279
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 724296 [runnable]:
+6.824/kvraft.(*KVServer).applier(0xc0004dd8b0)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:183 +0x91
+created by 6.824/kvraft.StartKVServer
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:294 +0x1cd
+
+goroutine 731302 [runnable]:
+bytes.NewBuffer(...)
+	/usr/local/go/src/bytes/buffer.go:450
+6.824/labrpc.(*ClientEnd).Call(0xc000eb63a0, 0x5eec7d, 0x12, 0x5a3860, 0xc00095a540, 0x5a38a0, 0xc0008612e0, 0xc000684770)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:114 +0x334
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x0, 0xadd)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 712452 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000808d00, 0x5ee3a9, 0x10, 0x5a3260, 0xc000b9ad00, 0x5a32a0, 0xc0011bcf80, 0x0)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc000983840, 0x5f3ff6, 0x1, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x8)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc000983840, 0x5f3ff6, 0x1, 0xc00006db40, 0xb, 0x1, 0x5f3ff4)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0xb, 0xc000983840, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0xb, 0xc0007b4600, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 712240 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc0008c9200, 0x5ee3a9, 0x10, 0x5a3260, 0xc000c43cc0, 0x5a32a0, 0xc0011bc9c0, 0x40da00)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc000b4bb00, 0x5f3ffb, 0x1, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x7)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc000b4bb00, 0x5f3ffb, 0x1, 0xc00006db40, 0x7, 0x1, 0x5f3ff4)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0x7, 0xc000b4bb00, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0x7, 0xc0007b4480, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 731380 [select]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0007424e0, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0006c2500, 0x242, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731307 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000eb6440, 0x5eec7d, 0x12, 0x5a3860, 0xc0011a5640, 0x5a38a0, 0xc0008608a0, 0xc0003c6ae0)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:483
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x5, 0xadc)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:631 +0x553
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 712453 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc000809160, 0x5ee3a9, 0x10, 0x5a3260, 0xc000981b40, 0x5a32a0, 0xc000eb67c0, 0x40da01)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc000423d80, 0x5f3ff9, 0x1, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x8)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc000423d80, 0x5f3ff9, 0x1, 0xc00006db40, 0xc, 0x1, 0x5f3ff6)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0xc, 0xc000423d80, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0xc, 0xc0007b4660, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 731442 [sleep]:
+time.Sleep(0xa7d8c0)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002ccc20, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f7200, 0x69, 0xb9, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:225 +0x79b
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 724289 [chan send]:
+6.824/raft.(*Raft).applyMessage(0xc0004050e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:959 +0x252
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 712233 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc0011bd7c0, 0x5ee3a9, 0x10, 0x5a3260, 0xc000d0dc00, 0x5a32a0, 0xc0011bc820, 0x1)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc00037d300, 0x5f3ff5, 0x1, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x7)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc00037d300, 0x5f3ff5, 0x1, 0xc00006db40, 0x0, 0x1, 0x5f3ff4)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0x0, 0xc00037d300, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0x0, 0xc0007b4120, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 724293 [runnable]:
+6.824/kvraft.(*KVServer).applier(0xc0004dd860)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:183 +0x91
+created by 6.824/kvraft.StartKVServer
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:294 +0x1cd
+
+goroutine 712237 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc0011bdec0, 0x5ee3a9, 0x10, 0x5a3260, 0xc000d0d040, 0x5a32a0, 0xc0011bcd80, 0x1)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc000aea2c0, 0x5f8623, 0x2, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x7)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc000aea2c0, 0x5f8623, 0x2, 0xc00006db40, 0x4, 0x1, 0x5f3ff6)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0x4, 0xc000aea2c0, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0x4, 0xc0007b42a0, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 731318 [select]:
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cd0d0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009cf2c0, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:251 +0x21f
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731236 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x5, 0xadb)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731149 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x46da00, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x2, 0xad8)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:547 +0x10dd
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731391 [semacquire]:
+6.824/kvraft.(*KVServer).Command(0xc0004dd8b0, 0xc000b2f0c0, 0xc000a01360)
+	/home/jyc/MIT6.824/6.824/src/kvraft/server.go:122 +0x258
+reflect.Value.call(0xc000028240, 0xc0004ba4c8, 0x13, 0x5ebdc9, 0x4, 0xc000e2dbd0, 0x3, 0x3, 0xc000e2da98, 0x4d1d6b, ...)
+	/usr/local/go/src/reflect/value.go:476 +0x8e7
+reflect.Value.Call(0xc000028240, 0xc0004ba4c8, 0x13, 0xc000e2dbd0, 0x3, 0x3, 0xc000014420, 0x0, 0xc000f78b70)
+	/usr/local/go/src/reflect/value.go:337 +0xb9
+6.824/labrpc.(*Service).dispatch(0xc001389cc0, 0x5ee3b2, 0x7, 0x5adac0, 0xc0002cd1c0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce240, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:496 +0x674
+6.824/labrpc.(*Server).dispatch(0xc00083aba0, 0x5adac0, 0xc0002cd1c0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce240, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:420 +0x4b8
+6.824/labrpc.(*Network).processReq.func1(0xc00083aba0, 0x5adac0, 0xc0002cd1c0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0009ce240, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:240 +0x65
+created by 6.824/labrpc.(*Network).processReq
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:239 +0x13e
+
+goroutine 731444 [sleep]:
+time.Sleep(0xf42400)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cd9c0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f72c0, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:225 +0x79b
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731396 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x56d02ed008ae7200, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x1, 0xadd)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:547 +0x10dd
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 723637 [runnable]:
+6.824/raft.(*Raft).applyMessage(0xc000b77320)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:959 +0x252
+created by 6.824/raft.Make
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:1041 +0x277
+
+goroutine 731269 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0x0, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x1, 0xadc)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:636 +0x98f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731400 [runnable]:
+time.Sleep(0x989680)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/raft.(*Raft).replicate(0xc0004047e0, 0x5, 0xadf)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:694 +0xa76
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:538 +0xb8
+
+goroutine 731423 [sleep]:
+time.Sleep(0x7a1200)
+	/usr/local/go/src/runtime/time.go:193 +0xd2
+6.824/labrpc.(*Network).processReq(0xc000c467d0, 0x5adac0, 0xc0002cc5b0, 0x5ee3a9, 0x10, 0x632b20, 0x5a3260, 0xc0000f6b40, 0x68, 0xb8, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:225 +0x79b
+created by 6.824/labrpc.MakeNetwork.func1
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:157 +0xb8
+
+goroutine 731334 [semacquire]:
+sync.runtime_SemacquireMutex(0xc000404004, 0xc0007bf700, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc000404000)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).AppendEntries(0xc000404000, 0xc000a65ec0, 0xc00009ee60)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:403 +0x6de
+reflect.Value.call(0xc0000283c0, 0xc00000e720, 0x13, 0x5ebdc9, 0x4, 0xc0007bfbd0, 0x3, 0x3, 0xc0007bfa98, 0x4d1d6b, ...)
+	/usr/local/go/src/reflect/value.go:476 +0x8e7
+reflect.Value.Call(0xc0000283c0, 0xc00000e720, 0x13, 0xc0007bfbd0, 0x3, 0x3, 0x1, 0x0, 0xc000a57b50)
+	/usr/local/go/src/reflect/value.go:337 +0xb9
+6.824/labrpc.(*Service).dispatch(0xc000b28e40, 0x5eec82, 0xd, 0x5adac0, 0xc000742540, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0009fc000, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:496 +0x674
+6.824/labrpc.(*Server).dispatch(0xc000dda2a0, 0x5adac0, 0xc000742540, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0009fc000, 0x215, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:420 +0x4b8
+6.824/labrpc.(*Network).processReq.func1(0xc000dda2a0, 0x5adac0, 0xc000742540, 0x5eec7d, 0x12, 0x632b20, 0x5a3860, 0xc0009fc000, 0x215, 0x256, ...)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:240 +0x65
+created by 6.824/labrpc.(*Network).processReq
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:239 +0x13e
+
+goroutine 712236 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc0011bdd00, 0x5ee3a9, 0x10, 0x5a3260, 0xc00037dd40, 0x5a32a0, 0xc0011bd120, 0x1)
+	/home/jyc/MIT6.824/6.824/src/labrpc/labrpc.go:112 +0x2ee
+6.824/kvraft.(*Clerk).sendCommand(0xc00037dcc0, 0x5f3ff7, 0x1, 0x0, 0x0, 0x5ebcd4, 0x3, 0x2, 0x7)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:57 +0x277
+6.824/kvraft.(*Clerk).Get(...)
+	/home/jyc/MIT6.824/6.824/src/kvraft/client.go:91
+6.824/kvraft.Get(0xc000548840, 0xc00037dcc0, 0x5f3ff7, 0x1, 0xc00006db40, 0x3, 0x1, 0x5f3ff3)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:49 +0xaa
+6.824/kvraft.GenericTest.func1(0x3, 0xc00037dcc0, 0xc000152d80)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:290 +0x3b7
+6.824/kvraft.run_client(0xc000152d80, 0xc000548840, 0x3, 0xc0007b4240, 0xc000a66000)
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:109 +0xf7
+created by 6.824/kvraft.spawn_clients_and_wait
+	/home/jyc/MIT6.824/6.824/src/kvraft/test_test.go:119 +0x96
+
+goroutine 731393 [semacquire]:
+sync.runtime_SemacquireMutex(0xc0004047e4, 0xc000830a00, 0x1)
+	/usr/local/go/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc0004047e0)
+	/usr/local/go/src/sync/mutex.go:138 +0x105
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:81
+6.824/raft.(*Raft).broadcastAppendEntries(0xc0004047e0)
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:529 +0xea
+created by 6.824/raft.(*Raft).Start
+	/home/jyc/MIT6.824/6.824/src/raft/raft.go:917 +0x1ef
+exit status 2
+FAIL	6.824/kvraft	600.065s

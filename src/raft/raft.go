@@ -20,6 +20,7 @@ package raft
 import (
 	"6.824/labgob"
 	"bytes"
+	"fmt"
 	"math/rand"
 	"time"
 
@@ -50,6 +51,7 @@ type ApplyMsg struct {
 	CommandValid bool
 	Command      interface{}
 	CommandIndex int
+	CommandTerm  int
 
 	// For 2D:
 	SnapshotValid bool
@@ -219,6 +221,11 @@ func (rf *Raft) InstallSnapshot(args *InstallSnapshotArgs, reply *InstallSnapsho
 
 	rf.role = FOLLOWER
 	rf.refreshTimeout()
+
+	if args.LastIncludedIndex <= rf.commitIndex{
+		DPrintf("[InstallSnapshot]:Peer[%d] in term[%d] receive old Snapshot with lastIndex[%d] but Peer's commitIndex[%d] and | %s\n", rf.me, rf.currentTerm, args.LastIncludedIndex,rf.commitIndex, time.Now().Format("15:04:05.000"))
+		return
+	}
 
 	if args.LastIncludedIndex>rf.lastIncludedIndex{
 		// update snapshot
@@ -620,7 +627,9 @@ func (rf *Raft) replicate(server int,prevLogIndex int)  {
 			Entries:      make([]LogEntry, 0),
 		}
 		if prevLogIndex+1 < rf.getLogLength() {
-			args.Entries = rf.log[rf.getStoreIndex(prevLogIndex+1):]
+			var temp = rf.log[rf.getStoreIndex(prevLogIndex+1):]
+			args.Entries = make([]LogEntry,len(temp))
+			copy(args.Entries,temp)
 		}
 		DPrintf("[AppendEntries Send][replicate()]: Leader[%d] send an AppendEntries to Peer[%d] with prevLogIndex:[%d] and log:[%v]| %s\n", rf.me, server, prevLogIndex, rf.log, time.Now().Format("15:04:05.000"))
 		rf.mu.Unlock()
@@ -939,24 +948,35 @@ func (rf *Raft) killed() bool {
 }
 
 func (rf *Raft) applyMessage() {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
 	for !rf.killed(){
+		rf.mu.Lock()
 		// wait
-		if rf.lastApplied<rf.commitIndex && rf.lastEntryLogIndex() > rf.lastApplied{
-			rf.lastApplied++
-			var applyMsg = ApplyMsg{
-				Command:      rf.getEntry(rf.lastApplied).Command,
-				CommandIndex: rf.lastApplied,
-				CommandValid: true,
-			}
-			DPrintf("[ApplyMsg Apply][applyMessage()]: Peer[%d] send a ApplyMsg[%d] lastIndex:[%d]| %s\n", rf.me, rf.lastApplied,rf.lastIncludedIndex, time.Now().Format("15:04:05.000"))
+		if rf.lastApplied<rf.commitIndex{
+			index := rf.lastApplied
+			tempEntries := make([]LogEntry,rf.commitIndex-rf.lastApplied)
+			copy(tempEntries,rf.log[rf.getStoreIndex(rf.lastApplied+1):rf.getStoreIndex(rf.commitIndex)+1])
 			rf.mu.Unlock()
-			rf.applyCh<-applyMsg
+			for _,entry :=range(tempEntries){
+				index ++
+				fmt.Printf("[ApplyMsg Apply][applyMessage()]: Peer[%d] send a ApplyMsg[%d] lastIndex:[%d]| %s\n", rf.me, index,rf.lastIncludedIndex, time.Now().Format("15:04:05.000"))
+				rf.applyCh<-ApplyMsg{
+					Command:      entry.Command,
+					CommandIndex: index,
+					CommandTerm:  entry.Term,
+					CommandValid: true,
+				}
+				//DPrintf("[ApplyMsg Apply][applyMessage()]: Peer[%d] send a ApplyMsg[%d] lastIndex:[%d]| %s\n", rf.me, index,rf.lastIncludedIndex, time.Now().Format("15:04:05.000"))
+			}
+			//fmt.Printf("[ApplyMsg Apply][applyMessage()]: Peer[%d] send a ApplyMsg[%d] lastIndex:[%d]| %s\n", rf.me, rf.lastApplied,rf.lastIncludedIndex, time.Now().Format("15:04:05.000"))
+			//fmt.Printf("------\n")
 			rf.mu.Lock()
+			if index>rf.lastApplied{
+				rf.lastApplied = index
+			}
 		}else{
 			rf.applyCond.Wait()
 		}
+		rf.mu.Unlock()
 	}
 }
 
@@ -968,8 +988,6 @@ func (rf *Raft) ticker() {
 		// Your code here to check if a leader election should
 		// be started and to randomize sleeping time using
 		// time.Sleep().
-		time.Sleep(onceDuration * time.Millisecond)
-
 		rf.mu.Lock()
 		//Leader send heartbeat
 		if rf.role == LEADER && time.Since(lastHeartBeatTime) > time.Millisecond * heartBeat{
@@ -989,6 +1007,7 @@ func (rf *Raft) ticker() {
 			continue
 		}
 		rf.mu.Unlock()
+		time.Sleep(onceDuration * time.Millisecond)
 	}
 }
 
@@ -1030,8 +1049,9 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.lastIncludedTerm = 0
 	rf.applyCond = sync.NewCond(&rf.mu)
 	// initialize from state persisted before a crash
+	//fmt.Printf("[Restart]:Peer[%d] , lastApplied[%d]\n",rf.me,rf.lastApplied)
 	rf.readPersist(persister.ReadRaftState())
-
+	//fmt.Printf("[Restart]:Peer[%d] from persisted state, lastApplied[%d]\n",rf.me,rf.lastApplied)
 	// start ticker goroutine to start elections
 	go rf.ticker()
 	go rf.applyMessage()
