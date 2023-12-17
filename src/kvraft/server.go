@@ -4,7 +4,7 @@ import (
 	"6.824/labgob"
 	"6.824/labrpc"
 	"6.824/raft"
-	"fmt"
+	"bytes"
 	"log"
 	"sync"
 	"sync/atomic"
@@ -12,7 +12,8 @@ import (
 )
 
 const Debug = false
-const TIMEOUT = 30
+const TIMEOUT = 250
+const SnapInterval= 10
 
 func DPrintf(format string, a ...interface{}) (n int, err error) {
 	if Debug {
@@ -79,6 +80,8 @@ type KVServer struct {
 	waitChMap 		map[int]chan CommandReply
 	cacheMap		map[int64]int64
 	lastApplied		int
+	lastSnapshot	int
+	snapshotCond 	*sync.Cond
 }
 
 func (kv *KVServer) applyToStateMachine(command Op) CommandReply{
@@ -131,7 +134,6 @@ func (kv *KVServer) Command(args *CommandArgs,reply *CommandReply) {
 	ch:=kv.getWaitCh(index)
 	kv.mu.Unlock()
 	DPrintf("[Wait Raft][Command()]: Server[%d] start a command:[%v] and wait raft | %s\n",kv.me,comm,time.Now().Format("15:04:05.000"))
-	fmt.Printf("[Wait Raft][Command()]: Server[%d] start a command[%d] from [%d] and wait raft | %s\n",kv.me,comm.CommandId,comm.ClientId,time.Now().Format("15:04:05.000"))
 
 	select {
 	case res:=<-ch:
@@ -158,9 +160,7 @@ func (kv *KVServer) getWaitCh(index int) chan CommandReply {
 func (kv *KVServer) clearWaitCh(index int)  {
 	kv.mu.Lock()
 	defer kv.mu.Unlock()
-	ch:=kv.getWaitCh(index)
 	delete(kv.waitChMap,index)
-	close(ch)
 	DPrintf("[Delete Chan][clearWaitCh()]: Server[%d] has deleted chan with index[%d] | %s\n",kv.me,index,time.Now().Format("15:04:05.000"))
 
 }
@@ -174,64 +174,116 @@ func (kv *KVServer) hasCache(clientId int64,commandId int64) bool {
 	}
 }
 
-
+func (kv *KVServer) isNeedSnapshot() bool{
+	//goroutine to notify raft to snapshot
+	if kv.maxraftstate != -1 && kv.rf.RaftStateSize() > kv.maxraftstate{
+		DPrintf("[Need Snapshot][isNeedSnapshot()]:Server[%d] log size:[%d] and need a snapshot | %s\n",kv.me,kv.rf.RaftStateSize(),time.Now().Format("15:04:05.000"))
+		return true
+	}
+	return false
+}
+// @Deprecated
 func (kv *KVServer) snapshot() {
-	//goroutine for notify raft to snapshot
+	//goroutine to notify raft to snapshot
+	for !kv.killed(){
 
+		kv.mu.Lock()
+		if kv.isNeedSnapshot() && kv.lastApplied > kv.lastSnapshot{
+			kv.sendSnapshot(kv.lastApplied)
+		}else{
+			kv.snapshotCond.Wait()
+		}
+		kv.mu.Unlock()
+		//time.Sleep(SnapInterval*time.Millisecond)
+	}
+}
+
+func (kv *KVServer) sendSnapshot(index int){
+	w := new(bytes.Buffer)
+	e := labgob.NewEncoder(w)
+	if e.Encode(kv.stateMachine) != nil ||
+		e.Encode(kv.cacheMap) != nil {
+	}
+	DPrintf("[Snapshot Send][sendSnapshot()] Server[%d] ask its raft to snapshot with index[%d] | %s\n",kv.me,index, time.Now().Format("15:04:05.000"))
+	kv.rf.Snapshot(index, w.Bytes())
+	kv.lastSnapshot = kv.lastApplied
+}
+
+func (kv *KVServer) setSnapshot(snapshot []byte){
+	if snapshot == nil || len(snapshot) < 1 { // bootstrap without any state?
+		return
+	}
+	r := bytes.NewBuffer(snapshot)
+	d := labgob.NewDecoder(r)
+	var stateMachine KVStateMachine
+	var cacheMap map[int64]int64
+	if d.Decode(&stateMachine) != nil || d.Decode(&cacheMap) != nil {
+		DPrintf("[Restore Error][setSnapshot()] Restore fail from persisted state! | %s\n", time.Now().Format("15:04:05.000"))
+	}else {
+		kv.stateMachine = stateMachine
+		kv.cacheMap = cacheMap
+		DPrintf("[Restore Success][setSnapshot()] Restore success from persisted state! | %s\n", time.Now().Format("15:04:05.000"))
+	}
 }
 
 func (kv *KVServer) applier() {
+	//goroutine to receive comand from raft and apply to state machine
 	for !kv.killed(){
+
 		select {
-		case msg:=<-kv.applyCh:
-			if msg.SnapshotValid{
-				// apply snapshot
-
-				// todo
-			}else if msg.CommandValid{
-				// apply to state machine
-				kv.mu.Lock()
-				// outdated command
-				if msg.CommandIndex<=kv.lastApplied{
-					DPrintf("[Outdated Msg][applier()]: Server[%d] discards outdated message with index[%d],lastApplied[%d] | %s\n",kv.me,msg.CommandIndex,kv.lastApplied,time.Now().Format("15:04:05.000"))
+			case msg:=<-kv.applyCh:
+				if msg.SnapshotValid{
+					// apply snapshot
+					kv.mu.Lock()
+					if kv.rf.CondInstallSnapshot(msg.SnapshotTerm,msg.SnapshotIndex,msg.Snapshot){
+						DPrintf("[Snapshot Msg][applier()]: Server[%d] receive Snapshot message with shapshotIndex[%d] and update its lastApplied | %s\n",kv.me,msg.SnapshotIndex,time.Now().Format("15:04:05.000"))
+						kv.setSnapshot(msg.Snapshot)
+						kv.lastApplied = msg.SnapshotIndex
+					}
 					kv.mu.Unlock()
-					continue
-				}
-
-				kv.lastApplied = msg.CommandIndex
-				command:=msg.Command.(Op)
-
-				var commandReply CommandReply
-				if command.Type!=GET && kv.hasCache(command.ClientId,command.CommandId){
-					DPrintf("[Duplicate Msg][applier()]: Server[%d] find a duplicated message clientId:[%d] commandId:[%d] | %s\n",kv.me,command.ClientId,command.CommandId,time.Now().Format("15:04:05.000"))
-					commandReply.Err=OK
-				}else{
-					commandReply = kv.applyToStateMachine(command)
-					if command.Type!=GET{
-						kv.cacheMap[command.ClientId]=command.CommandId
+				}else if msg.CommandValid{
+					// apply to state machine
+					kv.mu.Lock()
+					// outdated command
+					if msg.CommandIndex<=kv.lastApplied{
+						DPrintf("[Outdated Msg][applier()]: Server[%d] discards outdated message with index[%d],lastApplied[%d] | %s\n",kv.me,msg.CommandIndex,kv.lastApplied,time.Now().Format("15:04:05.000"))
+						kv.mu.Unlock()
+						continue
 					}
-					DPrintf("[Apply Msg][applier()]: Server[%d] apply a command to state machine command:[%v] | %s\n",kv.me,command,time.Now().Format("15:04:05.000"))
-					fmt.Printf("[Apply Msg][applier()]: Server[%d] apply a command to state machine command:[%d] | %s\n",kv.me,msg.CommandIndex,time.Now().Format("15:04:05.000"))
-				}
 
-				// if leader
-				currentTerm,isLeader:=kv.rf.GetState()
-				//DPrintf("[DEBUG][applier()]: Server[%d] in term[%d] and isLeader[%t] msg:[%d] | %s\n",kv.me,currentTerm,isLeader,msg.CommandTerm,time.Now().Format("15:04:05.000"))
-				if isLeader && currentTerm == msg.CommandTerm {
-					ch,ok:= kv.waitChMap[msg.CommandIndex]
-					if ok{
+					kv.lastApplied = msg.CommandIndex
+					command:=msg.Command.(Op)
+
+					var commandReply CommandReply
+					if command.Type!=GET && kv.hasCache(command.ClientId,command.CommandId){
+						DPrintf("[Duplicate Msg][applier()]: Server[%d] find a duplicated message clientId:[%d] commandId:[%d] | %s\n",kv.me,command.ClientId,command.CommandId,time.Now().Format("15:04:05.000"))
+						commandReply.Err=OK
+					}else{
+						commandReply = kv.applyToStateMachine(command)
+						if command.Type!=GET{
+							kv.cacheMap[command.ClientId]=command.CommandId
+						}
+						DPrintf("[Apply Msg][applier()]: Server[%d] apply a command to state machine command:[%v] | %s\n",kv.me,command,time.Now().Format("15:04:05.000"))
+						//fmt.Printf("[Apply Msg][applier()]: Server[%d] apply a command to state machine command:[%d] | %s\n",kv.me,msg.CommandIndex,time.Now().Format("15:04:05.000"))
+					}
+
+					// if leader
+					currentTerm,isLeader:=kv.rf.GetState()
+					DPrintf("[DEBUG][applier()]: Server[%d] in term[%d] and isLeader[%t] msg:[%d] | %s\n",kv.me,currentTerm,isLeader,msg.CommandTerm,time.Now().Format("15:04:05.000"))
+					if isLeader && currentTerm == msg.CommandTerm {
+						ch := kv.getWaitCh(msg.CommandIndex)
 						ch<-commandReply
-						DPrintf("[Notify Msg][applier()]: Server[%d] notify waitCh with a reply:[%v] | %s\n",kv.me,commandReply,time.Now().Format("15:04:05.000"))
-						fmt.Printf("[Notify Msg][applier()]: Server[%d] notify waitCh with a reply:[%d] | %s\n",kv.me,msg.CommandIndex,time.Now().Format("15:04:05.000"))
 					}
+					//fmt.Printf("[%d] : [%d] : [%d]\n",kv.me,kv.lastApplied,kv.lastSnapshot)
+					if kv.isNeedSnapshot() && kv.lastApplied > kv.lastSnapshot{
+						kv.sendSnapshot(kv.lastApplied)
+					}
+					//kv.snapshotCond.Broadcast()
+					kv.mu.Unlock()
 				}
-
-				kv.mu.Unlock()
-
-			}
-		default:
 
 		}
+
 	}
 }
 
@@ -293,11 +345,13 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 	kv.waitChMap = make(map[int]chan CommandReply)
 	kv.cacheMap = make(map[int64]int64)
 	kv.lastApplied = 0
+	kv.snapshotCond = sync.NewCond(&kv.mu)
 
 	kv.applyCh = make(chan raft.ApplyMsg)
 	kv.rf = raft.Make(servers, me, persister, kv.applyCh)
-	fmt.Printf("[Restart]:Server[%d] from persisted state, lastApplied[%d] | %s\n",kv.me,kv.lastApplied,time.Now().Format("15:04:05.000"))
+	kv.setSnapshot(persister.ReadSnapshot())
 	// You may need initialization code here.
 	go kv.applier()
+	// go kv.snapshot()
 	return kv
 }

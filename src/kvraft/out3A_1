@@ -1,4 +1,0 @@
-Test: restarts, many clients (3A) ...
-  ... Passed --  57.6  5 13338  865
-PASS
-ok  	6.824/kvraft	57.648s

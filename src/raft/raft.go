@@ -20,7 +20,6 @@ package raft
 import (
 	"6.824/labgob"
 	"bytes"
-	"fmt"
 	"math/rand"
 	"time"
 
@@ -356,6 +355,10 @@ func (rf *Raft) Snapshot(index int, snapshot []byte) {
 	DPrintf("[Snapshot success][Snapshot()]:Peer[%d] SaveStateAndSnapshot [index:%d | term:%d] log:%v| %s\n",rf.me,rf.lastIncludedIndex,rf.lastIncludedTerm,rf.log,time.Now().Format("15:04:05.000"))
 }
 
+func (rf *Raft) RaftStateSize() int {
+	return rf.persister.RaftStateSize()
+}
+
 //
 // example RequestVote RPC arguments structure.
 // field names must start with capital letters!
@@ -558,6 +561,7 @@ func (rf *Raft) replicate(server int,prevLogIndex int)  {
 		DPrintf("[AppendEntries Send][replicate()]:Leader[%d] send an AppendEntries to Peer[%d] with prevLogIndex[%d] | %s\n", rf.me, server, prevLogIndex, time.Now().Format("15:04:05.000"))
 		// todo
 		if rf.getStoreIndex(prevLogIndex)<0{
+			//fmt.Printf("[Send snapshot][replicate()]:Leader[%d] send an snapshot to Peer[%d] with index[%d] \n",rf.me,server,rf.lastIncludedIndex)
 			//send snapshot
 			var args = InstallSnapshotArgs{
 				Term: 				rf.currentTerm,
@@ -958,17 +962,15 @@ func (rf *Raft) applyMessage() {
 			rf.mu.Unlock()
 			for _,entry :=range(tempEntries){
 				index ++
-				fmt.Printf("[ApplyMsg Apply][applyMessage()]: Peer[%d] send a ApplyMsg[%d] lastIndex:[%d]| %s\n", rf.me, index,rf.lastIncludedIndex, time.Now().Format("15:04:05.000"))
+				DPrintf("[ApplyMsg Apply][applyMessage()]: Peer[%d] send a ApplyMsg[%d] lastIndex:[%d]| %s\n", rf.me, index,rf.lastIncludedIndex, time.Now().Format("15:04:05.000"))
+				//fmt.Printf("[ApplyMsg Apply][applyMessage()]: Peer[%d] send a ApplyMsg[%d] lastIndex:[%d] PeersIndex:[%v]| %s\n", rf.me, index,rf.lastIncludedIndex, rf.matchIndex,time.Now().Format("15:04:05.000"))
 				rf.applyCh<-ApplyMsg{
 					Command:      entry.Command,
 					CommandIndex: index,
 					CommandTerm:  entry.Term,
 					CommandValid: true,
 				}
-				//DPrintf("[ApplyMsg Apply][applyMessage()]: Peer[%d] send a ApplyMsg[%d] lastIndex:[%d]| %s\n", rf.me, index,rf.lastIncludedIndex, time.Now().Format("15:04:05.000"))
 			}
-			//fmt.Printf("[ApplyMsg Apply][applyMessage()]: Peer[%d] send a ApplyMsg[%d] lastIndex:[%d]| %s\n", rf.me, rf.lastApplied,rf.lastIncludedIndex, time.Now().Format("15:04:05.000"))
-			//fmt.Printf("------\n")
 			rf.mu.Lock()
 			if index>rf.lastApplied{
 				rf.lastApplied = index

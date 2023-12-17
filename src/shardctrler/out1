@@ -1,0 +1,494 @@
+Test: Multi-group join/leave ...
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 1} | 15:08:06.529
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 1} and Return reply:&{true  {0 [0 0 0 0 0 0 0 0 0 0] map[]}} | 15:08:06.530
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 1} | 15:08:06.532
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 1} and Return reply:&{true  {0 [0 0 0 0 0 0 0 0 0 0] map[]}} | 15:08:06.533
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 1} | 15:08:06.534
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 1} and Return reply:&{true  {0 [0 0 0 0 0 0 0 0 0 0] map[]}} | 15:08:06.534
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 1} | 15:08:06.639
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 1} and Return reply:&{true  {0 [0 0 0 0 0 0 0 0 0 0] map[]}} | 15:08:06.639
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 1} | 15:08:06.641
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 1} and Return reply:&{true  {0 [0 0 0 0 0 0 0 0 0 0] map[]}} | 15:08:06.641
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 1} | 15:08:06.642
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 1} and Return reply:&{true  {0 [0 0 0 0 0 0 0 0 0 0] map[]}} | 15:08:06.642
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 1} | 15:08:06.745
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 1}
+2023/12/09 15:08:06 [Create Waitch]:create ch[1]
+2023/12/09 15:08:06 [Debug]: 0xc000092600[1]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 1}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 1} index:[1]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 1} index:[1]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[1]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 1} and Return reply:&{false OK {0 [0 0 0 0 0 0 0 0 0 0] map[]}} | 15:08:06.751
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 1}
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 2} | 15:08:06.754
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 2}
+2023/12/09 15:08:06 [Create Waitch]:create ch[2]
+2023/12/09 15:08:06 [Debug]: 0xc00024ede0[2]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 2} index:[2]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 2} index:[2]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 2} and Return reply:&{false OK {0 [0 0 0 0 0 0 0 0 0 0] map[]}} | 15:08:06.759
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[2]
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1:[x y z] 2:[a b c]] 979904021208415527 3} | 15:08:06.760
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1:[x y z] 2:[a b c]] [] 0 0 0 Join 979904021208415527 3}
+2023/12/09 15:08:06 [Create Waitch]:create ch[3]
+2023/12/09 15:08:06 [Debug]: 0xc00024fa40[3]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1:[x y z] 2:[a b c]] [] 0 0 0 Join 979904021208415527 3}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1:[x y z] 2:[a b c]] [] 0 0 0 Join 979904021208415527 3} index:[3]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1:[x y z] 2:[a b c]] [] 0 0 0 Join 979904021208415527 3} index:[3]
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1:[x y z] 2:[a b c]] 979904021208415527 3} and Return reply:&{false OK} | 15:08:06.762
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[3]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 4} | 15:08:06.763
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 4}
+2023/12/09 15:08:06 [Create Waitch]:create ch[4]
+2023/12/09 15:08:06 [Debug]: 0xc00030a9c0[4]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 4}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 4} index:[4]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 4} index:[4]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 4} and Return reply:&{false OK {1 [1 1 1 1 1 2 2 2 2 2] map[1:[x y z] 2:[a b c]]}} | 15:08:06.766
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[4]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 5} | 15:08:06.767
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 5}
+2023/12/09 15:08:06 [Create Waitch]:create ch[5]
+2023/12/09 15:08:06 [Debug]: 0xc00030b740[5]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 5}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 5} index:[5]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 5} index:[5]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 5} and Return reply:&{false OK {1 [1 1 1 1 1 2 2 2 2 2] map[1:[x y z] 2:[a b c]]}} | 15:08:06.773
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[5]
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[3:[j k l]] 979904021208415527 6} | 15:08:06.774
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[3:[j k l]] [] 0 0 0 Join 979904021208415527 6}
+2023/12/09 15:08:06 [Create Waitch]:create ch[6]
+2023/12/09 15:08:06 [Debug]: 0xc00033a420[6]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[3:[j k l]] [] 0 0 0 Join 979904021208415527 6}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[3:[j k l]] [] 0 0 0 Join 979904021208415527 6} index:[6]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[3:[j k l]] [] 0 0 0 Join 979904021208415527 6} index:[6]
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[3:[j k l]] 979904021208415527 6} and Return reply:&{false OK} | 15:08:06.781
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[6]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 7} | 15:08:06.782
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 7}
+2023/12/09 15:08:06 [Create Waitch]:create ch[7]
+2023/12/09 15:08:06 [Debug]: 0xc00033b5c0[7]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 7}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 7} index:[7]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 7} index:[7]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[7]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 7} and Return reply:&{false OK {2 [3 3 1 1 1 3 2 2 2 2] map[1:[x y z] 2:[a b c] 3:[j k l]]}} | 15:08:06.787
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 8} | 15:08:06.789
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 8}
+2023/12/09 15:08:06 [Create Waitch]:create ch[8]
+2023/12/09 15:08:06 [Debug]: 0xc00002a8a0[8]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 8}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 8} index:[8]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 8} index:[8]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 8} and Return reply:&{false OK {2 [3 3 1 1 1 3 2 2 2 2] map[1:[x y z] 2:[a b c] 3:[j k l]]}} | 15:08:06.795
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[8]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 9} | 15:08:06.797
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 9}
+2023/12/09 15:08:06 [Create Waitch]:create ch[9]
+2023/12/09 15:08:06 [Debug]: 0xc000093bc0[9]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 9}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 9} index:[9]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 9} index:[9]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 9} and Return reply:&{false OK {2 [3 3 1 1 1 3 2 2 2 2] map[1:[x y z] 2:[a b c] 3:[j k l]]}} | 15:08:06.802
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[9]
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[1 3] 979904021208415527 10} | 15:08:06.803
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [1 3] 0 0 0 Leave 979904021208415527 10}
+2023/12/09 15:08:06 [Create Waitch]:create ch[10]
+2023/12/09 15:08:06 [Debug]: 0xc000289ce0[10]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [1 3] 0 0 0 Leave 979904021208415527 10}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [1 3] 0 0 0 Leave 979904021208415527 10} index:[10]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [1 3] 0 0 0 Leave 979904021208415527 10} index:[10]
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[1 3] 979904021208415527 10} and Return reply:&{false OK} | 15:08:06.809
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[10]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 11} | 15:08:06.810
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 11}
+2023/12/09 15:08:06 [Create Waitch]:create ch[11]
+2023/12/09 15:08:06 [Debug]: 0xc000412d20[11]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 11}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 11} index:[11]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 11} index:[11]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 11} and Return reply:&{false OK {3 [2 2 2 2 2 2 2 2 2 2] map[2:[a b c]]}} | 15:08:06.816
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[11]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 12} | 15:08:06.818
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 1}
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 2}
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1:[x y z] 2:[a b c]] [] 0 0 0 Join 979904021208415527 3}
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 4}
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 5}
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[3:[j k l]] [] 0 0 0 Join 979904021208415527 6}
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 12}
+2023/12/09 15:08:06 [Create Waitch]:create ch[12]
+2023/12/09 15:08:06 [Debug]: 0xc000360180[12]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 7}
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 8}
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 9}
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [1 3] 0 0 0 Leave 979904021208415527 10}
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 11}
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 12}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 12} index:[12]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 12} index:[12]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 12} and Return reply:&{false OK {3 [2 2 2 2 2 2 2 2 2 2] map[2:[a b c]]}} | 15:08:06.819
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[12]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 13} | 15:08:06.820
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 13}
+2023/12/09 15:08:06 [Create Waitch]:create ch[13]
+2023/12/09 15:08:06 [Debug]: 0xc000361080[13]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 13}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 13} index:[13]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 13} index:[13]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 13} and Return reply:&{false OK {3 [2 2 2 2 2 2 2 2 2 2] map[2:[a b c]]}} | 15:08:06.822
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[13]
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2] 979904021208415527 14} | 15:08:06.823
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2] 0 0 0 Leave 979904021208415527 14}
+2023/12/09 15:08:06 [Create Waitch]:create ch[14]
+2023/12/09 15:08:06 [Debug]: 0xc00043e3c0[14]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2] 0 0 0 Leave 979904021208415527 14}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2] 0 0 0 Leave 979904021208415527 14} index:[14]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2] 0 0 0 Leave 979904021208415527 14} index:[14]
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2] 979904021208415527 14} and Return reply:&{false OK} | 15:08:06.825
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[14]
+  ... Passed
+Test: Concurrent multi leave/join ...
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] 2592714297425718792 1} | 15:08:06.829
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] 2592714297425718792 1} and Return reply:&{true } | 15:08:06.830
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1000:[1000a 1000b 1000c] 2000:[2000a] 3000:[3000a]] 756463971572347858 1} | 15:08:06.830
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1000:[1000a 1000b 1000c] 2000:[2000a] 3000:[3000a]] 756463971572347858 1} and Return reply:&{true } | 15:08:06.830
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1002:[1002a 1002b 1002c] 2002:[2002a] 3002:[3002a]] 1865253880625919525 1} | 15:08:06.829
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1008:[1008a 1008b 1008c] 2008:[2008a] 3008:[3008a]] 4605791624296972635 1} | 15:08:06.831
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1008:[1008a 1008b 1008c] 2008:[2008a] 3008:[3008a]] 4605791624296972635 1} and Return reply:&{true } | 15:08:06.831
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] 1168118178855798726 1} | 15:08:06.831
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] 1168118178855798726 1} and Return reply:&{true } | 15:08:06.831
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1002:[1002a 1002b 1002c] 2002:[2002a] 3002:[3002a]] [] 0 0 0 Join 1865253880625919525 1}
+2023/12/09 15:08:06 [Create Waitch]:create ch[15]
+2023/12/09 15:08:06 [Debug]: 0xc00048e2a0[15]
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1001:[1001a 1001b 1001c] 2001:[2001a] 3001:[3001a]] 1514254627865824731 1} | 15:08:06.832
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] 2592714297425718792 1} | 15:08:06.832
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] 2592714297425718792 1} and Return reply:&{true } | 15:08:06.833
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] 1168118178855798726 1} | 15:08:06.833
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] 1168118178855798726 1} and Return reply:&{true } | 15:08:06.833
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1003:[1003a 1003b 1003c] 2003:[2003a] 3003:[3003a]] 869746272028097502 1} | 15:08:06.834
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1003:[1003a 1003b 1003c] 2003:[2003a] 3003:[3003a]] 869746272028097502 1} and Return reply:&{true } | 15:08:06.834
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1005:[1005a 1005b 1005c] 2005:[2005a] 3005:[3005a]] 968634910008899873 1} | 15:08:06.834
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1008:[1008a 1008b 1008c] 2008:[2008a] 3008:[3008a]] 4605791624296972635 1} | 15:08:06.833
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1001:[1001a 1001b 1001c] 2001:[2001a] 3001:[3001a]] [] 0 0 0 Join 1514254627865824731 1}
+2023/12/09 15:08:06 [Create Waitch]:create ch[16]
+2023/12/09 15:08:06 [Debug]: 0xc000506180[16]
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1004:[1004a 1004b 1004c] 2004:[2004a] 3004:[3004a]] 3723369606998526058 1} | 15:08:06.834
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1004:[1004a 1004b 1004c] 2004:[2004a] 3004:[3004a]] 3723369606998526058 1} and Return reply:&{true } | 15:08:06.834
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1005:[1005a 1005b 1005c] 2005:[2005a] 3005:[3005a]] [] 0 0 0 Join 968634910008899873 1}
+2023/12/09 15:08:06 [Create Waitch]:create ch[17]
+2023/12/09 15:08:06 [Debug]: 0xc0005065a0[17]
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1006:[1006a 1006b 1006c] 2006:[2006a] 3006:[3006a]] 631000881466141089 1} | 15:08:06.835
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1006:[1006a 1006b 1006c] 2006:[2006a] 3006:[3006a]] 631000881466141089 1} and Return reply:&{true } | 15:08:06.835
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1000:[1000a 1000b 1000c] 2000:[2000a] 3000:[3000a]] 756463971572347858 1} | 15:08:06.836
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] 1168118178855798726 1} | 15:08:06.838
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1006:[1006a 1006b 1006c] 2006:[2006a] 3006:[3006a]] 631000881466141089 1} | 15:08:06.838
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1008:[1008a 1008b 1008c] 2008:[2008a] 3008:[3008a]] [] 0 0 0 Join 4605791624296972635 1}
+2023/12/09 15:08:06 [Create Waitch]:create ch[18]
+2023/12/09 15:08:06 [Debug]: 0xc000506fc0[18]
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1004:[1004a 1004b 1004c] 2004:[2004a] 3004:[3004a]] 3723369606998526058 1} | 15:08:06.839
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] [] 0 0 0 Join 1168118178855798726 1}
+2023/12/09 15:08:06 [Create Waitch]:create ch[19]
+2023/12/09 15:08:06 [Debug]: 0xc000507500[19]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1002:[1002a 1002b 1002c] 2002:[2002a] 3002:[3002a]] [] 0 0 0 Join 1865253880625919525 1}
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] 2592714297425718792 1} | 15:08:06.840
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[1003:[1003a 1003b 1003c] 2003:[2003a] 3003:[3003a]] 869746272028097502 1} | 15:08:06.841
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1004:[1004a 1004b 1004c] 2004:[2004a] 3004:[3004a]] [] 0 0 0 Join 3723369606998526058 1}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1002:[1002a 1002b 1002c] 2002:[2002a] 3002:[3002a]] [] 0 0 0 Join 1865253880625919525 1} index:[15]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1002:[1002a 1002b 1002c] 2002:[2002a] 3002:[3002a]] [] 0 0 0 Join 1865253880625919525 1} index:[15]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1001:[1001a 1001b 1001c] 2001:[2001a] 3001:[3001a]] [] 0 0 0 Join 1514254627865824731 1}
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1002:[1002a 1002b 1002c] 2002:[2002a] 3002:[3002a]] 1865253880625919525 1} and Return reply:&{false OK} | 15:08:06.844
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1000:[1000a 1000b 1000c] 2000:[2000a] 3000:[3000a]] [] 0 0 0 Join 756463971572347858 1}
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2002 3002] 1865253880625919525 2} | 15:08:06.848
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1006:[1006a 1006b 1006c] 2006:[2006a] 3006:[3006a]] [] 0 0 0 Join 631000881466141089 1}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1001:[1001a 1001b 1001c] 2001:[2001a] 3001:[3001a]] [] 0 0 0 Join 1514254627865824731 1} index:[16]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1001:[1001a 1001b 1001c] 2001:[2001a] 3001:[3001a]] [] 0 0 0 Join 1514254627865824731 1} index:[16]
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1001:[1001a 1001b 1001c] 2001:[2001a] 3001:[3001a]] 1514254627865824731 1} and Return reply:&{false OK} | 15:08:06.849
+2023/12/09 15:08:06 [Create Waitch]:create ch[20]
+2023/12/09 15:08:06 [Debug]: 0xc0004c6840[20]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[15]
+2023/12/09 15:08:06 [Create Waitch]:create ch[21]
+2023/12/09 15:08:06 [Debug]: 0xc0003d1320[21]
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2001 3001] 1514254627865824731 2} | 15:08:06.852
+2023/12/09 15:08:06 [Create Waitch]:create ch[22]
+2023/12/09 15:08:06 [Debug]: 0xc0003d1380[22]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1005:[1005a 1005b 1005c] 2005:[2005a] 3005:[3005a]] [] 0 0 0 Join 968634910008899873 1}
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] [] 0 0 0 Join 2592714297425718792 1}
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[1003:[1003a 1003b 1003c] 2003:[2003a] 3003:[3003a]] [] 0 0 0 Join 869746272028097502 1}
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2002 3002] 0 0 0 Leave 1865253880625919525 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1005:[1005a 1005b 1005c] 2005:[2005a] 3005:[3005a]] [] 0 0 0 Join 968634910008899873 1} index:[17]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1005:[1005a 1005b 1005c] 2005:[2005a] 3005:[3005a]] [] 0 0 0 Join 968634910008899873 1} index:[17]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[16]
+2023/12/09 15:08:06 [Create Waitch]:create ch[23]
+2023/12/09 15:08:06 [Debug]: 0xc0001a0ba0[23]
+2023/12/09 15:08:06 [Create Waitch]:create ch[24]
+2023/12/09 15:08:06 [Debug]: 0xc0001a0c00[24]
+2023/12/09 15:08:06 [Create Waitch]:create ch[25]
+2023/12/09 15:08:06 [Debug]: 0xc0001a0c60[25]
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1005:[1005a 1005b 1005c] 2005:[2005a] 3005:[3005a]] 968634910008899873 1} and Return reply:&{false OK} | 15:08:06.872
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1008:[1008a 1008b 1008c] 2008:[2008a] 3008:[3008a]] [] 0 0 0 Join 4605791624296972635 1}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1008:[1008a 1008b 1008c] 2008:[2008a] 3008:[3008a]] [] 0 0 0 Join 4605791624296972635 1} index:[18]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1008:[1008a 1008b 1008c] 2008:[2008a] 3008:[3008a]] [] 0 0 0 Join 4605791624296972635 1} index:[18]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] [] 0 0 0 Join 1168118178855798726 1}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] [] 0 0 0 Join 1168118178855798726 1} index:[19]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] [] 0 0 0 Join 1168118178855798726 1} index:[19]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1004:[1004a 1004b 1004c] 2004:[2004a] 3004:[3004a]] [] 0 0 0 Join 3723369606998526058 1}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1004:[1004a 1004b 1004c] 2004:[2004a] 3004:[3004a]] [] 0 0 0 Join 3723369606998526058 1} index:[20]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1004:[1004a 1004b 1004c] 2004:[2004a] 3004:[3004a]] [] 0 0 0 Join 3723369606998526058 1} index:[20]
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1004:[1004a 1004b 1004c] 2004:[2004a] 3004:[3004a]] 3723369606998526058 1} and Return reply:&{false OK} | 15:08:06.873
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[17]
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1008:[1008a 1008b 1008c] 2008:[2008a] 3008:[3008a]] 4605791624296972635 1} and Return reply:&{false OK} | 15:08:06.876
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[18]
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] 1168118178855798726 1} and Return reply:&{false OK} | 15:08:06.876
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[19]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[20]
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2005 3005] 968634910008899873 2} | 15:08:06.877
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2001 3001] 0 0 0 Leave 1514254627865824731 2}
+2023/12/09 15:08:06 [Create Waitch]:create ch[26]
+2023/12/09 15:08:06 [Debug]: 0xc0004c6e40[26]
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2008 3008] 4605791624296972635 2} | 15:08:06.879
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2008 3008] 4605791624296972635 2} and Return reply:&{true } | 15:08:06.879
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2007 3007] 1168118178855798726 2} | 15:08:06.879
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2007 3007] 1168118178855798726 2} and Return reply:&{true } | 15:08:06.879
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2004 3004] 3723369606998526058 2} | 15:08:06.880
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2004 3004] 3723369606998526058 2} and Return reply:&{true } | 15:08:06.880
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2005 3005] 0 0 0 Leave 968634910008899873 2}
+2023/12/09 15:08:06 [Create Waitch]:create ch[27]
+2023/12/09 15:08:06 [Debug]: 0xc00033a2a0[27]
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2004 3004] 3723369606998526058 2} | 15:08:06.882
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2008 3008] 4605791624296972635 2} | 15:08:06.882
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2007 3007] 1168118178855798726 2} | 15:08:06.883
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2004 3004] 0 0 0 Leave 3723369606998526058 2}
+2023/12/09 15:08:06 [Create Waitch]:create ch[28]
+2023/12/09 15:08:06 [Debug]: 0xc00033bf80[28]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1000:[1000a 1000b 1000c] 2000:[2000a] 3000:[3000a]] [] 0 0 0 Join 756463971572347858 1}
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2008 3008] 0 0 0 Leave 4605791624296972635 2}
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2007 3007] 1168118178855798726 2} and Return reply:&{true } | 15:08:06.887
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2007 3007] 1168118178855798726 2} | 15:08:06.889
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1000:[1000a 1000b 1000c] 2000:[2000a] 3000:[3000a]] [] 0 0 0 Join 756463971572347858 1} index:[21]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1000:[1000a 1000b 1000c] 2000:[2000a] 3000:[3000a]] [] 0 0 0 Join 756463971572347858 1} index:[21]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1006:[1006a 1006b 1006c] 2006:[2006a] 3006:[3006a]] [] 0 0 0 Join 631000881466141089 1}
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1000:[1000a 1000b 1000c] 2000:[2000a] 3000:[3000a]] 756463971572347858 1} and Return reply:&{false OK} | 15:08:06.891
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1006:[1006a 1006b 1006c] 2006:[2006a] 3006:[3006a]] [] 0 0 0 Join 631000881466141089 1} index:[22]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1006:[1006a 1006b 1006c] 2006:[2006a] 3006:[3006a]] [] 0 0 0 Join 631000881466141089 1} index:[22]
+2023/12/09 15:08:06 [Create Waitch]:create ch[29]
+2023/12/09 15:08:06 [Debug]: 0xc00002a540[29]
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1006:[1006a 1006b 1006c] 2006:[2006a] 3006:[3006a]] 631000881466141089 1} and Return reply:&{false OK} | 15:08:06.893
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[21]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[22]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] [] 0 0 0 Join 2592714297425718792 1}
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2006 3006] 631000881466141089 2} | 15:08:06.896
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2006 3006] 631000881466141089 2} and Return reply:&{true } | 15:08:06.896
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2000 3000] 756463971572347858 2} | 15:08:06.897
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2000 3000] 756463971572347858 2} and Return reply:&{true } | 15:08:06.897
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2007 3007] 0 0 0 Leave 1168118178855798726 2}
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2000 3000] 756463971572347858 2} | 15:08:06.898
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2006 3006] 631000881466141089 2} | 15:08:06.898
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] [] 0 0 0 Join 2592714297425718792 1} index:[23]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] [] 0 0 0 Join 2592714297425718792 1} index:[23]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[1003:[1003a 1003b 1003c] 2003:[2003a] 3003:[3003a]] [] 0 0 0 Join 869746272028097502 1}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[1003:[1003a 1003b 1003c] 2003:[2003a] 3003:[3003a]] [] 0 0 0 Join 869746272028097502 1} index:[24]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[1003:[1003a 1003b 1003c] 2003:[2003a] 3003:[3003a]] [] 0 0 0 Join 869746272028097502 1} index:[24]
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1003:[1003a 1003b 1003c] 2003:[2003a] 3003:[3003a]] 869746272028097502 1} and Return reply:&{false OK} | 15:08:06.899
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] 2592714297425718792 1} and Return reply:&{false OK} | 15:08:06.899
+2023/12/09 15:08:06 [Create Waitch]:create ch[30]
+2023/12/09 15:08:06 [Debug]: 0xc0005063c0[30]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2002 3002] 0 0 0 Leave 1865253880625919525 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2002 3002] 0 0 0 Leave 1865253880625919525 2} index:[25]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2002 3002] 0 0 0 Leave 1865253880625919525 2} index:[25]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2001 3001] 0 0 0 Leave 1514254627865824731 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2001 3001] 0 0 0 Leave 1514254627865824731 2} index:[26]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2001 3001] 0 0 0 Leave 1514254627865824731 2} index:[26]
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2001 3001] 1514254627865824731 2} and Return reply:&{false OK} | 15:08:06.901
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2003 3003] 869746272028097502 2} | 15:08:06.902
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2002 3002] 1865253880625919525 2} and Return reply:&{false OK} | 15:08:06.902
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2003 3003] 869746272028097502 2} and Return reply:&{true } | 15:08:06.902
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2000 3000] 0 0 0 Leave 756463971572347858 2}
+2023/12/09 15:08:06 [Create Waitch]:create ch[31]
+2023/12/09 15:08:06 [Debug]: 0xc000507380[31]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[23]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2005 3005] 0 0 0 Leave 968634910008899873 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2005 3005] 0 0 0 Leave 968634910008899873 2} index:[27]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2005 3005] 0 0 0 Leave 968634910008899873 2} index:[27]
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2005 3005] 968634910008899873 2} and Return reply:&{false OK} | 15:08:06.904
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[24]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[26]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2004 3004] 0 0 0 Leave 3723369606998526058 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2004 3004] 0 0 0 Leave 3723369606998526058 2} index:[28]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2004 3004] 0 0 0 Leave 3723369606998526058 2} index:[28]
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2003 3003] 869746272028097502 2} | 15:08:06.904
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2009 3009] 2592714297425718792 2} | 15:08:06.905
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2009 3009] 2592714297425718792 2} and Return reply:&{true } | 15:08:06.905
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2009 3009] 2592714297425718792 2} | 15:08:06.906
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2009 3009] 2592714297425718792 2} and Return reply:&{true } | 15:08:06.906
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2003 3003] 0 0 0 Leave 869746272028097502 2}
+2023/12/09 15:08:06 [Create Waitch]:create ch[32]
+2023/12/09 15:08:06 [Debug]: 0xc0003d0480[32]
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[2009 3009] 2592714297425718792 2} | 15:08:06.907
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[25]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2008 3008] 0 0 0 Leave 4605791624296972635 2}
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2004 3004] 3723369606998526058 2} and Return reply:&{false OK} | 15:08:06.908
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2009 3009] 0 0 0 Leave 2592714297425718792 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2008 3008] 0 0 0 Leave 4605791624296972635 2} index:[29]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2008 3008] 0 0 0 Leave 4605791624296972635 2} index:[29]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2007 3007] 0 0 0 Leave 1168118178855798726 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2007 3007] 0 0 0 Leave 1168118178855798726 2} index:[30]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2007 3007] 0 0 0 Leave 1168118178855798726 2} index:[30]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[28]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[27]
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [2006 3006] 0 0 0 Leave 631000881466141089 2}
+2023/12/09 15:08:06 [Create Waitch]:create ch[34]
+2023/12/09 15:08:06 [Debug]: 0xc000250480[34]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2000 3000] 0 0 0 Leave 756463971572347858 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2000 3000] 0 0 0 Leave 756463971572347858 2} index:[31]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2000 3000] 0 0 0 Leave 756463971572347858 2} index:[31]
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2008 3008] 4605791624296972635 2} and Return reply:&{false OK} | 15:08:06.924
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2007 3007] 1168118178855798726 2} and Return reply:&{false OK} | 15:08:06.924
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2000 3000] 756463971572347858 2} and Return reply:&{false OK} | 15:08:06.925
+2023/12/09 15:08:06 [Create Waitch]:create ch[33]
+2023/12/09 15:08:06 [Debug]: 0xc0003d0ba0[33]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[30]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[29]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[31]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2003 3003] 0 0 0 Leave 869746272028097502 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2003 3003] 0 0 0 Leave 869746272028097502 2} index:[32]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2003 3003] 0 0 0 Leave 869746272028097502 2} index:[32]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2009 3009] 0 0 0 Leave 2592714297425718792 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2009 3009] 0 0 0 Leave 2592714297425718792 2} index:[33]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2009 3009] 0 0 0 Leave 2592714297425718792 2} index:[33]
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2003 3003] 869746272028097502 2} and Return reply:&{false OK} | 15:08:06.927
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2009 3009] 2592714297425718792 2} and Return reply:&{false OK} | 15:08:06.928
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[32]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [2006 3006] 0 0 0 Leave 631000881466141089 2}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [2006 3006] 0 0 0 Leave 631000881466141089 2} index:[34]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [2006 3006] 0 0 0 Leave 631000881466141089 2} index:[34]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[33]
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[2006 3006] 631000881466141089 2} and Return reply:&{false OK} | 15:08:06.929
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[34]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 15} | 15:08:06.930
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 15}
+2023/12/09 15:08:06 [Create Waitch]:create ch[35]
+2023/12/09 15:08:06 [Debug]: 0xc0004071a0[35]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 15}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 15} index:[35]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 15} index:[35]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 15} and Return reply:&{false OK {24 [1001 1006 1007 1002 1005 1008 1009 1000 1003 1004] map[1000:[1000a 1000b 1000c] 1001:[1001a 1001b 1001c] 1002:[1002a 1002b 1002c] 1003:[1003a 1003b 1003c] 1004:[1004a 1004b 1004c] 1005:[1005a 1005b 1005c] 1006:[1006a 1006b 1006c] 1007:[1007a 1007b 1007c] 1008:[1008a 1008b 1008c] 1009:[1009a 1009b 1009c]]}} | 15:08:06.936
+  ... Passed
+Test: Minimal transfers after multijoins ...
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[35]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 16} | 15:08:06.936
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 16}
+2023/12/09 15:08:06 [Create Waitch]:create ch[36]
+2023/12/09 15:08:06 [Debug]: 0xc00041f6e0[36]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 16}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 16} index:[36]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 16} index:[36]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 16} and Return reply:&{false OK {24 [1001 1006 1007 1002 1005 1008 1009 1000 1003 1004] map[1000:[1000a 1000b 1000c] 1001:[1001a 1001b 1001c] 1002:[1002a 1002b 1002c] 1003:[1003a 1003b 1003c] 1004:[1004a 1004b 1004c] 1005:[1005a 1005b 1005c] 1006:[1006a 1006b 1006c] 1007:[1007a 1007b 1007c] 1008:[1008a 1008b 1008c] 1009:[1009a 1009b 1009c]]}} | 15:08:06.940
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[36]
+2023/12/09 15:08:06 [Join Start]:Receive args:&{map[11:[11a 11b] 12:[12a 12b] 13:[13a 13b] 14:[14a 14b] 15:[15a 15b]] 979904021208415527 17} | 15:08:06.942
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[11:[11a 11b] 12:[12a 12b] 13:[13a 13b] 14:[14a 14b] 15:[15a 15b]] [] 0 0 0 Join 979904021208415527 17}
+2023/12/09 15:08:06 [Create Waitch]:create ch[37]
+2023/12/09 15:08:06 [Debug]: 0xc0002c4d80[37]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[11:[11a 11b] 12:[12a 12b] 13:[13a 13b] 14:[14a 14b] 15:[15a 15b]] [] 0 0 0 Join 979904021208415527 17}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[11:[11a 11b] 12:[12a 12b] 13:[13a 13b] 14:[14a 14b] 15:[15a 15b]] [] 0 0 0 Join 979904021208415527 17} index:[37]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[11:[11a 11b] 12:[12a 12b] 13:[13a 13b] 14:[14a 14b] 15:[15a 15b]] [] 0 0 0 Join 979904021208415527 17} index:[37]
+2023/12/09 15:08:06 [Join Return]:Receive args:&{map[11:[11a 11b] 12:[12a 12b] 13:[13a 13b] 14:[14a 14b] 15:[15a 15b]] 979904021208415527 17} and Return reply:&{false OK} | 15:08:06.955
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[37]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 18} | 15:08:06.957
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 18}
+2023/12/09 15:08:06 [Create Waitch]:create ch[38]
+2023/12/09 15:08:06 [Debug]: 0xc0001fcba0[38]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 18}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 18} index:[38]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 18} index:[38]
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[38]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 18} and Return reply:&{false OK {25 [1001 1006 1007 1002 1005 1008 1009 1000 1003 1004] map[11:[11a 11b] 12:[12a 12b] 13:[13a 13b] 14:[14a 14b] 15:[15a 15b] 1000:[1000a 1000b 1000c] 1001:[1001a 1001b 1001c] 1002:[1002a 1002b 1002c] 1003:[1003a 1003b 1003c] 1004:[1004a 1004b 1004c] 1005:[1005a 1005b 1005c] 1006:[1006a 1006b 1006c] 1007:[1007a 1007b 1007c] 1008:[1008a 1008b 1008c] 1009:[1009a 1009b 1009c]]}} | 15:08:06.965
+  ... Passed
+Test: Minimal transfers after multileaves ...
+2023/12/09 15:08:06 [Leave Start]:Receive args:&{[11 12 13 14 15] 979904021208415527 19} | 15:08:06.966
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [11 12 13 14 15] 0 0 0 Leave 979904021208415527 19}
+2023/12/09 15:08:06 [Create Waitch]:create ch[39]
+2023/12/09 15:08:06 [Debug]: 0xc0001fd7a0[39]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [11 12 13 14 15] 0 0 0 Leave 979904021208415527 19}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [11 12 13 14 15] 0 0 0 Leave 979904021208415527 19} index:[39]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [11 12 13 14 15] 0 0 0 Leave 979904021208415527 19} index:[39]
+2023/12/09 15:08:06 [Leave Return]:Receive args:&{[11 12 13 14 15] 979904021208415527 19} and Return reply:&{false OK} | 15:08:06.969
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[39]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 20} | 15:08:06.970
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 20}
+2023/12/09 15:08:06 [Create Waitch]:create ch[40]
+2023/12/09 15:08:06 [Debug]: 0xc00051b860[40]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 20}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 20} index:[40]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 20} index:[40]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 20} and Return reply:&{false OK {26 [1001 1006 1007 1002 1005 1008 1009 1000 1003 1004] map[1000:[1000a 1000b 1000c] 1001:[1001a 1001b 1001c] 1002:[1002a 1002b 1002c] 1003:[1003a 1003b 1003c] 1004:[1004a 1004b 1004c] 1005:[1005a 1005b 1005c] 1006:[1006a 1006b 1006c] 1007:[1007a 1007b 1007c] 1008:[1008a 1008b 1008c] 1009:[1009a 1009b 1009c]]}} | 15:08:06.972
+  ... Passed
+Test: Check Same config on servers ...
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[40]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 21} | 15:08:06.975
+2023/12/09 15:08:06 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 21}
+2023/12/09 15:08:06 [Create Waitch]:create ch[41]
+2023/12/09 15:08:06 [Debug]: 0xc0005adce0[41]
+2023/12/09 15:08:06 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 21}
+2023/12/09 15:08:06 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 21} index:[41]
+2023/12/09 15:08:06 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 21} index:[41]
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 21} and Return reply:&{false OK {26 [1001 1006 1007 1002 1005 1008 1009 1000 1003 1004] map[1000:[1000a 1000b 1000c] 1001:[1001a 1001b 1001c] 1002:[1002a 1002b 1002c] 1003:[1003a 1003b 1003c] 1004:[1004a 1004b 1004c] 1005:[1005a 1005b 1005c] 1006:[1006a 1006b 1006c] 1007:[1007a 1007b 1007c] 1008:[1008a 1008b 1008c] 1009:[1009a 1009b 1009c]]}} | 15:08:06.981
+2023/12/09 15:08:06 [Clear Waitch]:clear ch[41]
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 22} | 15:08:06.998
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 22} and Return reply:&{true  {0 [0 0 0 0 0 0 0 0 0 0] map[]}} | 15:08:06.998
+2023/12/09 15:08:06 [Query Start]:Receive args:&{-1 979904021208415527 22} | 15:08:06.999
+2023/12/09 15:08:06 [Query Return]:Receive args:&{-1 979904021208415527 22} and Return reply:&{true  {0 [0 0 0 0 0 0 0 0 0 0] map[]}} | 15:08:06.999
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1:[x y z] 2:[a b c]] [] 0 0 0 Join 979904021208415527 3}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 4}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 5}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[3:[j k l]] [] 0 0 0 Join 979904021208415527 6}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 7}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 8}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 9}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [1 3] 0 0 0 Leave 979904021208415527 10}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 11}
+2023/12/09 15:08:07 [Query Start]:Receive args:&{-1 979904021208415527 22} | 15:08:07.208
+2023/12/09 15:08:07 [Command]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 22}
+2023/12/09 15:08:07 [Create Waitch]:create ch[42]
+2023/12/09 15:08:07 [Debug]: 0xc000092780[42]
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 12}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 13}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2] 0 0 0 Leave 979904021208415527 14}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1002:[1002a 1002b 1002c] 2002:[2002a] 3002:[3002a]] [] 0 0 0 Join 1865253880625919525 1}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1001:[1001a 1001b 1001c] 2001:[2001a] 3001:[3001a]] [] 0 0 0 Join 1514254627865824731 1}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1005:[1005a 1005b 1005c] 2005:[2005a] 3005:[3005a]] [] 0 0 0 Join 968634910008899873 1}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1008:[1008a 1008b 1008c] 2008:[2008a] 3008:[3008a]] [] 0 0 0 Join 4605791624296972635 1}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1007:[1007a 1007b 1007c] 2007:[2007a] 3007:[3007a]] [] 0 0 0 Join 1168118178855798726 1}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1004:[1004a 1004b 1004c] 2004:[2004a] 3004:[3004a]] [] 0 0 0 Join 3723369606998526058 1}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1000:[1000a 1000b 1000c] 2000:[2000a] 3000:[3000a]] [] 0 0 0 Join 756463971572347858 1}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1006:[1006a 1006b 1006c] 2006:[2006a] 3006:[3006a]] [] 0 0 0 Join 631000881466141089 1}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1009:[1009a 1009b 1009c] 2009:[2009a] 3009:[3009a]] [] 0 0 0 Join 2592714297425718792 1}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[1003:[1003a 1003b 1003c] 2003:[2003a] 3003:[3003a]] [] 0 0 0 Join 869746272028097502 1}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2002 3002] 0 0 0 Leave 1865253880625919525 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2001 3001] 0 0 0 Leave 1514254627865824731 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2005 3005] 0 0 0 Leave 968634910008899873 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2004 3004] 0 0 0 Leave 3723369606998526058 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2008 3008] 0 0 0 Leave 4605791624296972635 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2007 3007] 0 0 0 Leave 1168118178855798726 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2000 3000] 0 0 0 Leave 756463971572347858 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2003 3003] 0 0 0 Leave 869746272028097502 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2009 3009] 0 0 0 Leave 2592714297425718792 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [2006 3006] 0 0 0 Leave 631000881466141089 2}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 15}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 16}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[11:[11a 11b] 12:[12a 12b] 13:[13a 13b] 14:[14a 14b] 15:[15a 15b]] [] 0 0 0 Join 979904021208415527 17}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 18}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [11 12 13 14 15] 0 0 0 Leave 979904021208415527 19}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 20}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 21}
+2023/12/09 15:08:07 [ApplyMsg]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 22}
+2023/12/09 15:08:07 [ApplyMsg findCh]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 22} index:[42]
+2023/12/09 15:08:07 [ApplyMsg Ch]:Receive Commmand {map[] [] 0 0 -1 Query 979904021208415527 22} index:[42]
+2023/12/09 15:08:07 [Query Return]:Receive args:&{-1 979904021208415527 22} and Return reply:&{false OK {26 [1001 1006 1007 1002 1005 1008 1009 1000 1003 1004] map[1000:[1000a 1000b 1000c] 1001:[1001a 1001b 1001c] 1002:[1002a 1002b 1002c] 1003:[1003a 1003b 1003c] 1004:[1004a 1004b 1004c] 1005:[1005a 1005b 1005c] 1006:[1006a 1006b 1006c] 1007:[1007a 1007b 1007c] 1008:[1008a 1008b 1008c] 1009:[1009a 1009b 1009c]]}} | 15:08:07.221
+  ... Passed
+2023/12/09 15:08:07 [Clear Waitch]:clear ch[42]
+PASS
+ok  	6.824/shardctrler	0.737s

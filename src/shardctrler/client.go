@@ -4,7 +4,10 @@ package shardctrler
 // Shardctrler clerk.
 //
 
-import "6.824/labrpc"
+import (
+	"6.824/labrpc"
+	"sync/atomic"
+)
 import "time"
 import "crypto/rand"
 import "math/big"
@@ -12,6 +15,8 @@ import "math/big"
 type Clerk struct {
 	servers []*labrpc.ClientEnd
 	// Your data here.
+	clientId	int64
+	commandId 	int64
 }
 
 func nrand() int64 {
@@ -25,13 +30,19 @@ func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	ck := new(Clerk)
 	ck.servers = servers
 	// Your code here.
+	ck.clientId = nrand()
+	ck.commandId = 0
 	return ck
 }
 
 func (ck *Clerk) Query(num int) Config {
 	args := &QueryArgs{}
 	// Your code here.
+	// add commanId
+	atomic.AddInt64(&ck.commandId,1)
 	args.Num = num
+	args.ClientId = ck.clientId
+	args.CommandId = ck.commandId
 	for {
 		// try each known server.
 		for _, srv := range ck.servers {
@@ -48,8 +59,10 @@ func (ck *Clerk) Query(num int) Config {
 func (ck *Clerk) Join(servers map[int][]string) {
 	args := &JoinArgs{}
 	// Your code here.
+	atomic.AddInt64(&ck.commandId,1)
 	args.Servers = servers
-
+	args.ClientId = ck.clientId
+	args.CommandId = ck.commandId
 	for {
 		// try each known server.
 		for _, srv := range ck.servers {
@@ -66,8 +79,10 @@ func (ck *Clerk) Join(servers map[int][]string) {
 func (ck *Clerk) Leave(gids []int) {
 	args := &LeaveArgs{}
 	// Your code here.
+	atomic.AddInt64(&ck.commandId,1)
 	args.GIDs = gids
-
+	args.ClientId = ck.clientId
+	args.CommandId = ck.commandId
 	for {
 		// try each known server.
 		for _, srv := range ck.servers {
@@ -84,9 +99,11 @@ func (ck *Clerk) Leave(gids []int) {
 func (ck *Clerk) Move(shard int, gid int) {
 	args := &MoveArgs{}
 	// Your code here.
+	atomic.AddInt64(&ck.commandId,1)
 	args.Shard = shard
 	args.GID = gid
-
+	args.ClientId = ck.clientId
+	args.CommandId = ck.commandId
 	for {
 		// try each known server.
 		for _, srv := range ck.servers {

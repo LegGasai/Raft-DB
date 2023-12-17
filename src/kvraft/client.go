@@ -3,7 +3,6 @@ package kvraft
 import (
 	"6.824/labrpc"
 	"sync/atomic"
-	"time"
 )
 import "crypto/rand"
 import "math/big"
@@ -63,7 +62,6 @@ func (ck *Clerk) sendCommand(key string,value string,opType OpType) string {
 			}else{
 				// try another,leaderId = (leaderId+1)%nServers
 				ck.leaderId = (ck.leaderId+1)%ck.nServers
-				time.Sleep(10*time.Millisecond)
 				continue
 			}
 		}else{
