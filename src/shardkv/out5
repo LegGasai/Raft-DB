@@ -1,0 +1,521 @@
+Test: static shards ...
+2024/01/21 14:05:53 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{0 [0 0 0 0 0 0 0 0 0 0] map[]}] | 14:05:53.939
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[101]-[2] got the latest config:[{0 [0 0 0 0 0 0 0 0 0 0] map[]}] | 14:05:54.001
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{0 [0 0 0 0 0 0 0 0 0 0] map[]}] | 14:05:54.001
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{0 [0 0 0 0 0 0 0 0 0 0] map[]}] | 14:05:54.001
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[101]-[2] got the latest config:[{1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}] | 14:05:54.057
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}] | 14:05:54.057
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}] | 14:05:54.057
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:54.058
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:54.058
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[102]-[0] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:54.058
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:54.073
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:54.073
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[102]-[1] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:54.073
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[102]-[2] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:54.074
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:54.108
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:54.108
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.114
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[101]-[2] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.114
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[0] with state[Waiting] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[1] with state[Waiting] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[2] with state[Waiting] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[3] with state[Waiting] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[4] with state[Waiting] | 14:05:54.116
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[102]-[0] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:54.116
+2024/01/21 14:05:54 [Ask Shard Data][updateShardData()]:Server[101]-[2] ask shard:[0] configNum:[2] from gid[100] and servers[[server-100-0 server-100-1 server-100-2]] | 14:05:54.117
+2024/01/21 14:05:54 [Ask Shard Data][updateShardData()]:Server[101]-[2] ask shard:[1] configNum:[2] from gid[100] and servers[[server-100-0 server-100-1 server-100-2]] | 14:05:54.117
+2024/01/21 14:05:54 [Ask Shard Data][updateShardData()]:Server[101]-[2] ask shard:[2] configNum:[2] from gid[100] and servers[[server-100-0 server-100-1 server-100-2]] | 14:05:54.117
+2024/01/21 14:05:54 [Ask Shard Data][updateShardData()]:Server[101]-[2] ask shard:[3] configNum:[2] from gid[100] and servers[[server-100-0 server-100-1 server-100-2]] | 14:05:54.117
+2024/01/21 14:05:54 [Ask Shard Data][updateShardData()]:Server[101]-[2] ask shard:[4] configNum:[2] from gid[100] and servers[[server-100-0 server-100-1 server-100-2]] | 14:05:54.117
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:54.117
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{0 XTYNx5-bCrEvC6BXdui7 8 Put 19225122607913846 1}] and reply:[OK] | 14:05:54.117
+2024/01/21 14:05:54 [Command Success][PutAppend()]: Server[100]-[1] has reply a request[19225122607913846] from client[1] and reply:[{ OK}] | 14:05:54.117
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{1 GNxAvHOQPEnjdN4l8WcI 9 Put 19225122607913846 2}] and reply:[OK] | 14:05:54.117
+2024/01/21 14:05:54 [Command Success][PutAppend()]: Server[100]-[1] has reply a request[19225122607913846] from client[2] and reply:[{ OK}] | 14:05:54.117
+2024/01/21 14:05:54 [Wrong Group][PutAppend()]: Server[101]-[0] received a wrong shard with args:[&{2 EvpYLs8kgRiwnm2B_gni Put 19225122607913846 3}] should [100] but current gid[101] and return | 14:05:54.117
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:54.117
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.117
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[0] with state[Waiting] | 14:05:54.117
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.117
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[1] with state[Waiting] | 14:05:54.117
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.117
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[2] with state[Waiting] | 14:05:54.118
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.118
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[3] with state[Waiting] | 14:05:54.118
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.118
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[4] with state[Waiting] | 14:05:54.118
+2024/01/21 14:05:54 [Send ShardData Success][ShardMigrationHandler] Server[100]-[1] send shard[0] with config[2] : [2] | 14:05:54.118
+2024/01/21 14:05:54 [ShardData][updateShardData()]: Server[101]-[2] commit a new shard data with shard[0]  | 14:05:54.118
+2024/01/21 14:05:54 [Send ShardData Success][ShardMigrationHandler] Server[100]-[1] send shard[1] with config[2] : [2] | 14:05:54.118
+2024/01/21 14:05:54 [ShardData][updateShardData()]: Server[101]-[2] commit a new shard data with shard[1]  | 14:05:54.118
+2024/01/21 14:05:54 [Send ShardData Success][ShardMigrationHandler] Server[100]-[1] send shard[2] with config[2] : [2] | 14:05:54.118
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0  0 [] map[] map[19225122607913846:2]}] | 14:05:54.118
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[0] with ShardData:[&{Ready map[]}] | 14:05:54.118
+2024/01/21 14:05:54 [ShardData][updateShardData()]: Server[101]-[2] commit a new shard data with shard[2]  | 14:05:54.118
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1  0 [] map[] map[19225122607913846:2]}] | 14:05:54.118
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[1] with ShardData:[&{Ready map[]}] | 14:05:54.118
+2024/01/21 14:05:54 [Send ShardData Success][ShardMigrationHandler] Server[100]-[1] send shard[3] with config[2] : [2] | 14:05:54.119
+2024/01/21 14:05:54 [ShardData][updateShardData()]: Server[101]-[2] commit a new shard data with shard[3]  | 14:05:54.119
+2024/01/21 14:05:54 [Send ShardData Success][ShardMigrationHandler] Server[100]-[1] send shard[4] with config[2] : [2] | 14:05:54.119
+2024/01/21 14:05:54 [ShardData][updateShardData()]: Server[101]-[2] commit a new shard data with shard[4]  | 14:05:54.119
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2  0 [] map[] map[19225122607913846:2]}] | 14:05:54.119
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[2] with ShardData:[&{Ready map[]}] | 14:05:54.119
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3  0 [] map[] map[19225122607913846:2]}] | 14:05:54.119
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[3] with ShardData:[&{Ready map[]}] | 14:05:54.119
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4  0 [] map[] map[19225122607913846:2]}] | 14:05:54.119
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[4] with ShardData:[&{Ready map[]}] | 14:05:54.119
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[102]-[2] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[102]-[1] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[0] with state[Waiting] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[1] with state[Waiting] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[2] with state[Waiting] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0  0 [] map[] map[19225122607913846:2]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[0] with ShardData:[&{Ready map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1  0 [] map[] map[19225122607913846:2]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[1] with ShardData:[&{Ready map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2  0 [] map[] map[19225122607913846:2]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[2] with ShardData:[&{Ready map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3  0 [] map[] map[19225122607913846:2]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[3] with ShardData:[&{Ready map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4  0 [] map[] map[19225122607913846:2]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[4] with ShardData:[&{Ready map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[3] with state[Waiting] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[4] with state[Waiting] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0  0 [] map[] map[19225122607913846:2]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[0] with ShardData:[&{Ready map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1  0 [] map[] map[19225122607913846:2]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[1] with ShardData:[&{Ready map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2  0 [] map[] map[19225122607913846:2]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[2] with ShardData:[&{Ready map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3  0 [] map[] map[19225122607913846:2]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[3] with ShardData:[&{Ready map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4  0 [] map[] map[19225122607913846:2]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[4] with ShardData:[&{Ready map[]}] | 14:05:54.131
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:54.169
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{0 XTYNx5-bCrEvC6BXdui7 8 Put 19225122607913846 1}] and reply:[OK] | 14:05:54.169
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{1 GNxAvHOQPEnjdN4l8WcI 9 Put 19225122607913846 2}] and reply:[OK] | 14:05:54.169
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.169
+2024/01/21 14:05:54 [UpdateConfig Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:54.169
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{0 XTYNx5-bCrEvC6BXdui7 8 Put 19225122607913846 1}] and reply:[OK] | 14:05:54.169
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{1 GNxAvHOQPEnjdN4l8WcI 9 Put 19225122607913846 2}] and reply:[OK] | 14:05:54.169
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[101]-[2] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.170
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.170
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.231
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.232
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[101]-[2] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.232
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{2 EvpYLs8kgRiwnm2B_gni 0 Put 19225122607913846 3}] and reply:[OK] | 14:05:54.233
+2024/01/21 14:05:54 [Command Success][PutAppend()]: Server[101]-[2] has reply a request[19225122607913846] from client[3] and reply:[{ OK}] | 14:05:54.233
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{3 YJMEUzlGCR8knk1Spr0N 1 Put 19225122607913846 4}] and reply:[OK] | 14:05:54.234
+2024/01/21 14:05:54 [Command Success][PutAppend()]: Server[101]-[2] has reply a request[19225122607913846] from client[4] and reply:[{ OK}] | 14:05:54.234
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{4 P3Pg3GcwQUzJXZKfvMw_ 2 Put 19225122607913846 5}] and reply:[OK] | 14:05:54.234
+2024/01/21 14:05:54 [Command Success][PutAppend()]: Server[101]-[2] has reply a request[19225122607913846] from client[5] and reply:[{ OK}] | 14:05:54.234
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{5 MeEa5nN-jg0fIoDxsh3Y 3 Put 19225122607913846 6}] and reply:[OK] | 14:05:54.235
+2024/01/21 14:05:54 [Command Success][PutAppend()]: Server[101]-[2] has reply a request[19225122607913846] from client[6] and reply:[{ OK}] | 14:05:54.235
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{6 OOvvU0rJ4rWRag2eK-nF 4 Put 19225122607913846 7}] and reply:[OK] | 14:05:54.236
+2024/01/21 14:05:54 [Command Success][PutAppend()]: Server[101]-[2] has reply a request[19225122607913846] from client[7] and reply:[{ OK}] | 14:05:54.236
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{7 OYf5HjeZsdK5uJ7zWaxV 5 Put 19225122607913846 8}] and reply:[OK] | 14:05:54.236
+2024/01/21 14:05:54 [Command Success][PutAppend()]: Server[100]-[1] has reply a request[19225122607913846] from client[8] and reply:[{ OK}] | 14:05:54.236
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{8 wmbPcgXEjcUbX6ju6EzA 6 Put 19225122607913846 9}] and reply:[OK] | 14:05:54.237
+2024/01/21 14:05:54 [Command Success][PutAppend()]: Server[100]-[1] has reply a request[19225122607913846] from client[9] and reply:[{ OK}] | 14:05:54.237
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{9 JC7Iy4Za0UqvmJtnZwbt 7 Put 19225122607913846 10}] and reply:[OK] | 14:05:54.238
+2024/01/21 14:05:54 [Command Success][PutAppend()]: Server[100]-[1] has reply a request[19225122607913846] from client[10] and reply:[{ OK}] | 14:05:54.238
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{0  8 Get 19225122607913846 11}] and reply:[OK] | 14:05:54.238
+2024/01/21 14:05:54 [Get Success][Get()]: Server[100]-[1] has reply a request[19225122607913846] from client[11] and reply:[{XTYNx5-bCrEvC6BXdui7 OK}] | 14:05:54.238
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{1  9 Get 19225122607913846 12}] and reply:[OK] | 14:05:54.239
+2024/01/21 14:05:54 [Get Success][Get()]: Server[100]-[1] has reply a request[19225122607913846] from client[12] and reply:[{GNxAvHOQPEnjdN4l8WcI OK}] | 14:05:54.239
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{7 OYf5HjeZsdK5uJ7zWaxV 5 Put 19225122607913846 8}] and reply:[OK] | 14:05:54.239
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{8 wmbPcgXEjcUbX6ju6EzA 6 Put 19225122607913846 9}] and reply:[OK] | 14:05:54.239
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{9 JC7Iy4Za0UqvmJtnZwbt 7 Put 19225122607913846 10}] and reply:[OK] | 14:05:54.239
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{0  8 Get 19225122607913846 11}] and reply:[OK] | 14:05:54.239
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{1  9 Get 19225122607913846 12}] and reply:[OK] | 14:05:54.239
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{2  0 Get 19225122607913846 13}] and reply:[OK] | 14:05:54.240
+2024/01/21 14:05:54 [Get Success][Get()]: Server[101]-[2] has reply a request[19225122607913846] from client[13] and reply:[{EvpYLs8kgRiwnm2B_gni OK}] | 14:05:54.240
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{3  1 Get 19225122607913846 14}] and reply:[OK] | 14:05:54.241
+2024/01/21 14:05:54 [Get Success][Get()]: Server[101]-[2] has reply a request[19225122607913846] from client[14] and reply:[{YJMEUzlGCR8knk1Spr0N OK}] | 14:05:54.241
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{4  2 Get 19225122607913846 15}] and reply:[OK] | 14:05:54.241
+2024/01/21 14:05:54 [Get Success][Get()]: Server[101]-[2] has reply a request[19225122607913846] from client[15] and reply:[{P3Pg3GcwQUzJXZKfvMw_ OK}] | 14:05:54.241
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{5  3 Get 19225122607913846 16}] and reply:[OK] | 14:05:54.242
+2024/01/21 14:05:54 [Get Success][Get()]: Server[101]-[2] has reply a request[19225122607913846] from client[16] and reply:[{MeEa5nN-jg0fIoDxsh3Y OK}] | 14:05:54.242
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{6  4 Get 19225122607913846 17}] and reply:[OK] | 14:05:54.243
+2024/01/21 14:05:54 [Get Success][Get()]: Server[101]-[2] has reply a request[19225122607913846] from client[17] and reply:[{OOvvU0rJ4rWRag2eK-nF OK}] | 14:05:54.243
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{7  5 Get 19225122607913846 18}] and reply:[OK] | 14:05:54.245
+2024/01/21 14:05:54 [Get Success][Get()]: Server[100]-[1] has reply a request[19225122607913846] from client[18] and reply:[{OYf5HjeZsdK5uJ7zWaxV OK}] | 14:05:54.245
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{8  6 Get 19225122607913846 19}] and reply:[OK] | 14:05:54.276
+2024/01/21 14:05:54 [Get Success][Get()]: Server[100]-[1] has reply a request[19225122607913846] from client[19] and reply:[{wmbPcgXEjcUbX6ju6EzA OK}] | 14:05:54.276
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{9  7 Get 19225122607913846 20}] and reply:[OK] | 14:05:54.277
+2024/01/21 14:05:54 [Get Success][Get()]: Server[100]-[1] has reply a request[19225122607913846] from client[20] and reply:[{JC7Iy4Za0UqvmJtnZwbt OK}] | 14:05:54.277
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{0  8 Get 4137794139092380194 1}] and reply:[OK] | 14:05:54.279
+2024/01/21 14:05:54 [Get Success][Get()]: Server[100]-[1] has reply a request[4137794139092380194] from client[1] and reply:[{XTYNx5-bCrEvC6BXdui7 OK}] | 14:05:54.279
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{1  9 Get 2579432215491128399 1}] and reply:[OK] | 14:05:54.280
+2024/01/21 14:05:54 [Get Success][Get()]: Server[100]-[1] has reply a request[2579432215491128399] from client[1] and reply:[{GNxAvHOQPEnjdN4l8WcI OK}] | 14:05:54.280
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.282
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.283
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{7  5 Get 4552905549397231061 1}] and reply:[OK] | 14:05:54.284
+2024/01/21 14:05:54 [Get Success][Get()]: Server[100]-[1] has reply a request[4552905549397231061] from client[1] and reply:[{OYf5HjeZsdK5uJ7zWaxV OK}] | 14:05:54.284
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{8  6 Get 3295729722145043092 1}] and reply:[OK] | 14:05:54.285
+2024/01/21 14:05:54 [Get Success][Get()]: Server[100]-[1] has reply a request[3295729722145043092] from client[1] and reply:[{wmbPcgXEjcUbX6ju6EzA OK}] | 14:05:54.285
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{9  7 Get 2296192881179494565 1}] and reply:[OK] | 14:05:54.285
+2024/01/21 14:05:54 [Get Success][Get()]: Server[100]-[1] has reply a request[2296192881179494565] from client[1] and reply:[{JC7Iy4Za0UqvmJtnZwbt OK}] | 14:05:54.285
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{7 OYf5HjeZsdK5uJ7zWaxV 5 Put 19225122607913846 8}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{8 wmbPcgXEjcUbX6ju6EzA 6 Put 19225122607913846 9}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{9 JC7Iy4Za0UqvmJtnZwbt 7 Put 19225122607913846 10}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{0  8 Get 19225122607913846 11}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{1  9 Get 19225122607913846 12}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{7  5 Get 19225122607913846 18}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{8  6 Get 19225122607913846 19}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{9  7 Get 19225122607913846 20}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{0  8 Get 4137794139092380194 1}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{1  9 Get 2579432215491128399 1}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{7  5 Get 4552905549397231061 1}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{8  6 Get 3295729722145043092 1}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{9  7 Get 2296192881179494565 1}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{7  5 Get 19225122607913846 18}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{8  6 Get 19225122607913846 19}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{9  7 Get 19225122607913846 20}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{0  8 Get 4137794139092380194 1}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{1  9 Get 2579432215491128399 1}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{7  5 Get 4552905549397231061 1}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{8  6 Get 3295729722145043092 1}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{9  7 Get 2296192881179494565 1}] and reply:[OK] | 14:05:54.289
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.337
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.337
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.397
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.398
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.451
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.452
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.504
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.504
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.561
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.562
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.614
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.615
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.676
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.677
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.732
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.733
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.785
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.786
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.845
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.846
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.901
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.901
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.952
+2024/01/21 14:05:54 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:54.952
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.015
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.017
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.077
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.078
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.154
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.154
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.217
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.218
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.279
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.279
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.342
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.343
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.420
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.421
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.484
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.484
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.544
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.544
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.606
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.606
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.670
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.670
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.730
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.730
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.791
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.791
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.850
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.866
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.912
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.927
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.973
+2024/01/21 14:05:55 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:55.989
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.033
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.049
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.094
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.112
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.158
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.173
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.217
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.250
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.279
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[1] received a wrong shard with args:[&{2 1692555394378031560 1}] should [0] but current gid[101] and return | 14:05:56.294
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{0  8 Get 19225122607913846 21}] and reply:[OK] | 14:05:56.295
+2024/01/21 14:05:56 [Get Success][Get()]: Server[100]-[1] has reply a request[19225122607913846] from client[21] and reply:[{XTYNx5-bCrEvC6BXdui7 OK}] | 14:05:56.295
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{1  9 Get 19225122607913846 22}] and reply:[OK] | 14:05:56.296
+2024/01/21 14:05:56 [Get Success][Get()]: Server[100]-[1] has reply a request[19225122607913846] from client[22] and reply:[{GNxAvHOQPEnjdN4l8WcI OK}] | 14:05:56.296
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{2 19225122607913846 23}] should [0] but current gid[101] and return | 14:05:56.296
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.308
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{0  8 Get 19225122607913846 21}] and reply:[OK] | 14:05:56.308
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{0  8 Get 19225122607913846 21}] and reply:[OK] | 14:05:56.308
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[100]-[2] apply a command to state machine command:[{1  9 Get 19225122607913846 22}] and reply:[OK] | 14:05:56.308
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[100]-[0] apply a command to state machine command:[{1  9 Get 19225122607913846 22}] and reply:[OK] | 14:05:56.308
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{5 1474507199839296877 1}] should [0] but current gid[101] and return | 14:05:56.309
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{6 831083248590160369 1}] should [0] but current gid[101] and return | 14:05:56.340
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.342
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{4 3761910377981013532 1}] should [0] but current gid[101] and return | 14:05:56.343
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.359
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.405
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{2 19225122607913846 23}] should [0] but current gid[101] and return | 14:05:56.406
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{2 1692555394378031560 1}] should [0] but current gid[101] and return | 14:05:56.406
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{3 4584417579153381463 1}] should [0] but current gid[101] and return | 14:05:56.406
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.417
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{5 1474507199839296877 1}] should [0] but current gid[101] and return | 14:05:56.417
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{6 831083248590160369 1}] should [0] but current gid[101] and return | 14:05:56.447
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.477
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.478
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{4 3761910377981013532 1}] should [0] but current gid[101] and return | 14:05:56.478
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{3 4584417579153381463 1}] should [0] but current gid[101] and return | 14:05:56.511
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{2 19225122607913846 23}] should [0] but current gid[101] and return | 14:05:56.512
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{2 1692555394378031560 1}] should [0] but current gid[101] and return | 14:05:56.512
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{5 1474507199839296877 1}] should [0] but current gid[101] and return | 14:05:56.528
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.529
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.532
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[101]-[1] got the latest config:[{1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}] | 14:05:56.532
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[0] with state[Waiting] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[1] with state[Waiting] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[2] with state[Waiting] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[3] with state[Waiting] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[4] with state[Waiting] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0  0 [] map[] map[19225122607913846:2]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[0] with ShardData:[&{Ready map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1  0 [] map[] map[19225122607913846:2]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[1] with ShardData:[&{Ready map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2  0 [] map[] map[19225122607913846:2]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[2] with ShardData:[&{Ready map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3  0 [] map[] map[19225122607913846:2]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[3] with ShardData:[&{Ready map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4  0 [] map[] map[19225122607913846:2]}] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[4] with ShardData:[&{Ready map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{2 EvpYLs8kgRiwnm2B_gni 0 Put 19225122607913846 3}] and reply:[OK] | 14:05:56.533
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{3 YJMEUzlGCR8knk1Spr0N 1 Put 19225122607913846 4}] and reply:[OK] | 14:05:56.533
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{4 P3Pg3GcwQUzJXZKfvMw_ 2 Put 19225122607913846 5}] and reply:[OK] | 14:05:56.533
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{5 MeEa5nN-jg0fIoDxsh3Y 3 Put 19225122607913846 6}] and reply:[OK] | 14:05:56.533
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{6 OOvvU0rJ4rWRag2eK-nF 4 Put 19225122607913846 7}] and reply:[OK] | 14:05:56.533
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{2  0 Get 19225122607913846 13}] and reply:[OK] | 14:05:56.533
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{3  1 Get 19225122607913846 14}] and reply:[OK] | 14:05:56.533
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{4  2 Get 19225122607913846 15}] and reply:[OK] | 14:05:56.533
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{5  3 Get 19225122607913846 16}] and reply:[OK] | 14:05:56.533
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{6  4 Get 19225122607913846 17}] and reply:[OK] | 14:05:56.533
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:56.533
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{6 831083248590160369 1}] should [0] but current gid[101] and return | 14:05:56.558
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[0] with state[Waiting] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[1] with state[Waiting] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[2] with state[Waiting] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[3] with state[Waiting] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[4] with state[Waiting] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0  0 [] map[] map[19225122607913846:2]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[0] with ShardData:[&{Ready map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1  0 [] map[] map[19225122607913846:2]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[1] with ShardData:[&{Ready map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2  0 [] map[] map[19225122607913846:2]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[2] with ShardData:[&{Ready map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3  0 [] map[] map[19225122607913846:2]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[3] with ShardData:[&{Ready map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4  0 [] map[] map[19225122607913846:2]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[4] with ShardData:[&{Ready map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{2 EvpYLs8kgRiwnm2B_gni 0 Put 19225122607913846 3}] and reply:[OK] | 14:05:56.572
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{3 YJMEUzlGCR8knk1Spr0N 1 Put 19225122607913846 4}] and reply:[OK] | 14:05:56.572
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{4 P3Pg3GcwQUzJXZKfvMw_ 2 Put 19225122607913846 5}] and reply:[OK] | 14:05:56.572
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{5 MeEa5nN-jg0fIoDxsh3Y 3 Put 19225122607913846 6}] and reply:[OK] | 14:05:56.572
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{6 OOvvU0rJ4rWRag2eK-nF 4 Put 19225122607913846 7}] and reply:[OK] | 14:05:56.572
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{2  0 Get 19225122607913846 13}] and reply:[OK] | 14:05:56.572
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{3  1 Get 19225122607913846 14}] and reply:[OK] | 14:05:56.572
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{4  2 Get 19225122607913846 15}] and reply:[OK] | 14:05:56.572
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{5  3 Get 19225122607913846 16}] and reply:[OK] | 14:05:56.572
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{6  4 Get 19225122607913846 17}] and reply:[OK] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[0] with state[Waiting] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[1] with state[Waiting] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.572
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[2] with state[Waiting] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[3] with state[Waiting] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[4] with state[Waiting] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0  0 [] map[] map[19225122607913846:2]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[0] with ShardData:[&{Ready map[]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1  0 [] map[] map[19225122607913846:2]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[1] with ShardData:[&{Ready map[]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2  0 [] map[] map[19225122607913846:2]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[2] with ShardData:[&{Ready map[]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3  0 [] map[] map[19225122607913846:2]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[3] with ShardData:[&{Ready map[]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4  0 [] map[] map[19225122607913846:2]}] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[4] with ShardData:[&{Ready map[]}] | 14:05:56.573
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{2 EvpYLs8kgRiwnm2B_gni 0 Put 19225122607913846 3}] and reply:[OK] | 14:05:56.573
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{3 YJMEUzlGCR8knk1Spr0N 1 Put 19225122607913846 4}] and reply:[OK] | 14:05:56.573
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{4 P3Pg3GcwQUzJXZKfvMw_ 2 Put 19225122607913846 5}] and reply:[OK] | 14:05:56.573
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{5 MeEa5nN-jg0fIoDxsh3Y 3 Put 19225122607913846 6}] and reply:[OK] | 14:05:56.573
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{6 OOvvU0rJ4rWRag2eK-nF 4 Put 19225122607913846 7}] and reply:[OK] | 14:05:56.573
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{2  0 Get 19225122607913846 13}] and reply:[OK] | 14:05:56.573
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{3  1 Get 19225122607913846 14}] and reply:[OK] | 14:05:56.573
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{4  2 Get 19225122607913846 15}] and reply:[OK] | 14:05:56.573
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{5  3 Get 19225122607913846 16}] and reply:[OK] | 14:05:56.573
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{6  4 Get 19225122607913846 17}] and reply:[OK] | 14:05:56.573
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateConfig {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]} 0  0 [] map[] map[]}] | 14:05:56.573
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[101]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.605
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.605
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{4 3761910377981013532 1}] should [100] but current gid[101] and return | 14:05:56.605
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.605
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[0] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[1] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[2] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[3] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[1] update shard[4] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[0] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[1] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[2] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[3] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[2] update shard[4] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [Ask Shard Data][updateShardData()]:Server[101]-[1] ask shard:[3] configNum:[2] from gid[100] and servers[[server-100-0 server-100-1 server-100-2]] | 14:05:56.619
+2024/01/21 14:05:56 [Ask Shard Data][updateShardData()]:Server[101]-[1] ask shard:[4] configNum:[2] from gid[100] and servers[[server-100-0 server-100-1 server-100-2]] | 14:05:56.619
+2024/01/21 14:05:56 [Ask Shard Data][updateShardData()]:Server[101]-[1] ask shard:[0] configNum:[2] from gid[100] and servers[[server-100-0 server-100-1 server-100-2]] | 14:05:56.619
+2024/01/21 14:05:56 [Ask Shard Data][updateShardData()]:Server[101]-[1] ask shard:[1] configNum:[2] from gid[100] and servers[[server-100-0 server-100-1 server-100-2]] | 14:05:56.619
+2024/01/21 14:05:56 [Ask Shard Data][updateShardData()]:Server[101]-[1] ask shard:[2] configNum:[2] from gid[100] and servers[[server-100-0 server-100-1 server-100-2]] | 14:05:56.619
+2024/01/21 14:05:56 [Wrong Group][Get()]: Server[101]-[0] received a wrong shard with args:[&{3 4584417579153381463 1}] should [100] but current gid[101] and return | 14:05:56.619
+2024/01/21 14:05:56 [UpdateConfig Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateConfig {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]} 0  0 [] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[0] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[1] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[2] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[3] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardState {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4 Waiting 100 [server-100-0 server-100-1 server-100-2] map[] map[]}] | 14:05:56.619
+2024/01/21 14:05:56 [UpdateShardState Success][updateShardState()]: Server[101]-[0] update shard[4] with state[Waiting] | 14:05:56.619
+2024/01/21 14:05:56 [Send ShardData Success][ShardMigrationHandler] Server[100]-[1] send shard[2] with config[2] : [2] | 14:05:56.620
+2024/01/21 14:05:56 [ShardData][updateShardData()]: Server[101]-[1] commit a new shard data with shard[2]  | 14:05:56.620
+2024/01/21 14:05:56 [Send ShardData Success][ShardMigrationHandler] Server[100]-[1] send shard[4] with config[2] : [2] | 14:05:56.620
+2024/01/21 14:05:56 [ShardData][updateShardData()]: Server[101]-[1] commit a new shard data with shard[4]  | 14:05:56.620
+2024/01/21 14:05:56 [Send ShardData Success][ShardMigrationHandler] Server[100]-[1] send shard[1] with config[2] : [2] | 14:05:56.620
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2  0 [] map[] map[19225122607913846:10]}] | 14:05:56.621
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[2] with ShardData:[&{Ready map[4:P3Pg3GcwQUzJXZKfvMw_]}] | 14:05:56.621
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4  0 [] map[] map[19225122607913846:10]}] | 14:05:56.621
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[4] with ShardData:[&{Ready map[6:OOvvU0rJ4rWRag2eK-nF]}] | 14:05:56.621
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{2  0 Get 19225122607913846 23}] and reply:[ErrNotReady] | 14:05:56.621
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[19225122607913846] from client[23] and reply:[{ ErrNotReady}] | 14:05:56.621
+2024/01/21 14:05:56 [Send ShardData Success][ShardMigrationHandler] Server[100]-[1] send shard[0] with config[2] : [2] | 14:05:56.621
+2024/01/21 14:05:56 [Send ShardData Success][ShardMigrationHandler] Server[100]-[1] send shard[3] with config[2] : [2] | 14:05:56.621
+2024/01/21 14:05:56 [ShardData][updateShardData()]: Server[101]-[1] commit a new shard data with shard[1]  | 14:05:56.621
+2024/01/21 14:05:56 [ShardData][updateShardData()]: Server[101]-[1] commit a new shard data with shard[3]  | 14:05:56.636
+2024/01/21 14:05:56 [ShardData][updateShardData()]: Server[101]-[1] commit a new shard data with shard[0]  | 14:05:56.667
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[101]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.667
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{2  0 Get 1692555394378031560 1}] and reply:[ErrNotReady] | 14:05:56.667
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1  0 [] map[] map[19225122607913846:10]}] | 14:05:56.667
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[1] with ShardData:[&{Ready map[3:YJMEUzlGCR8knk1Spr0N]}] | 14:05:56.667
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3  0 [] map[] map[19225122607913846:10]}] | 14:05:56.667
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[3] with ShardData:[&{Ready map[5:MeEa5nN-jg0fIoDxsh3Y]}] | 14:05:56.667
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0  0 [] map[] map[19225122607913846:10]}] | 14:05:56.667
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[1] update Shard[0] with ShardData:[&{Ready map[2:EvpYLs8kgRiwnm2B_gni]}] | 14:05:56.667
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.669
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[1692555394378031560] from client[1] and reply:[{ ErrNotReady}] | 14:05:56.669
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2  0 [] map[] map[19225122607913846:10]}] | 14:05:56.669
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[2] with ShardData:[&{Ready map[4:P3Pg3GcwQUzJXZKfvMw_]}] | 14:05:56.669
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4  0 [] map[] map[19225122607913846:10]}] | 14:05:56.669
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[4] with ShardData:[&{Ready map[6:OOvvU0rJ4rWRag2eK-nF]}] | 14:05:56.669
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{2  0 Get 19225122607913846 23}] and reply:[ErrNotReady] | 14:05:56.669
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{2  0 Get 1692555394378031560 1}] and reply:[ErrNotReady] | 14:05:56.669
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1  0 [] map[] map[19225122607913846:10]}] | 14:05:56.669
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[1] with ShardData:[&{Ready map[3:YJMEUzlGCR8knk1Spr0N]}] | 14:05:56.669
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3  0 [] map[] map[19225122607913846:10]}] | 14:05:56.669
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[3] with ShardData:[&{Ready map[5:MeEa5nN-jg0fIoDxsh3Y]}] | 14:05:56.669
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0  0 [] map[] map[19225122607913846:10]}] | 14:05:56.669
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[2] update Shard[0] with ShardData:[&{Ready map[2:EvpYLs8kgRiwnm2B_gni]}] | 14:05:56.669
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{5  3 Get 1474507199839296877 1}] and reply:[OK] | 14:05:56.670
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[1474507199839296877] from client[1] and reply:[{MeEa5nN-jg0fIoDxsh3Y OK}] | 14:05:56.670
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{6  4 Get 831083248590160369 1}] and reply:[OK] | 14:05:56.670
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[831083248590160369] from client[1] and reply:[{OOvvU0rJ4rWRag2eK-nF OK}] | 14:05:56.670
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.671
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{4  2 Get 3761910377981013532 1}] and reply:[OK] | 14:05:56.713
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[3761910377981013532] from client[1] and reply:[{P3Pg3GcwQUzJXZKfvMw_ OK}] | 14:05:56.713
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 2  0 [] map[] map[19225122607913846:10]}] | 14:05:56.727
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[2] with ShardData:[&{Ready map[4:P3Pg3GcwQUzJXZKfvMw_]}] | 14:05:56.727
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 4  0 [] map[] map[19225122607913846:10]}] | 14:05:56.727
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{5  3 Get 1474507199839296877 1}] and reply:[OK] | 14:05:56.727
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{6  4 Get 831083248590160369 1}] and reply:[OK] | 14:05:56.727
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[2] apply a command to state machine command:[{4  2 Get 3761910377981013532 1}] and reply:[OK] | 14:05:56.727
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[4] with ShardData:[&{Ready map[6:OOvvU0rJ4rWRag2eK-nF]}] | 14:05:56.727
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{2  0 Get 19225122607913846 23}] and reply:[ErrNotReady] | 14:05:56.727
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{2  0 Get 1692555394378031560 1}] and reply:[ErrNotReady] | 14:05:56.727
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 1  0 [] map[] map[19225122607913846:10]}] | 14:05:56.727
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[1] with ShardData:[&{Ready map[3:YJMEUzlGCR8knk1Spr0N]}] | 14:05:56.727
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 3  0 [] map[] map[19225122607913846:10]}] | 14:05:56.727
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[3] with ShardData:[&{Ready map[5:MeEa5nN-jg0fIoDxsh3Y]}] | 14:05:56.727
+2024/01/21 14:05:56 [UpdateShardDB Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{UpdateShardDB {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0  0 [] map[] map[19225122607913846:10]}] | 14:05:56.727
+2024/01/21 14:05:56 [UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[101]-[0] update Shard[0] with ShardData:[&{Ready map[2:EvpYLs8kgRiwnm2B_gni]}] | 14:05:56.727
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{5  3 Get 1474507199839296877 1}] and reply:[OK] | 14:05:56.727
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{6  4 Get 831083248590160369 1}] and reply:[OK] | 14:05:56.727
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[0] apply a command to state machine command:[{4  2 Get 3761910377981013532 1}] and reply:[OK] | 14:05:56.727
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[101]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.729
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{3  1 Get 4584417579153381463 1}] and reply:[OK] | 14:05:56.731
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[4584417579153381463] from client[1] and reply:[{YJMEUzlGCR8knk1Spr0N OK}] | 14:05:56.731
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[102]-[0] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.731
+2024/01/21 14:05:56 [Get Config][getConfig()]:Server[100]-[1] got the latest config:[{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}] | 14:05:56.732
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{2  0 Get 19225122607913846 23}] and reply:[OK] | 14:05:56.733
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[19225122607913846] from client[23] and reply:[{EvpYLs8kgRiwnm2B_gni OK}] | 14:05:56.733
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{3  1 Get 19225122607913846 24}] and reply:[OK] | 14:05:56.734
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[19225122607913846] from client[24] and reply:[{YJMEUzlGCR8knk1Spr0N OK}] | 14:05:56.734
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{4  2 Get 19225122607913846 25}] and reply:[OK] | 14:05:56.734
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[19225122607913846] from client[25] and reply:[{P3Pg3GcwQUzJXZKfvMw_ OK}] | 14:05:56.734
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{5  3 Get 19225122607913846 26}] and reply:[OK] | 14:05:56.735
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[19225122607913846] from client[26] and reply:[{MeEa5nN-jg0fIoDxsh3Y OK}] | 14:05:56.735
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[101]-[1] apply a command to state machine command:[{6  4 Get 19225122607913846 27}] and reply:[OK] | 14:05:56.736
+2024/01/21 14:05:56 [Get Success][Get()]: Server[101]-[1] has reply a request[19225122607913846] from client[27] and reply:[{OOvvU0rJ4rWRag2eK-nF OK}] | 14:05:56.736
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{7  5 Get 19225122607913846 28}] and reply:[OK] | 14:05:56.744
+2024/01/21 14:05:56 [Get Success][Get()]: Server[100]-[1] has reply a request[19225122607913846] from client[28] and reply:[{OYf5HjeZsdK5uJ7zWaxV OK}] | 14:05:56.744
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{8  6 Get 19225122607913846 29}] and reply:[OK] | 14:05:56.745
+2024/01/21 14:05:56 [Get Success][Get()]: Server[100]-[1] has reply a request[19225122607913846] from client[29] and reply:[{wmbPcgXEjcUbX6ju6EzA OK}] | 14:05:56.745
+2024/01/21 14:05:56 [Apply Msg][applier()]: Server[100]-[1] apply a command to state machine command:[{9  7 Get 19225122607913846 30}] and reply:[OK] | 14:05:56.745
+2024/01/21 14:05:56 [Get Success][Get()]: Server[100]-[1] has reply a request[19225122607913846] from client[30] and reply:[{JC7Iy4Za0UqvmJtnZwbt OK}] | 14:05:56.745
+  ... Passed
+PASS
+ok  	6.824/shardkv	3.059s
