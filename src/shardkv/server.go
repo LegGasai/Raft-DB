@@ -19,8 +19,9 @@ func DPrintf(format string, a ...interface{}) (n int, err error) {
 	}
 	return
 }
-const Debug = true
+const Debug = false
 const configInterval = 50
+const commonInterval = 10
 const TIMEOUT = 250
 
 type OpType string
@@ -35,12 +36,14 @@ const (
 	UPDATE_CONFIG 	ShardOpType ="UpdateConfig"
 	UPDATE_SHARD_STATE			="UpdateShardState"
 	UPDATE_SHARD_DB 			="UpdateShardDB"
+	GC_SHARD 					="GCShard"
 )
 
 type ShardState string
 const (
 	READY ShardState ="Ready"
 	WAITING			 ="Waiting"
+	RECEIVED	     ="Received"
 	GC 				 ="GC"
 )
 
@@ -59,10 +62,9 @@ type Op struct {
 type ShardOp struct {
 	Type		ShardOpType
 	NewConfig	shardctrler.Config
+	ConfigNum	int
 	Shard		int
 	NewState	ShardState
-	TargetGid 	int
-	Groups		[]string
 	DB			map[string]string
 	CacheMap	map[int64]int64
 }
@@ -80,11 +82,10 @@ type ShardKV struct {
 	// Your definitions here.
 	mck  		 	*shardctrler.Clerk // shardctrler's client
 	config 		 	shardctrler.Config // shard config
+	preConfig 		shardctrler.Config
 	stateMachine 	KVStateMachine 	// stateMachine
 	waitChMap 		map[int]chan CommandReply
 	cacheMap		map[int64]int64
-	pullGid			map[int]int //Shard -> Gid
-	pullGroups		map[int][]string // Gid -> servers
 	lastApplied		int
 	lastSnapshot	int
 	cond 			*sync.Cond
@@ -145,6 +146,12 @@ type CommandReply struct {
 	Err		Err
 }
 func (kv *ShardKV) applyToStateMachine(command Op) CommandReply{
+	_,_,checked := kv.checkKey(command.Key)
+	if !checked {
+		return CommandReply{
+			Err: ErrWrongGroup,
+		}
+	}
 	if command.Type == GET{
 		err,res := kv.stateMachine.get(command.Shard,command.Key)
 		return CommandReply{
@@ -294,8 +301,7 @@ func (kv *ShardKV) sendSnapshot(index int){
 	e := labgob.NewEncoder(w)
 	if  e.Encode(kv.stateMachine) != nil ||
 		e.Encode(kv.cacheMap) != nil ||
-		e.Encode(kv.pullGid) != nil ||
-		e.Encode(kv.pullGroups) != nil ||
+		e.Encode(kv.preConfig) != nil ||
 		e.Encode(kv.config) != nil{
 	}
 	//DPrintf("[Snapshot Send][sendSnapshot()] Server[%d]-[%d] ask its raft to snapshot with index[%d] | %s\n",kv.gid,kv.me,index, time.Now().Format("15:04:05.000"))
@@ -311,20 +317,18 @@ func (kv *ShardKV) setSnapshot(snapshot []byte){
 	d := labgob.NewDecoder(r)
 	var stateMachine KVStateMachine
 	var cacheMap map[int64]int64
-	var pullGid map[int]int
-	var pullGroups map[int][]string
+	var preConfig shardctrler.Config
 	var config shardctrler.Config
+
 	if  d.Decode(&stateMachine) != nil ||
 		d.Decode(&cacheMap) != nil ||
-		d.Decode(&pullGid) != nil ||
-		d.Decode(&pullGroups) != nil ||
+		d.Decode(&preConfig) != nil ||
 		d.Decode(&config) != nil {
 		//DPrintf("[Restore Error][setSnapshot()] Restore fail from persisted state! | %s\n", time.Now().Format("15:04:05.000"))
 	}else {
 		kv.stateMachine = stateMachine
 		kv.cacheMap = cacheMap
-		kv.pullGid = pullGid
-		kv.pullGroups = pullGroups
+		kv.preConfig = preConfig
 		kv.config = config
 		//DPrintf("[Restore Success][setSnapshot()] Restore success from persisted state! | %s\n", time.Now().Format("15:04:05.000"))
 	}
@@ -340,6 +344,32 @@ func (kv *ShardKV) Kill() {
 	kv.rf.Kill()
 	// Your code here, if desired.
 }
+
+// ShardGCHandler
+// todo
+func (kv *ShardKV) ShardGCHandler(args *ShardMigrationArgs, reply * ShardMigrationReply){
+	if _,isLeader := kv.rf.GetState();!isLeader{
+		reply.Err = ErrWrongLeader
+		return
+	}
+	kv.mu.RLock()
+	if args.ConfigNum > kv.config.Num{
+		DPrintf("[Delete ShardData Fail][ShardGCHandler] Server[%d]-[%d] send shard[%d] with config[%d] : [%d] | %s\n", kv.gid,kv.me,args.Shard,args.ConfigNum,kv.config.Num,time.Now().Format("15:04:05.000"))
+		reply.Err = OK
+		return
+	}
+	kv.mu.RUnlock()
+	kv.rf.Start(ShardOp{
+		Type: GC_SHARD,
+		Shard: args.Shard,
+		ConfigNum: args.ConfigNum,
+	})
+
+	reply.Shard = args.Shard
+	reply.ConfigNum = args.ConfigNum
+	reply.Err = OK
+}
+
 
 // ShardMigrationHandler
 // todo
@@ -359,7 +389,7 @@ func (kv *ShardKV) ShardMigrationHandler(args *ShardMigrationArgs, reply * Shard
 	copyDB,copyCache := kv.deepCopyShardDataAndCacheMap(shard)
 	reply.Data = copyDB
 	reply.CacheMap = copyCache
-	reply.ConfigNum = kv.config.Num
+	reply.ConfigNum = args.ConfigNum
 	reply.Shard = shard
 	reply.Err = OK
 	DPrintf("[Send ShardData Success][ShardMigrationHandler] Server[%d]-[%d] send shard[%d] with config[%d] : [%d] | %s\n", kv.gid,kv.me,args.Shard,args.ConfigNum,kv.config.Num,time.Now().Format("15:04:05.000"))
@@ -429,13 +459,16 @@ func (kv *ShardKV) applier(){
 				}else if command,ok:=msg.Command.(ShardOp);ok{
 					if command.Type == UPDATE_CONFIG{
 						DPrintf("[UpdateConfig Msg][applier()]: Server[%d]-[%d] apply a command to state machine command:[%v] | %s\n",kv.gid,kv.me,command,time.Now().Format("15:04:05.000"))
-						kv.config = command.NewConfig
+						kv.updateConfig(&command.NewConfig)
 					}else if command.Type == UPDATE_SHARD_STATE{
 						DPrintf("[UpdateShardState Msg][applier()]: Server[%d]-[%d] apply a command to state machine command:[%v] | %s\n",kv.gid,kv.me,command,time.Now().Format("15:04:05.000"))
-						kv.updateShardState(command.Shard,command.NewState,command.TargetGid,command.Groups)
+						kv.updateShardState(command.Shard,command.NewState)
 					}else if command.Type == UPDATE_SHARD_DB{
 						DPrintf("[UpdateShardDB Msg][applier()]: Server[%d]-[%d] apply a command to state machine command:[%v] | %s\n",kv.gid,kv.me,command,time.Now().Format("15:04:05.000"))
-						kv.updateShardDBAndCacheMap(command.Shard,command.DB,command.CacheMap,command.TargetGid)
+						kv.updateShardDBAndCacheMap(command.ConfigNum,command.Shard,command.DB,command.CacheMap)
+					}else if command.Type == GC_SHARD{
+						DPrintf("[DeleteShardGC Msg][applier()]: Server[%d]-[%d] apply a command to state machine command:[%v] | %s\n",kv.gid,kv.me,command,time.Now().Format("15:04:05.000"))
+						kv.deleteShardGC(command.ConfigNum,command.Shard)
 					}
 				}
 
@@ -448,7 +481,19 @@ func (kv *ShardKV) applier(){
 	}
 }
 
-func (kv *ShardKV) updateShardState(shard int,newState ShardState,targetGid int,groups []string){
+func (kv *ShardKV) updateConfig(newConfig *shardctrler.Config){
+	if newConfig.Num == 0 || newConfig.Num == kv.config.Num+1{
+		if newConfig.Num == 0{
+			kv.preConfig = *newConfig
+			kv.config = *newConfig
+		}else{
+			kv.preConfig = kv.config
+			kv.config = *newConfig
+		}
+	}
+}
+
+func (kv *ShardKV) updateShardState(shard int,newState ShardState){
 	if _,ok:=kv.stateMachine.KVData[shard];!ok{
 		kv.stateMachine.KVData[shard] = &ShardData{
 			State: READY,
@@ -456,33 +501,48 @@ func (kv *ShardKV) updateShardState(shard int,newState ShardState,targetGid int,
 		}
 	}
 	kv.stateMachine.KVData[shard].State = newState
-	if newState == WAITING{
-		kv.pullGid[shard] = targetGid
-		kv.pullGroups[targetGid] = groups
-	}
 	DPrintf("[UpdateShardState Success][updateShardState()]: Server[%d]-[%d] update shard[%d] with state[%s] | %s\n",kv.gid,kv.me,shard,kv.stateMachine.KVData[shard].State,time.Now().Format("15:04:05.000"))
 }
 
-func (kv *ShardKV) updateShardDBAndCacheMap(shard int,shardDB map[string]string,cache map[int64]int64,targetGid int){
-	// merge DB map
-	if shardData,ok:=kv.stateMachine.KVData[shard];!ok{
-		kv.stateMachine.KVData[shard] = &ShardData{
-			State: READY,
-			DB: shardDB,
+func (kv *ShardKV) deleteShardGC(configNum int,shard int) {
+	if configNum == kv.config.Num{
+		// merge DB map
+		if shardData,ok:=kv.stateMachine.KVData[shard];ok{
+			if shardData.State == GC {
+				delete(kv.stateMachine.KVData,shard)
+			}
 		}
+		DPrintf("[DeleteShardGC Success][deleteShardGC()]: Server[%d]-[%d] delete Shard[%d] and configNum[%d]:[%d] | %s\n",kv.gid,kv.me,shard,kv.config.Num,configNum,time.Now().Format("15:04:05.000"))
 	}else{
-		shardData.State = READY
-		for k,v := range shardDB{
-			shardData.DB[k]=v
+		DPrintf("[DeleteShardGC Fail][deleteShardGC()]: Server[%d]-[%d] delete Shard[%d] and configNum[%d]:[%d] | %s\n",kv.gid,kv.me,shard,kv.config.Num,configNum,time.Now().Format("15:04:05.000"))
+	}
+
+}
+
+func (kv *ShardKV) updateShardDBAndCacheMap(configNum int,shard int,shardDB map[string]string,cache map[int64]int64){
+	if configNum == kv.config.Num{
+		// merge DB map
+		if shardData,ok:=kv.stateMachine.KVData[shard];!ok{
+			kv.stateMachine.KVData[shard] = &ShardData{
+				State: READY,
+				DB: shardDB,
+			}
+		}else{
+			if shardData.State == WAITING {
+				for k,v := range shardDB{
+					shardData.DB[k]=v
+				}
+				shardData.State = RECEIVED
+			}
 		}
+		// merge cacheMap
+		for k,v := range cache{
+			kv.cacheMap[k] = max(kv.cacheMap[k],v)
+		}
+		DPrintf("[UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[%d]-[%d] update Shard[%d] with ShardData:[%v] and configNum[%d]:[%d] | %s\n",kv.gid,kv.me,shard,kv.stateMachine.KVData[shard],kv.config.Num,configNum,time.Now().Format("15:04:05.000"))
+	}else{
+		DPrintf("[UpdateShardDB Fail][updateShardDBAndCacheMap()]: Server[%d]-[%d] update Shard[%d] with ShardData:[%v] and configNum[%d]:[%d] | %s\n",kv.gid,kv.me,shard,kv.stateMachine.KVData[shard],kv.config.Num,configNum,time.Now().Format("15:04:05.000"))
 	}
-	// merge cacheMap
-	for k,v := range cache{
-		kv.cacheMap[k] = max(kv.cacheMap[k],v)
-	}
-	delete(kv.pullGid, shard)
-	delete(kv.pullGroups,targetGid)
-	DPrintf("[UpdateShardDB Success][updateShardDBAndCacheMap()]: Server[%d]-[%d] update Shard[%d] with ShardData:[%v] | %s\n",kv.gid,kv.me,shard,kv.stateMachine.KVData[shard],time.Now().Format("15:04:05.000"))
 }
 
 // goroutine to request for latest config from shardctrler every 50 ms
@@ -501,60 +561,6 @@ func (kv *ShardKV) getConfig(){
 	}
 }
 
-// goroutine to update shardData periodically
-// todo
-func (kv *ShardKV) updateShardData(){
-	for{
-		_,isLeader := kv.rf.GetState()
-		if !isLeader {
-			time.Sleep(time.Millisecond*10)
-			continue
-		}
-		kv.mu.RLock()
-		var wg sync.WaitGroup
-		for shard,shardData := range kv.stateMachine.KVData{
-			state := shardData.State
-			if state == WAITING {
-				wg.Add(1)
-				targetGid := kv.pullGid[shard]
-				servers := kv.pullGroups[targetGid]
-				DPrintf("[Ask Shard Data][updateShardData()]:Server[%d]-[%d] ask shard:[%d] configNum:[%d] from gid[%d] and servers[%v] | %s\n",kv.gid,kv.me,shard,kv.config.Num,targetGid,servers,time.Now().Format("15:04:05.000"))
-				go func(shard int,configNum int,targetGid int,servers []string) {
-					defer wg.Done()
-					args := ShardMigrationArgs{
-						Shard: shard,
-						ConfigNum: configNum,
-					}
-					for _,server := range servers{
-						reply := ShardMigrationReply{}
-						srv := kv.make_end(server)
-						if ok:=srv.Call("ShardKV.ShardMigrationHandler",&args,&reply);ok&&reply.Err == OK{
-							kv.rf.Start(ShardOp{
-								Type: UPDATE_SHARD_DB,
-								Shard: reply.Shard,
-								DB: reply.Data,
-								CacheMap: reply.CacheMap,
-							})
-							DPrintf("[ShardData][updateShardData()]: Server[%d]-[%d] commit a new shard data with shard[%d]  | %s\n",kv.gid,kv.me,reply.Shard,time.Now().Format("15:04:05.000"))
-						}
-					}
-				}(shard,kv.config.Num,targetGid,servers)
-			}
-		}
-		// wait for all shard are ready
-		kv.mu.RUnlock()
-		wg.Wait()
-		time.Sleep(time.Millisecond*10)
-	}
-
-}
-
-
-// goroutine to recycle shardData periodically
-func (kv *ShardKV) GCShardData(){
-
-}
-
 // update config only by leader
 // todo : send RPC for shard data if necessary and update config
 func (kv *ShardKV) checkConfig(newConfig shardctrler.Config)  {
@@ -564,6 +570,14 @@ func (kv *ShardKV) checkConfig(newConfig shardctrler.Config)  {
 		//DPrintf("[No need to update][updateConfig]:Server[%d]-[%d] with old configNum[%d] : new configNew[%d] | %s\n",kv.gid,kv.me,kv.config.Num,newConfig.Num,time.Now().Format("15:04:05.000"))
 		return
 	}
+
+	// check current shards are all ready
+	for _,v := range kv.stateMachine.KVData{
+		if v.State != READY {
+			return
+		}
+	}
+
 	// check whether to need shard data
 
 	// 1.update config firstly
@@ -584,26 +598,136 @@ func (kv *ShardKV) checkConfig(newConfig shardctrler.Config)  {
 				Type: UPDATE_SHARD_STATE,
 				Shard: index,
 				NewState: WAITING,
-				TargetGid: oldConfig.Shards[index],
-				Groups: oldConfig.Groups[oldConfig.Shards[index]],
 			})
 		}else if newConfig.Shards[index] != kv.gid && oldConfig.Shards[index] == kv.gid {
 			// need GC
-			//kv.rf.Start(ShardOp{
-			//	Type: UPDATE_SHARD_STATE,
-			//	Shard: index,
-			//	NewState: GC,
-			//})
+			kv.rf.Start(ShardOp{
+				Type: UPDATE_SHARD_STATE,
+				Shard: index,
+				NewState: GC,
+			})
 		}
 	}
 }
 
 
+
+// goroutine to update shardData periodically
+// todo
+func (kv *ShardKV) updateShardData(){
+	for{
+		_,isLeader := kv.rf.GetState()
+		if !isLeader {
+			time.Sleep(time.Millisecond*commonInterval)
+			continue
+		}
+		kv.mu.RLock()
+		var wg sync.WaitGroup
+		for shard,shardData := range kv.stateMachine.KVData{
+			state := shardData.State
+			if state == WAITING {
+				wg.Add(1)
+				targetGid := kv.preConfig.Shards[shard]
+				servers := kv.preConfig.Groups[targetGid]
+				DPrintf("[Ask Shard Data][updateShardData()]:Server[%d]-[%d] ask shard:[%d] configNum:[%d] from gid[%d] and servers[%v] | %s\n",kv.gid,kv.me,shard,kv.config.Num,targetGid,servers,time.Now().Format("15:04:05.000"))
+				go func(shard int,configNum int,targetGid int,servers []string) {
+					defer wg.Done()
+					args := ShardMigrationArgs{
+						Shard: shard,
+						ConfigNum: configNum,
+					}
+					for _,server := range servers{
+						reply := ShardMigrationReply{}
+						srv := kv.make_end(server)
+						if ok:=srv.Call("ShardKV.ShardMigrationHandler",&args,&reply);ok&&reply.Err == OK{
+							kv.rf.Start(ShardOp{
+								Type: UPDATE_SHARD_DB,
+								Shard: reply.Shard,
+								DB: reply.Data,
+								CacheMap: reply.CacheMap,
+								ConfigNum: reply.ConfigNum,
+							})
+							DPrintf("[ShardData][updateShardData()]: Server[%d]-[%d] commit a new shard data with shard[%d]  | %s\n",kv.gid,kv.me,reply.Shard,time.Now().Format("15:04:05.000"))
+						}
+					}
+				}(shard,kv.config.Num,targetGid,servers)
+			}
+		}
+		// wait for all shard are ready
+		kv.mu.RUnlock()
+		wg.Wait()
+		time.Sleep(time.Millisecond*commonInterval)
+	}
+
+}
+
+
+// goroutine to recycle shardData periodically
+func (kv *ShardKV) GCShardData(){
+	for{
+		_,isLeader := kv.rf.GetState()
+		if !isLeader {
+			time.Sleep(time.Millisecond*commonInterval)
+			continue
+		}
+		kv.mu.RLock()
+		var wg sync.WaitGroup
+		for shard,shardData := range kv.stateMachine.KVData{
+			state := shardData.State
+			if state == RECEIVED {
+				wg.Add(1)
+				targetGid := kv.preConfig.Shards[shard]
+				servers := kv.preConfig.Groups[targetGid]
+				DPrintf("[Ask Shard GC][GCShardData()]:Server[%d]-[%d] delete shard:[%d] configNum:[%d] to gid[%d] and servers[%v] | %s\n",kv.gid,kv.me,shard,kv.config.Num,targetGid,servers,time.Now().Format("15:04:05.000"))
+				go func(shard int,configNum int,targetGid int,servers []string) {
+					defer wg.Done()
+					args := ShardMigrationArgs{
+						Shard: shard,
+						ConfigNum: configNum,
+					}
+					for _,server := range servers{
+						reply := ShardMigrationReply{}
+						srv := kv.make_end(server)
+						if ok:=srv.Call("ShardKV.ShardGCHandler",&args,&reply);ok&&reply.Err == OK{
+							kv.rf.Start(ShardOp{
+								Type: UPDATE_SHARD_STATE,
+								Shard: reply.Shard,
+								ConfigNum: reply.ConfigNum,
+								NewState: READY,
+							})
+							DPrintf("[ShardGC][GCShardData()]: Server[%d]-[%d] update shard data state with shard[%d]  | %s\n",kv.gid,kv.me,reply.Shard,time.Now().Format("15:04:05.000"))
+						}
+					}
+				}(shard,kv.config.Num,targetGid,servers)
+			}
+		}
+		// wait for all shard are ready
+		kv.mu.RUnlock()
+		wg.Wait()
+		time.Sleep(time.Millisecond*commonInterval)
+	}
+}
+
+// goroutine to commit nil log
+func (kv *ShardKV) checkNoOpLog() {
+	for {
+		if !kv.rf.HasLogInCurrentTerm(){
+			DPrintf("[Null Log]")
+			kv.rf.Start(ShardOp{})
+		}
+		time.Sleep(time.Millisecond*commonInterval)
+	}
+}
+
 // Check if the shard the key belongs to is its own responsibility
 func (kv *ShardKV) checkKey(key string) (int,int,bool){
 	shard := key2shard(key)
 	gid := kv.config.Shards[shard]
-	return shard,gid,kv.config.Shards[key2shard(key)]==kv.gid
+	shardData,ok := kv.stateMachine.KVData[shard]
+	if (ok && (shardData.State == READY || shardData.State == GC)) || !ok{
+		return shard,gid,kv.config.Shards[key2shard(key)]==kv.gid
+	}
+	return shard,gid,false
 }
 
 func max(a int64,b int64) int64{
@@ -663,15 +787,15 @@ func StartServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persister,
 	kv.stateMachine = KVStateMachine{KVData: make(map[int]*ShardData)}
 	kv.waitChMap = make(map[int]chan CommandReply)
 	kv.cacheMap = make(map[int64]int64)
-	kv.pullGid  = make(map[int]int)
-	kv.pullGroups = make(map[int][]string)
 	kv.lastApplied = 0
 	kv.cond = sync.NewCond(&kv.mu)
-	kv.config = shardctrler.Config{}
 	kv.setSnapshot(persister.ReadSnapshot())
 
 	go kv.getConfig()
 	go kv.applier()
+
 	go kv.updateShardData()
+	go kv.GCShardData()
+	go kv.checkNoOpLog()
 	return kv
 }
