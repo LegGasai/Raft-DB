@@ -1,6 +1,6 @@
 # Lab 1.MapReduce
 ### 介绍
-简易的分布式并行计算框架，分为coordinator进程和若干worker进程。工作进程通过RPC与coordinator通信，从而获取任务，并执行。coordinator进程负责协调任务的分发。
+简易的分布式并行计算框架，分为`coordinator进程`和`worker进程`。`worker进程`通过RPC与`coordinator`通信，从而获取任务然后并行执行任务。`coordinator进程`负责协调任务的分发。
 ### 笔记
 [Lab 1.MapReduce](https://leggasai.github.io/posts/ddf70eb0/)
 
